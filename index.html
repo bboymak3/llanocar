@@ -2,68 +2,6 @@
 <html lang="es-CL">
 <head>
 <style>
-  #floating-top-buttons {
-    position: fixed;
-    top: 85px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-    z-index: 10001;
-    align-items: center;
-  }
-
-  .float-top-btn {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.35rem;
-    text-decoration: none;
-    color: white;
-    border: 2px solid #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
-  }
-
-  .float-top-btn:hover {
-    transform: scale(1.12);
-  }
-
-  .float-btn-ia {
-    background: linear-gradient(135deg, #FFC107 0%, #ff9800 100%);
-    color: #000;
-    animation: pulse-yellow 2s infinite;
-  }
-
-  .float-btn-bell {
-    background: linear-gradient(135deg, #E87722 0%, #E87722 100%);
-    animation: pulseBell-float 2s infinite;
-  }
-  .float-btn-agenda {
-    background: linear-gradient(135deg, #FF8C00 0%, #FFB347 100%);
-    color: #fff;
-    animation: pulse-agenda 2s infinite;
-  }
-  @keyframes pulse-agenda {
-    0% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.6); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 107, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
-  }
-
-  @keyframes pulse-yellow {
-    0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
-  }
-
-  @keyframes pulseBell-float {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(232, 119, 34, 0.5); }
-    50% { box-shadow: 0 0 0 10px rgba(232, 119, 34, 0); }
-  }
-
   /* ========== NAVBAR NUEVO - SIN OVERFLOW HIDDEN ========== */
   .navbar {
     overflow: visible !important;
@@ -207,15 +145,6 @@
       padding-left: 20px;
       transform: none;
     }
-    #floating-top-buttons {
-      top: 90px;
-      right: 10px;
-    }
-    .float-top-btn {
-      width: 44px;
-      height: 44px;
-      font-size: 1.1rem;
-    }
   }
 </style>
 
@@ -255,10 +184,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <!-- Leaflet CSS (mapa para seleccionar ubicacion en modal Agenda) -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
   <link rel="stylesheet" href="css/styles.css"/>
-  <!-- Elfsight script eliminado - placeholder para reseñas -->
+
 
   <style>
     :root {
@@ -276,11 +204,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       scroll-padding-bottom: 120px;
     }
     
-    .text-primary { color: var(--gp-blood-red) !important; }
+    .text-primary { color: var(--llanocar-primary) !important; }
     
     .btn-primary {
-      background-color: var(--gp-blood-red) !important;
-      border-color: var(--gp-blood-red) !important;
+      background-color: var(--llanocar-primary) !important;
+      border-color: var(--llanocar-primary) !important;
       color: white !important;
     }
     .btn-primary:hover, .btn-primary:focus {
@@ -289,8 +217,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 0 15px rgba(232, 119, 34, 0.4);
     }
     
-    .bg-primary { background-color: var(--gp-blood-red) !important; }
-    .border-primary { border-color: var(--gp-blood-red) !important; }
+    .bg-primary { background-color: var(--llanocar-primary) !important; }
+    .border-primary { border-color: var(--llanocar-primary) !important; }
 
     /* .nav-link movido al style principal del navbar arriba */
 
@@ -336,7 +264,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .expand-icon { color: white; font-size: 2rem; }
 
     .logo-img {
-      background-color: var(--gp-blood-red); 
+      background-color: var(--llanocar-primary); 
       width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;
       border-radius: 8px; margin-right: 15px; overflow: hidden; 
       color: white; font-weight: bold; font-size: 1.2rem;
@@ -356,24 +284,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .accordion-button:not(.collapsed) {
-      background-color: var(--gp-blood-red);
+      background-color: var(--llanocar-primary);
       color: white;
     }
     .accordion-button:focus {
       box-shadow: 0 0 0 0.25rem rgba(232, 119, 34, 0.25);
     }
     .pillar-card {
-      border-left: 4px solid var(--gp-blood-red);
+      border-left: 4px solid var(--llanocar-primary);
       height: 100%;
     }
 
     .seo-section {
       background-color: #f8f9fa;
       padding: 60px 0;
-      border-bottom: 5px solid var(--gp-blood-red);
+      border-bottom: 5px solid var(--llanocar-primary);
     }
     .seo-h1 {
-      color: var(--gp-blood-red);
+      color: var(--llanocar-primary);
       font-weight: 800;
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
@@ -395,7 +323,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-align: justify;
     }
     .seo-highlight {
-      color: var(--gp-blood-red);
+      color: var(--llanocar-primary);
       font-weight: bold;
       background-color: rgba(232, 119, 34, 0.05);
       padding: 0 5px;
@@ -428,7 +356,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       left: 0;
       width: 100%;
       height: 90px;
-      background-color: var(--gp-black);
+      background-color: var(--llanocar-black);
       color: white;
       display: flex;
       justify-content: center;
@@ -436,7 +364,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 0 15px;
       z-index: 9999;
       box-shadow: 0 -4px 15px rgba(0,0,0,0.6);
-      border-top: 3px solid var(--gp-blood-red);
+      border-top: 3px solid var(--llanocar-primary);
     }
 
     .big-buttons-container {
@@ -524,11 +452,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: #bbb;
       padding: 60px 0 20px 0;
       font-size: 0.9rem;
-      border-top: 4px solid var(--gp-blood-red);
+      border-top: 4px solid var(--llanocar-primary);
     }
     
     .footer-logo-box {
-      background-color: var(--gp-blood-red);
+      background-color: var(--llanocar-primary);
       width: 60px;
       height: 60px;
       display: flex;
@@ -548,7 +476,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-transform: uppercase;
       margin-bottom: 20px;
       font-size: 1.1rem;
-      border-bottom: 2px solid var(--gp-blood-red);
+      border-bottom: 2px solid var(--llanocar-primary);
       display: inline-block;
       padding-bottom: 5px;
     }
@@ -570,7 +498,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     
     .footer-links a:hover {
-      color: var(--gp-blood-red);
+      color: var(--llanocar-primary);
       padding-left: 5px;
     }
 
@@ -581,7 +509,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     
     .contact-info-item i {
-      color: var(--gp-blood-red);
+      color: var(--llanocar-primary);
       margin-right: 10px;
       margin-top: 5px;
     }
@@ -601,7 +529,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     
     .social-icons a:hover {
-      background-color: var(--gp-blood-red);
+      background-color: var(--llanocar-primary);
       transform: translateY(-3px);
     }
 
@@ -724,18 +652,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </script>
 </head>
 <body>
-<!-- Botones IA + Campana (top-right) -->
-<div id="floating-top-buttons">
-  <a href="#" class="float-top-btn float-btn-ia" title="Consulta tu vehiculo por patente" onclick="abrirModalGP('modal-chat-ia'); return false;">
-    <i class="fas fa-robot"></i>
-  </a>
-  <a href="#" class="float-top-btn float-btn-bell" title="Recorda tu revision tecnica" onclick="abrirModalGP('modal-recordatorio'); return false;">
-    <i class="fas fa-bell"></i>
-  </a>
-  <a href="#" class="float-top-btn float-btn-agenda" title="Agenda tu visita tecnica" onclick="abrirModalGP('modal-agenda-visita'); return false;">
-    <i class="fas fa-bolt"></i>
-  </a>
-</div>
+
 
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41608a73d5524531804ac808fbf45439"}'></script><!-- End Cloudflare Web Analytics -->
 <!-- Google Tag Manager (noscript) -->
@@ -861,6 +778,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a class="nav-link" href="contacto.html">Contacto</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="#galeria-de-trabajos">Galería</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="blog/index.html">Blog</a>
         </li>
       </ul>
@@ -901,16 +821,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="btn-group mt-4">
-          <a href="#" class="btn btn-primary me-2" onclick="abrirModalGP('modal-agenda-visita'); return false;">
-            <i class="fas fa-calendar-check me-2"></i> Agenda tu Visita Tecnica
-          </a>
-          <a href="#servicios" class="btn btn-outline-light">
+          <a href="#servicios" class="btn btn-primary me-2">
             <i class="fas fa-wrench me-2"></i> Ver Servicios
+          </a>
+          <a href="https://wa.me/56933261085?text=Hola%20te%20escribo%20desde%20la%20pagina%20web%20estoy%20interesado%20en%20tus%20servicios" class="btn btn-outline-light" target="_blank">
+            <i class="fab fa-whatsapp me-2"></i> WhatsApp
           </a>
         </div>
       </div>
       <div class="col-lg-5">
-        <img src="images/image1.jpg" alt="Taller mecánico profesional LLANOCAR" class="img-fluid rounded shadow">
+        <div style="background: linear-gradient(135deg, #E87722 0%, #FF8C00 50%, #FFB347 100%); border-radius: 20px; height: 350px; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 60px rgba(232,119,34,0.3);">
+          <div style="text-align: center; color: white;">
+            <i class="fas fa-wrench" style="font-size: 5rem; margin-bottom: 15px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));"></i>
+            <h3 style="font-size: 1.8rem; font-weight: 800; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">LLANOCAR</h3>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Servicios Automotrices</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -953,233 +879,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ======================================================================= -->
 
 
-<!-- SECCIÓN DE RESEÑAS - PLACEHOLDER (Se agregará widget próximamente) -->
-<section id="resenas" class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-    <p class="section-subtitle" style="color:#888; font-style:italic;">Próximamente compartiremos las experiencias de nuestros clientes aquí.</p>
-    <!-- ESPACIO RESERVADO PARA WIDGET DE RESEÑAS -->
-  </div>
-</section>
 
-<!-- ======================================================================= -->
-<!-- SECCION: SISTEMA DE ALERTA TEMPRANA REVISION TECNICA -->
-<!-- ======================================================================= -->
-<section id="alerta-revision" style="position:relative; padding:70px 0; overflow:hidden; background: linear-gradient(180deg, #FFF8F0 0%, #fff 30%, #f8f9fa 100%);">
-  <!-- Subtle aura decorativa dual -->
-  <div style="position:absolute; top:-80px; left:25%; transform:translateX(-50%); width:500px; height:300px; background:radial-gradient(ellipse, rgba(255,107,0,0.08) 0%, transparent 70%); pointer-events:none;"></div>
-  <div style="position:absolute; top:-80px; left:75%; transform:translateX(-50%); width:500px; height:300px; background:radial-gradient(ellipse, rgba(232,119,34,0.06) 0%, transparent 70%); pointer-events:none;"></div>
-  <style>
-    @keyframes auraPulse {
-      0%, 100% { opacity:0.5; transform:scale(1); }
-      50% { opacity:1; transform:scale(1.08); }
-    }
-    .alerta-card {
-      position:relative; z-index:2; background:#fff; border:2px solid rgba(232,119,34,0.12);
-      border-radius:24px; padding:35px 28px;
-      box-shadow: 0 8px 40px rgba(232,119,34,0.10), 0 2px 10px rgba(0,0,0,0.06);
-      animation: cardGlow 3s ease-in-out infinite alternate;
-      height: 100%;
-    }
-    @keyframes cardGlow {
-      0% { box-shadow: 0 8px 40px rgba(232,119,34,0.08), 0 2px 10px rgba(0,0,0,0.04); }
-      100% { box-shadow: 0 12px 50px rgba(232,119,34,0.16), 0 4px 15px rgba(0,0,0,0.06); }
-    }
-    @keyframes cardGlowOrange {
-      0% { box-shadow: 0 8px 40px rgba(255,107,0,0.08), 0 2px 10px rgba(0,0,0,0.04); }
-      100% { box-shadow: 0 12px 50px rgba(255,107,0,0.16), 0 4px 15px rgba(0,0,0,0.06); }
-    }
-    .alerta-icon-ring {
-      width:100px; height:100px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-      background: linear-gradient(135deg, #E87722, #ff6b00); margin:0 auto 24px;
-      box-shadow: 0 6px 30px rgba(232,119,34,0.35), 0 0 60px rgba(255,107,0,0.15);
-      animation: iconRing 2.5s ease-in-out infinite;
-    }
-    @keyframes iconRing {
-      0%, 100% { box-shadow: 0 6px 30px rgba(232,119,34,0.35), 0 0 60px rgba(255,107,0,0.15); }
-      50% { box-shadow: 0 8px 40px rgba(232,119,34,0.5), 0 0 80px rgba(255,107,0,0.25); }
-    }
-    @keyframes iconRingOrange {
-      0%, 100% { box-shadow: 0 6px 30px rgba(255,107,0,0.35), 0 0 60px rgba(255,140,51,0.15); }
-      50% { box-shadow: 0 8px 40px rgba(255,107,0,0.5), 0 0 80px rgba(255,140,51,0.25); }
-    }
-    .alerta-input {
-      width:100%; padding:16px 16px 16px 46px; border:2px solid #e5e7eb; border-radius:14px;
-      font-size:1.1rem; outline:none; background:#f9fafb; color:#111;
-      font-family:inherit; transition: all 0.3s;
-    }
-    .alerta-input::placeholder { color:#9ca3af; }
-    .alerta-input:focus { border-color:#E87722; box-shadow:0 0 0 4px rgba(232,119,34,0.1); background:#fff; }
-    .alerta-btn {
-      width:100%; padding:18px; border:none; border-radius:14px; font-size:1.3rem; font-weight:800;
-      cursor:pointer; display:flex; align-items:center; justify-content:center; gap:12px;
-      background: linear-gradient(135deg, #E87722, #E87722); color:#fff;
-      box-shadow: 0 6px 24px rgba(232,119,34,0.35); transition: all 0.3s; text-transform:uppercase; letter-spacing:0.06em;
-    }
-    .alerta-btn:hover { transform:translateY(-3px); box-shadow: 0 10px 35px rgba(232,119,34,0.45); }
-    .alerta-btn:active { transform:translateY(0); }
-    .alerta-baja-btn {
-      width:100%; padding:14px; border:2px solid #e5e7eb; border-radius:14px;
-      background:#fff; color:#6b7280; font-size:1rem; font-weight:600;
-      cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; transition:all 0.3s;
-    }
-    .alerta-baja-btn:hover { border-color:#dc3545; color:#dc3545; background:#FFF4E8; }
-    .alerta-radio-label {
-      flex:1; display:flex; align-items:center; justify-content:center; gap:6px; padding:14px;
-      border:2px solid #e5e7eb; border-radius:12px; cursor:pointer; font-size:1rem;
-      font-weight:600; text-align:center; transition:all 0.2s; color:#4b5563;
-    }
-    .alerta-radio-label:hover { border-color:#E87722; color:#E87722; }
-    .alerta-radio-label input:checked + span { color:#E87722; }
-    .alerta-benefit {
-      display:flex; align-items:center; gap:16px; padding:14px 0; border-bottom:1px solid #f3f4f6;
-    }
-    .alerta-benefit:last-child { border-bottom:none; }
-    .alerta-benefit-icon {
-      width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center;
-      background:rgba(232,119,34,0.08); color:#E87722; font-size:1.2rem; flex-shrink:0;
-    }
-  </style>
 
-  <div class="container">
-    <div class="row g-4 justify-content-center">
 
-      <!-- ===== TARJETA 1: AGENDA TU VISITA TÉCNICA ===== -->
-      <div class="col-lg-6 col-md-6">
-        <div class="alerta-card" style="border-color:rgba(255,107,0,0.15); animation-name: cardGlowOrange;">
-          <div style="text-align:center; margin-bottom:30px;">
-            <div style="width:90px; height:90px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#ff6b00,#ff8c33); margin:0 auto 20px; box-shadow:0 6px 30px rgba(255,107,0,0.35); animation: iconRingOrange 2.5s ease-in-out infinite;">
-              <i class="fas fa-bolt" style="font-size:2.2rem; color:#fff; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));"></i>
-            </div>
-            <h2 style="color:#e06000; font-weight:900; font-size:1.6rem; margin-bottom:8px; letter-spacing:-0.01em;">Agenda tu Visita Tecnica</h2>
-            <p style="color:#6b7280; font-size:1rem; max-width:400px; margin:0 auto; line-height:1.6;">Solicita un mecanico a domicilio ahora. Tu orden express se aprueba automaticamente.</p>
-          </div>
-          <div style="margin-bottom:24px; padding:0 4px;">
-            <div class="alerta-benefit">
-              <div class="alerta-benefit-icon" style="background:rgba(255,107,0,0.08); color:#e06000;"><i class="fas fa-bolt"></i></div>
-              <div><span style="color:#111; font-weight:700; font-size:1rem;">Orden Express</span><br><small style="color:#6b7280;">Aprobada al instante, sin esperas</small></div>
-            </div>
-            <div class="alerta-benefit">
-              <div class="alerta-benefit-icon" style="background:rgba(255,107,0,0.08); color:#e06000;"><i class="fas fa-home"></i></div>
-              <div><span style="color:#111; font-weight:700; font-size:1rem;">A domicilio</span><br><small style="color:#6b7280;">El tecnico va donde tu vehiculo este</small></div>
-            </div>
-            <div class="alerta-benefit">
-              <div class="alerta-benefit-icon" style="background:rgba(255,107,0,0.08); color:#e06000;"><i class="fas fa-phone-alt"></i></div>
-              <div><span style="color:#111; font-weight:700; font-size:1rem;">Te contactamos</span><br><small style="color:#6b7280;">Confirmacion rapida por telefono</small></div>
-            </div>
-          </div>
-          <button onclick="abrirModalGP('modal-agenda-visita')" style="width:100%; padding:16px; border:none; border-radius:14px; font-size:1.15rem; font-weight:800; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; background:linear-gradient(135deg,#ff6b00,#ff8c33); color:#fff; box-shadow:0 6px 24px rgba(255,107,0,0.35); transition:all 0.3s; text-transform:uppercase; letter-spacing:0.04em;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 35px rgba(255,107,0,0.45)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 24px rgba(255,107,0,0.35)'">
-            <i class="fas fa-bolt"></i> AGENDAR AHORA
-          </button>
-        </div>
-      </div>
-
-      <!-- ===== TARJETA 2: RECORDA TU REVISIÓN (original) ===== -->
-      <div class="col-lg-6 col-md-6">
-        <div class="alerta-card">
-          <!-- Header -->
-          <div style="text-align:center; margin-bottom:35px;">
-            <div class="alerta-icon-ring">
-              <i class="fas fa-bell" style="font-size:2.6rem; color:#fff; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));"></i>
-            </div>
-            <h2 style="color:#E87722; font-weight:900; font-size:2.2rem; margin-bottom:10px; letter-spacing:-0.02em;">
-              Recorda tu Revision
-            </h2>
-            <p style="color:#6b7280; font-size:1.15rem; max-width:480px; margin:0 auto; line-height:1.7;">
-              Nunca mas te olvides de la <strong style="color:#E87722;">revision tecnica</strong> de tu vehiculo. Te avisamos por WhatsApp a tiempo.
-            </p>
-          </div>
-
-          <!-- Beneficios -->
-          <div style="margin-bottom:30px; padding:0 8px;">
-            <div class="alerta-benefit">
-              <div class="alerta-benefit-icon"><i class="fas fa-clock"></i></div>
-              <div><span style="color:#111; font-weight:700; font-size:1.05rem;">Alerta a tiempo</span><br><small style="color:#6b7280; font-size:0.95rem;">Te notificamos 30 dias antes de tu revision</small></div>
-            </div>
-            <div class="alerta-benefit">
-              <div class="alerta-benefit-icon"><i class="fas fa-dollar-sign"></i></div>
-              <div><span style="color:#111; font-weight:700; font-size:1.05rem;">Evita multas</span><br><small style="color:#6b7280; font-size:0.95rem;">Circula siempre al dia, sin sorpresas ni pagos innecesarios</small></div>
-            </div>
-            <div class="alerta-benefit">
-              <div class="alerta-benefit-icon"><i class="fab fa-whatsapp"></i></div>
-              <div><span style="color:#111; font-weight:700; font-size:1.05rem;">Notificacion por WhatsApp</span><br><small style="color:#6b7280; font-size:0.95rem;">Recibes el recordatorio directo en tu celular</small></div>
-            </div>
-          </div>
-
-          <hr style="border:none; border-top:1px solid #f3f4f6; margin:28px 0;">
-
-          <!-- Formulario -->
-          <div style="margin-bottom:18px;">
-            <label style="display:block; font-weight:700; font-size:1rem; color:#374151; margin-bottom:8px;">
-              <i class="fas fa-car" style="color:#E87722; margin-right:6px;"></i> Patente del vehiculo
-            </label>
-            <div style="position:relative;">
-              <i class="fas fa-id-card" style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:#9ca3af; font-size:1.1rem;"></i>
-              <input type="text" id="sec-patente" class="alerta-input" placeholder="Ej: ABCD12" required maxlength="10"
-                     oninput="this.value=this.value.toUpperCase();" onblur="detectarMesRevisionSec()">
-            </div>
-            <div id="sec-mes-info" style="display:none; background:#ecfdf5; border:1px solid #a7f3d0; border-radius:12px; padding:12px 16px; margin-top:10px; font-size:1rem; color:#065f46;">
-              <i class="fas fa-calendar-check" style="margin-right:6px;"></i>
-              <span id="sec-mes-text"></span>
-            </div>
-          </div>
-
-          <div style="margin-bottom:18px;">
-            <label style="display:block; font-weight:700; font-size:1rem; color:#374151; margin-bottom:8px;">
-              <i class="fas fa-calendar" style="color:#E87722; margin-right:6px;"></i> Como determinar el mes
-            </label>
-            <div style="display:flex; gap:10px;">
-              <label class="alerta-radio-label"><input type="radio" name="sec-modo" value="auto" checked style="accent-color:#E87722;"><span>Automatico</span></label>
-              <label class="alerta-radio-label"><input type="radio" name="sec-modo" value="manual" style="accent-color:#E87722;"><span>Manual</span></label>
-            </div>
-            <div id="sec-mes-manual" style="display:none; margin-top:10px;">
-              <select id="sec-select-mes" class="alerta-input" style="padding-left:16px;">
-                <option value="">-- Selecciona mes --</option>
-                <option value="1">Enero</option><option value="2">Febrero</option><option value="3">Marzo</option>
-                <option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option>
-                <option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option>
-                <option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option>
-              </select>
-            </div>
-          </div>
-
-          <div style="margin-bottom:18px;">
-            <label style="display:block; font-weight:700; font-size:1rem; color:#374151; margin-bottom:8px;">
-              <i class="fab fa-whatsapp" style="color:#E87722; margin-right:6px;"></i> Tu WhatsApp
-            </label>
-            <div style="position:relative;">
-              <i class="fas fa-phone" style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:#9ca3af; font-size:1.1rem;"></i>
-              <input type="tel" id="sec-telefono" class="alerta-input" placeholder="Ej: +56 9 1234 5678" required>
-            </div>
-          </div>
-
-          <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:24px; padding:14px; background:#f9fafb; border-radius:14px;">
-            <input type="checkbox" id="sec-consent" required style="width:20px; height:20px; margin-top:2px; accent-color:#E87722; flex-shrink:0;">
-            <label for="sec-consent" style="font-size:0.95rem; color:#6b7280; cursor:pointer; line-height:1.5;">Acepto recibir recordatorios de revision tecnica por WhatsApp. Puedo darme de baja cuando quiera.</label>
-          </div>
-
-          <button id="sec-submit" onclick="submitRecordatorioSec()" class="alerta-btn">
-            <i class="fas fa-bell"></i> RECORDARME
-          </button>
-
-          <div id="sec-resultado" style="margin-top:16px; display:none; padding:16px; border-radius:14px; font-size:1rem;"></div>
-
-          <!-- Dar me de baja -->
-          <div style="margin-top:24px; text-align:center;">
-            <p style="color:#9ca3af; font-size:0.95rem; margin-bottom:10px;">No quieres mas recordatorios?</p>
-            <div style="display:flex; gap:10px;">
-              <input type="tel" id="sec-baja-telefono" class="alerta-input" placeholder="+56 9 1234 5678" style="flex:1; padding:14px 16px 14px 16px; font-size:1rem;">
-              <button onclick="darmeDeBajaSec()" class="alerta-baja-btn" style="width:auto; padding:14px 24px; flex-shrink:0;">
-                <i class="fas fa-user-slash"></i> DARME DE BAJA
-              </button>
-            </div>
-            <div id="sec-baja-resultado" style="margin-top:10px; display:none; padding:12px 16px; border-radius:12px; font-size:0.95rem;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- SECCIÓN: CONECTAMOS (CSS Infinite Scroll Carousel) -->
 <section class="conectamos-section">
@@ -1374,7 +1076,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
     <div class="row g-4">
       <div class="col-md-6">
-        <div class="service-solution-card" style="border-left:4px solid var(--gp-blood-red);">
+        <div class="service-solution-card" style="border-left:4px solid var(--llanocar-primary);">
           <div class="p-4">
             <h4 class="fw-bold text-primary mb-3"><i class="fas fa-clipboard-check me-2"></i> 1. Mantención Preventiva y Correctiva</h4>
             <p style="color:#555; margin-bottom:1rem;">Ejecutamos planes de mantención diseñados para maximizar la vida útil de los componentes.</p>
@@ -1388,7 +1090,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="service-solution-card" style="border-left:4px solid var(--gp-blood-red);">
+        <div class="service-solution-card" style="border-left:4px solid var(--llanocar-primary);">
           <div class="p-4">
             <h4 class="fw-bold text-primary mb-3"><i class="fas fa-truck-pickup me-2"></i> 2. Mecánica a Domicilio en Santiago</h4>
             <p style="color:#555; margin-bottom:1rem;">¿No puedes traer tu vehículo al taller? Nuestro servicio de mecánico a domicilio es la solución ideal:</p>
@@ -1406,19 +1108,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <i class="fas fa-trophy text-primary me-2"></i> ¿Por qué elegir el Servicios Automotrices LLANOCAR?
     </h3>
     <div class="row g-4">
-      <div class="col-md-6"><div class="d-flex align-items-start gap-3 p-3 bg-white rounded shadow-sm" style="border-left:4px solid var(--gp-blood-red);"><div style="min-width:50px;height:50px;border-radius:12px;background:var(--gp-blood-red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0;"><i class="fas fa-truck-moving"></i></div><div><h6 class="fw-bold text-dark mb-1">Especialistas en Terreno</h6><p class="small text-muted mb-0">Unidades móviles equipadas para ofrecer mecánica a domicilio eficiente.</p></div></div></div>
-      <div class="col-md-6"><div class="d-flex align-items-start gap-3 p-3 bg-white rounded shadow-sm" style="border-left:4px solid var(--gp-blood-red);"><div style="min-width:50px;height:50px;border-radius:12px;background:var(--gp-blood-red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0;"><i class="fas fa-map-pin"></i></div><div><h6 class="fw-bold text-dark mb-1">Ubicación Estratégica</h6><p class="small text-muted mb-0">Taller mecánico con infraestructura de punta en Santiago.</p></div></div></div>
-      <div class="col-md-6"><div class="d-flex align-items-start gap-3 p-3 bg-white rounded shadow-sm" style="border-left:4px solid var(--gp-blood-red);"><div style="min-width:50px;height:50px;border-radius:12px;background:var(--gp-blood-red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0;"><i class="fas fa-user-graduate"></i></div><div><h6 class="fw-bold text-dark mb-1">Personal Calificado</h6><p class="small text-muted mb-0">Técnicos con años de experiencia en diversas marcas y modelos.</p></div></div></div>
-      <div class="col-md-6"><div class="d-flex align-items-start gap-3 p-3 bg-white rounded shadow-sm" style="border-left:4px solid var(--gp-blood-red);"><div style="min-width:50px;height:50px;border-radius:12px;background:var(--gp-blood-red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0;"><i class="fas fa-stopwatch"></i></div><div><h6 class="fw-bold text-dark mb-1">Optimización de Tiempos</h6><p class="small text-muted mb-0">Reducimos los tiempos de inactividad mediante procesos estandarizados.</p></div></div></div>
+      <div class="col-md-6"><div class="d-flex align-items-start gap-3 p-3 bg-white rounded shadow-sm" style="border-left:4px solid var(--llanocar-primary);"><div style="min-width:50px;height:50px;border-radius:12px;background:var(--llanocar-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0;"><i class="fas fa-truck-moving"></i></div><div><h6 class="fw-bold text-dark mb-1">Especialistas en Terreno</h6><p class="small text-muted mb-0">Unidades móviles equipadas para ofrecer mecánica a domicilio eficiente.</p></div></div></div>
+      <div class="col-md-6"><div class="d-flex align-items-start gap-3 p-3 bg-white rounded shadow-sm" style="border-left:4px solid var(--llanocar-primary);"><div style="min-width:50px;height:50px;border-radius:12px;background:var(--llanocar-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0;"><i class="fas fa-map-pin"></i></div><div><h6 class="fw-bold text-dark mb-1">Ubicación Estratégica</h6><p class="small text-muted mb-0">Taller mecánico con infraestructura de punta en Santiago.</p></div></div></div>
+      <div class="col-md-6"><div class="d-flex align-items-start gap-3 p-3 bg-white rounded shadow-sm" style="border-left:4px solid var(--llanocar-primary);"><div style="min-width:50px;height:50px;border-radius:12px;background:var(--llanocar-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0;"><i class="fas fa-user-graduate"></i></div><div><h6 class="fw-bold text-dark mb-1">Personal Calificado</h6><p class="small text-muted mb-0">Técnicos con años de experiencia en diversas marcas y modelos.</p></div></div></div>
+      <div class="col-md-6"><div class="d-flex align-items-start gap-3 p-3 bg-white rounded shadow-sm" style="border-left:4px solid var(--llanocar-primary);"><div style="min-width:50px;height:50px;border-radius:12px;background:var(--llanocar-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0;"><i class="fas fa-stopwatch"></i></div><div><h6 class="fw-bold text-dark mb-1">Optimización de Tiempos</h6><p class="small text-muted mb-0">Reducimos los tiempos de inactividad mediante procesos estandarizados.</p></div></div></div>
     </div>
     <h3 style="font-size:1.4rem; font-weight:700; color:#333; margin-top:3rem; margin-bottom:1.5rem; text-align:center;">
       <i class="fas fa-cogs text-primary me-2"></i> Áreas de Intervención Técnica (LLANOCAR Santiago)
     </h3>
     <div class="row g-4">
-      <div class="col-md-6 col-lg-3"><div class="bg-white rounded p-4 text-center shadow-sm" style="border-top:4px solid var(--gp-blood-red);"><div style="width:55px;height:55px;border-radius:50%;background:var(--gp-blood-red);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.3rem;color:#fff;"><i class="fas fa-cog"></i></div><h6 class="fw-bold text-dark mb-1">Motor y Transmisión</h6><p class="small text-muted mb-0">Ajustes, limpieza de inyectores y optimización de rendimiento.</p></div></div>
-      <div class="col-md-6 col-lg-3"><div class="bg-white rounded p-4 text-center shadow-sm" style="border-top:4px solid var(--gp-blood-red);"><div style="width:55px;height:55px;border-radius:50%;background:var(--gp-blood-red);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.3rem;color:#fff;"><i class="fas fa-bolt"></i></div><h6 class="fw-bold text-dark mb-1">Sistema Eléctrico</h6><p class="small text-muted mb-0">Alternadores, motores de arranque y cableado complejo.</p></div></div>
-      <div class="col-md-6 col-lg-3"><div class="bg-white rounded p-4 text-center shadow-sm" style="border-top:4px solid var(--gp-blood-red);"><div style="width:55px;height:55px;border-radius:50%;background:var(--gp-blood-red);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.3rem;color:#fff;"><i class="fas fa-tint"></i></div><h6 class="fw-bold text-dark mb-1">Sistemas Hidráulicos</h6><p class="small text-muted mb-0">Revisión de fugas, presión de bombas y cambio de mangueras.</p></div></div>
-      <div class="col-md-6 col-lg-3"><div class="bg-white rounded p-4 text-center shadow-sm" style="border-top:4px solid var(--gp-blood-red);"><div style="width:55px;height:55px;border-radius:50%;background:var(--gp-blood-red);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.3rem;color:#fff;"><i class="fas fa-circle-notch"></i></div><h6 class="fw-bold text-dark mb-1">Tren de Rodaje</h6><p class="small text-muted mb-0">Verificación de neumáticos, alineación y balanceo.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="bg-white rounded p-4 text-center shadow-sm" style="border-top:4px solid var(--llanocar-primary);"><div style="width:55px;height:55px;border-radius:50%;background:var(--llanocar-primary);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.3rem;color:#fff;"><i class="fas fa-cog"></i></div><h6 class="fw-bold text-dark mb-1">Motor y Transmisión</h6><p class="small text-muted mb-0">Ajustes, limpieza de inyectores y optimización de rendimiento.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="bg-white rounded p-4 text-center shadow-sm" style="border-top:4px solid var(--llanocar-primary);"><div style="width:55px;height:55px;border-radius:50%;background:var(--llanocar-primary);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.3rem;color:#fff;"><i class="fas fa-bolt"></i></div><h6 class="fw-bold text-dark mb-1">Sistema Eléctrico</h6><p class="small text-muted mb-0">Alternadores, motores de arranque y cableado complejo.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="bg-white rounded p-4 text-center shadow-sm" style="border-top:4px solid var(--llanocar-primary);"><div style="width:55px;height:55px;border-radius:50%;background:var(--llanocar-primary);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.3rem;color:#fff;"><i class="fas fa-tint"></i></div><h6 class="fw-bold text-dark mb-1">Sistemas Hidráulicos</h6><p class="small text-muted mb-0">Revisión de fugas, presión de bombas y cambio de mangueras.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="bg-white rounded p-4 text-center shadow-sm" style="border-top:4px solid var(--llanocar-primary);"><div style="width:55px;height:55px;border-radius:50%;background:var(--llanocar-primary);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.3rem;color:#fff;"><i class="fas fa-circle-notch"></i></div><h6 class="fw-bold text-dark mb-1">Tren de Rodaje</h6><p class="small text-muted mb-0">Verificación de neumáticos, alineación y balanceo.</p></div></div>
     </div>
   </div>
 </section>
@@ -2291,98 +1993,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<script>
-// Radio manual/auto para seccion inline
-document.querySelectorAll('input[name="sec-modo"]').forEach(function(r) {
-  r.addEventListener('change', function() {
-    document.getElementById('sec-mes-manual').style.display = this.value === 'manual' ? 'block' : 'none';
-  });
-});
-// Detectar mes automatico para seccion inline
-var secDebounce;
-function detectarMesRevisionSec() {
-  clearTimeout(secDebounce);
-  secDebounce = setTimeout(async function() {
-    var pat = document.getElementById('sec-patente').value.trim().toUpperCase().replace(/[\s\.\-·]/g, '');
-    var info = document.getElementById('sec-mes-info');
-    if (pat.length < 5) { info.style.display = 'none'; return; }
-    try {
-      var r = await fetch('https://llanocarv3.estilosgrado33.workers.dev/api/check?patente=' + encodeURIComponent(pat));
-      var d = await r.json();
-      if (d.success && d.es_auto) {
-        document.getElementById('sec-mes-text').innerHTML = 'Tu revision vence en <strong>' + d.nombre_mes + '</strong>';
-        info.style.display = 'block';
-        document.querySelector('input[name="sec-modo"][value="auto"]').checked = true;
-        document.getElementById('sec-mes-manual').style.display = 'none';
-      } else if (d.success && d.necesita_manual) {
-        document.getElementById('sec-mes-text').innerHTML = 'Formato nuevo. <strong>Selecciona el mes manualmente.</strong>';
-        info.style.display = 'block';
-        document.querySelector('input[name="sec-modo"][value="manual"]').checked = true;
-        document.getElementById('sec-mes-manual').style.display = 'block';
-      } else { info.style.display = 'none'; }
-    } catch(e) { info.style.display = 'none'; }
-  }, 400);
-}
-// Submit seccion inline
-async function submitRecordatorioSec() {
-  var patente = document.getElementById('sec-patente').value.trim().toUpperCase();
-  var telefono = document.getElementById('sec-telefono').value.trim();
-  var modo = document.querySelector('input[name="sec-modo"]:checked').value;
-  var mesManual = modo === 'manual' ? parseInt(document.getElementById('sec-select-mes').value) : null;
-  var resultado = document.getElementById('sec-resultado');
-  var btn = document.getElementById('sec-submit');
-  if (!patente || !telefono) { showSecResult('error', '<i class="fas fa-exclamation-circle"></i> Completa todos los campos.'); return; }
-  if (modo === 'manual' && (!mesManual || mesManual < 1 || mesManual > 12)) { showSecResult('error', '<i class="fas fa-exclamation-circle"></i> Selecciona un mes.'); return; }
-  if (!document.getElementById('sec-consent').checked) { showSecResult('error', '<i class="fas fa-exclamation-circle"></i> Acepta recibir recordatorios.'); return; }
-  btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registrando...'; resultado.style.display = 'none';
-  try {
-    var r = await fetch('https://llanocarv3.estilosgrado33.workers.dev/api/save-lead', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ patente: patente, telefono: telefono, mes_manual: mesManual || null })
-    });
-    var d = await r.json();
-    if (d.success) {
-      showSecResult('success', '<i class="fas fa-check-circle"></i> <strong>Registrado!</strong><br>Patente: ' + d.patente + '<br>Mes de revision: <strong>' + d.nombre_mes + '</strong><br><small>Te avisaremos por WhatsApp.</small>');
-      document.getElementById('sec-patente').value = ''; document.getElementById('sec-telefono').value = '';
-      document.getElementById('sec-mes-info').style.display = 'none';
-    } else { showSecResult('error', '<i class="fas fa-exclamation-circle"></i> ' + (d.error || 'Error. Intenta de nuevo.')); }
-  } catch(e) { showSecResult('error', '<i class="fas fa-wifi"></i> Error de conexion.'); }
-  finally { btn.disabled = false; btn.innerHTML = '<i class="fas fa-bell"></i> RECORDARME'; }
-}
-function showSecResult(type, html) {
-  var el = document.getElementById('sec-resultado');
-  el.style.display = 'block';
-  el.style.background = type === 'success' ? 'rgba(5,150,105,0.15)' : 'rgba(220,53,69,0.12)';
-  el.style.border = type === 'success' ? '1px solid rgba(5,150,105,0.3)' : '1px solid rgba(220,53,69,0.3)';
-  el.style.color = type === 'success' ? '#6ee7b7' : '#fca5a5';
-  el.innerHTML = html;
-}
-// Dar me de baja
-async function darmeDeBajaSec() {
-  var tel = document.getElementById('sec-baja-telefono').value.trim();
-  var res = document.getElementById('sec-baja-resultado');
-  if (!tel) { res.style.display = 'block'; res.style.background = 'rgba(220,53,69,0.12)'; res.style.border = '1px solid rgba(220,53,69,0.3)'; res.style.color = '#fca5a5'; res.innerHTML = '<i class="fas fa-exclamation-circle"></i> Ingresa tu telefono.'; return; }
-  res.style.display = 'block'; res.style.background = 'rgba(255,255,255,0.05)'; res.style.border = '1px solid rgba(255,255,255,0.1)'; res.style.color = 'rgba(255,255,255,0.5)'; res.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
-  try {
-    var r = await fetch('https://llanocarv3.estilosgrado33.workers.dev/api/unsubscribe', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ telefono: tel })
-    });
-    var d = await r.json();
-    if (d.success) {
-      res.style.background = 'rgba(5,150,105,0.15)'; res.style.border = '1px solid rgba(5,150,105,0.3)'; res.style.color = '#6ee7b7';
-      res.innerHTML = '<i class="fas fa-check-circle"></i> <strong>Dado de baja.</strong> Ya no recibiras recordatorios.';
-      document.getElementById('sec-baja-telefono').value = '';
-    } else {
-      res.style.background = 'rgba(220,53,69,0.12)'; res.style.border = '1px solid rgba(220,53,69,0.3)'; res.style.color = '#fca5a5';
-      res.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + (d.error || 'No se encontro el telefono. Verifica e intenta de nuevo.');
-    }
-  } catch(e) {
-    res.style.background = 'rgba(220,53,69,0.12)'; res.style.border = '1px solid rgba(220,53,69,0.3)'; res.style.color = '#fca5a5';
-    res.innerHTML = '<i class="fas fa-wifi"></i> Error de conexion.';
-  }
-}
-</script>
+
 
 <!-- SECCION: POR QUE ELEGIRNOS SERVICIO MECANICO A DOMICILIO -->
 <section class="py-5 bg-light" id="por-que-elegirnos-domicilio">
@@ -2411,7 +2022,13 @@ async function darmeDeBajaSec() {
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 mb-4 mb-lg-0">
-        <img src="images/image2.png" alt="Diagnóstico avanzado en el taller LLANOCAR" class="img-fluid rounded shadow">
+        <div style="background: linear-gradient(135deg, #1A1A1A 0%, #333 100%); border-radius: 16px; height: 300px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+          <div style="text-align: center; color: #E87722;">
+            <i class="fas fa-cogs" style="font-size: 4rem; margin-bottom: 15px;"></i>
+            <h4 style="font-weight: 700;">Diagnóstico Avanzado</h4>
+            <p style="color: #999; font-size: 0.9rem;">Tecnología de última generación</p>
+          </div>
+        </div>
       </div>
       <div class="col-lg-6">
         <h2 class="section-title">¿Por Qué Elegir LLANOCAR?</h2>
@@ -2500,84 +2117,70 @@ async function darmeDeBajaSec() {
     <h2 class="section-title">Nuestro Trabajo en Detalle</h2>
     <p class="section-subtitle">Un vistazo a la calidad y el profesionalismo que aplicamos en cada servicio especializado.</p>
     <div class="row g-4">
-      <!-- Imagen 1: Frenos -->
       <div class="col-md-6 col-lg-4">
         <div class="gallery-item">
-          <img src="images/reparacion-frenos-domicilio.jpeg" class="img-fluid" alt="Servicio de reparación de frenos a domicilio">
-          <h4 class="gallery-item-title">Servicio de Frenos a Domicilio</h4>
-          <p class="gallery-item-desc">Ofrecemos un servicio móvil especializado en la <strong>reparación de frenos</strong>. Nuestros mecánicos realizan el <strong>cambio de pastillas y discos</strong>, la revisión del <strong>líquido de frenos</strong> y el diagnóstico del sistema <strong>ABS</strong> directamente en tu ubicación.</p>
+          <div style="background: linear-gradient(135deg, #E87722, #FF8C00); height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 12px 12px 0 0;">
+            <i class="fas fa-brake-system fa-3x" style="color: white; font-size: 3rem;"><span class="fas fa-compact-disc"></span></i>
+          </div>
+          <div style="padding: 20px; background: white; border-radius: 0 0 12px 12px;">
+            <h4 class="gallery-item-title">Servicio de Frenos a Domicilio</h4>
+            <p class="gallery-item-desc">Cambio de pastillas y discos, revisión de líquido de frenos y diagnóstico del sistema ABS directamente en tu ubicación.</p>
+          </div>
         </div>
       </div>
-      <!-- Imagen 2: Aire Acondicionado -->
       <div class="col-md-6 col-lg-4">
         <div class="gallery-item">
-          <img src="images/reparacion-aire-acondicionado.jpeg" class="img-fluid" alt="Reparación de aire acondicionado automotriz">
-          <h4 class="gallery-item-title">Reparación de Aire Acondicionado</h4>
-          <p class="gallery-item-desc">Recuperamos tu confort con la <strong>reparación de aire acondicionado auto</strong>. Realizamos <strong>recarga de refrigerante</strong>, <strong>reparación de compresor</strong> y detección de <strong>fugas</strong> en el <strong>condensador</strong> y <strong>evaporador</strong>.</p>
+          <div style="background: linear-gradient(135deg, #1A1A1A, #333); height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 12px 12px 0 0;">
+            <i class="fas fa-snowflake" style="color: #E87722; font-size: 3rem;"></i>
+          </div>
+          <div style="padding: 20px; background: white; border-radius: 0 0 12px 12px;">
+            <h4 class="gallery-item-title">Reparación de Aire Acondicionado</h4>
+            <p class="gallery-item-desc">Recarga de refrigerante, reparación de compresor y detección de fugas en el sistema de climatización.</p>
+          </div>
         </div>
       </div>
-      <!-- Imagen 3: Taller General -->
       <div class="col-md-6 col-lg-4">
         <div class="gallery-item">
-          <img src="images/mantenimiento-vehicular-general.jpeg" class="img-fluid" alt="Taller mecánico y servicio automotriz">
-          <h4 class="gallery-item-title">Mantenimiento Vehicular General</h4>
-          <p class="gallery-item-desc">En nuestro <strong>taller mecánico</strong> realizamos <strong>mantenimiento vehicular</strong> completo. Incluye <strong>cambio de aceite, filtros</strong>, <strong>engrase general</strong> y una <strong>revisión técnica</strong> exhaustiva para prevenir fallas.</p>
+          <div style="background: linear-gradient(135deg, #FF8C00, #FFB347); height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 12px 12px 0 0;">
+            <i class="fas fa-oil-can" style="color: white; font-size: 3rem;"></i>
+          </div>
+          <div style="padding: 20px; background: white; border-radius: 0 0 12px 12px;">
+            <h4 class="gallery-item-title">Mantenimiento Vehicular General</h4>
+            <p class="gallery-item-desc">Cambio de aceite, filtros, engrase general y revisión técnica exhaustiva para prevenir fallas.</p>
+          </div>
         </div>
       </div>
-      <!-- Imagen 4: Motor -->
       <div class="col-md-6 col-lg-4">
         <div class="gallery-item">
-          <img src="images/reparacion-motor-automotriz.jpeg" class="img-fluid" alt="Reparación y reconstrucción de motor automotriz">
-          <h4 class="gallery-item-title">Reparación y Reconstrucción de Motor</h4>
-          <p class="gallery-item-desc">Especialistas en <strong>reparación de motor</strong>. Ofrecemos <strong>reconstrucción de motor</strong>, <strong>rectificación de culata</strong> y <strong>cigueñal</strong>, y <strong>reemplazo de correa de distribución</strong> para devolverle la potencia a tu vehículo.</p>
+          <div style="background: linear-gradient(135deg, #333, #1A1A1A); height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 12px 12px 0 0;">
+            <i class="fas fa-engine" style="color: #E87722; font-size: 3rem;"><span class="fas fa-cogs"></span></i>
+          </div>
+          <div style="padding: 20px; background: white; border-radius: 0 0 12px 12px;">
+            <h4 class="gallery-item-title">Reparación y Reconstrucción de Motor</h4>
+            <p class="gallery-item-desc">Reconstrucción de motor, rectificación de culata y cigüeñal, y reemplazo de correa de distribución.</p>
+          </div>
         </div>
       </div>
-      <!-- Imagen 5: Suspensión y Dirección -->
       <div class="col-md-6 col-lg-4">
         <div class="gallery-item">
-          <img src="images/suspension-direccion-reparacion.jpeg" class="img-fluid" alt="Reparación de suspensión y dirección">
-          <h4 class="gallery-item-title">Suspensión y Dirección</h4>
-          <p class="gallery-item-desc">Garantizamos estabilidad y control con la <strong>reparación de suspensión</strong> y <strong>dirección</strong>. Realizamos <strong>alineación computarizada</strong>, cambio de <strong>amortiguadores</strong>, <strong>bujes</strong> y <strong>rotulas</strong>.</p>
+          <div style="background: linear-gradient(135deg, #E87722, #C4611A); height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 12px 12px 0 0;">
+            <i class="fas fa-car" style="color: white; font-size: 3rem;"></i>
+          </div>
+          <div style="padding: 20px; background: white; border-radius: 0 0 12px 12px;">
+            <h4 class="gallery-item-title">Suspensión y Dirección</h4>
+            <p class="gallery-item-desc">Alineación computarizada, cambio de amortiguadores, bujes y rótulas para mayor estabilidad.</p>
+          </div>
         </div>
       </div>
-      <!-- Imagen 6: Sistema Eléctrico -->
       <div class="col-md-6 col-lg-4">
         <div class="gallery-item">
-          <img src="images/reparacion-sistema-electrico.jpeg" class="img-fluid" alt="Reparación del sistema eléctrico del vehículo">
-          <h4 class="gallery-item-title">Diagnóstico Eléctrico</h4>
-          <p class="gallery-item-desc">Resolvemos cualquier problema del <strong>sistema eléctrico</strong>. Reparamos <strong>alternador, batería, motor de arranque</strong> y realizamos <strong>diagnóstico eléctrico</strong> computarizado en la <strong>centralita</strong>.</p>
-        </div>
-      </div>
-      <!-- Imagen 7: Transmisión -->
-      <div class="col-md-6 col-lg-4">
-        <div class="gallery-item">
-          <img src="images/reparacion-transmision-embrague.jpeg" class="img-fluid" alt="Reparación de transmisión automática y embrague">
-          <h4 class="gallery-item-title">Reparación de Transmisión</h4>
-          <p class="gallery-item-desc">Expertos en <strong>reparación de transmisión automática</strong> y manual. Realizamos <strong>cambio de embrague</strong>, <strong>mantenimiento de transmisión</strong> y reparación de <strong>caja de cambios</strong> y <strong>diferencial</strong>.</p>
-        </div>
-      </div>
-      <!-- Imagen 8: Inyección Electrónica -->
-      <div class="col-md-6 col-lg-4">
-        <div class="gallery-item">
-          <img src="images/reparacion-inyeccion-electronica.jpeg" class="img-fluid" alt="Reparación de sistema de inyección electrónica">
-          <h4 class="gallery-item-title">Inyección Electrónica</h4>
-          <p class="gallery-item-desc">Optimizamos el rendimiento con la reparación de la <strong>inyección electrónica</strong>. Realizamos <strong>limpieza de inyectores</strong>, <strong>reprogramación de ECU</strong> y <strong>calibración de sensores</strong> para un consumo eficiente.</p>
-        </div>
-      </div>
-      <!-- Imagen 9: Carrocería y Pintura -->
-      <div class="col-md-6 col-lg-4">
-        <div class="gallery-item">
-          <img src="images/carroceria-pintura-reparacion.jpeg" class="img-fluid" alt="Reparación de carrocería y pintura automotriz">
-          <h4 class="gallery-item-title">Carrocería y Pintura</h4>
-          <p class="gallery-item-desc">Devolvemos la estética y protección a tu vehículo. Especialistas en <strong>chapa y pintura automotriz</strong>, <strong>enderezado de chasis</strong> y <strong>tratamiento cerámico</strong> para <strong>automóviles siniestrados</strong>.</p>
-        </div>
-      </div>
-      <!-- Imagen 10: Mantenimiento Preventivo -->
-      <div class="col-md-6 col-lg-4">
-        <div class="gallery-item">
-          <img src="images/plan-mantenimiento-preventivo.jpeg" class="img-fluid" alt="Plan de mantenimiento preventivo automotriz">
-          <h4 class="gallery-item-title">Mantenimiento Preventivo</h4>
-          <p class="gallery-item-desc">Creamos un <strong>plan de mantenimiento</strong> personalizado. Realizamos <strong>cambio de filtros</strong>, <strong>rotación de neumáticos</strong> y <strong>revisiones periódicas</strong> según el <strong>kilometraje</strong> para alargar la vida útil de tu auto.</p>
+          <div style="background: linear-gradient(135deg, #1A1A1A, #444); height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 12px 12px 0 0;">
+            <i class="fas fa-bolt" style="color: #FFC107; font-size: 3rem;"></i>
+          </div>
+          <div style="padding: 20px; background: white; border-radius: 0 0 12px 12px;">
+            <h4 class="gallery-item-title">Diagnóstico Eléctrico</h4>
+            <p class="gallery-item-desc">Reparación de alternador, batería, motor de arranque y diagnóstico eléctrico computarizado.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -2705,785 +2308,6 @@ tapizado de volantes en Santiago para renovar la imagen de tu auto. Trabajamos c
 
 
 <!-- ======================================================================= -->
-<!-- MODAL CHAT IA - CONSULTA VEHICULAR POR PATENTE -->
-<!-- ======================================================================= -->
-<div id="modal-chat-ia" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:10000; align-items:center; justify-content:center; padding:20px;">
-  <div style="background:#fff; border-radius:16px; max-width:560px; width:100%; max-height:90vh; overflow:hidden; display:flex; flex-direction:column; position:relative; animation: modalSlideIn 0.3s ease-out;">
-    <button onclick="cerrarModalGP('modal-chat-ia')" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#999; z-index:10;">&times;</button>
-    <div style="padding:30px 30px 0 30px; flex-shrink:0;">
-      <div style="text-align:center; margin-bottom:20px;">
-        <div style="width:70px; height:70px; background:linear-gradient(135deg,#FFC107,#FF9800); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; box-shadow:0 4px 15px rgba(255,152,0,0.4);">
-          <i class="fas fa-robot" style="font-size:2rem; color:#fff;"></i>
-        </div>
-        <h3 style="color:#E87722; font-weight:700; margin-bottom:6px;">Consulta tu Vehiculo</h3>
-        <p style="color:#666; font-size:0.9rem;">Ingresa tu patente y revisa el historial completo de trabajos, notas del tecnico, fechas y mas.</p>
-      </div>
-      <form id="form-patente-ia" onsubmit="buscarPatenteIA(event)" style="display:flex; gap:10px;">
-        <input type="text" id="input-patente-ia" placeholder="Ej: ABCD12" required maxlength="10" style="flex:1; padding:14px 18px; border:2px solid #e5e7eb; border-radius:12px; font-size:1.1rem; text-transform:uppercase; outline:none; font-family:inherit;" onfocus="this.style.borderColor='#E87722'" onblur="this.style.borderColor='#e5e7eb'">
-        <button type="submit" style="padding:14px 24px; background:#E87722; color:#fff; border:none; border-radius:12px; font-weight:700; cursor:pointer; font-size:1rem; white-space:nowrap; transition:background 0.2s;" onmouseover="this.style.background='#8b0000'" onmouseout="this.style.background='#E87722'">BUSCAR</button>
-      </form>
-    </div>
-    <div id="resultado-patente-ia" style="margin-top:16px; display:none; overflow-y:auto; flex:1; padding:0 30px 20px 30px;"></div>
-    <div style="text-align:center; padding:0 30px 16px 30px; flex-shrink:0;">
-      <a href="https://llm-chat-app-template.estilosgrado33.workers.dev" target="_blank" style="color:#E87722; text-decoration:none; font-size:0.85rem; font-weight:600;">
-        <i class="fas fa-comments"></i> Abrir chat completo con IA
-      </a>
-    </div>
-  </div>
-</div>
-<style>
-@keyframes modalSlideIn {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-#resultado-patente-ia { max-height:60vh; overflow-y:auto; }
-#resultado-patente-ia .ot-card { background:#f9fafb; border:1px solid #e5e7eb; border-radius:10px; padding:12px; margin-bottom:10px; }
-#resultado-patente-ia .ot-num { font-weight:700; color:#E87722; }
-#resultado-patente-ia .ot-estado { display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.75rem; font-weight:600; }
-#resultado-patente-ia .badge-ok { background:#d4edda; color:#155724; }
-#resultado-patente-ia .badge-pend { background:#fff3cd; color:#856404; }
-#resultado-patente-ia .dato { font-size:0.85rem; margin-bottom:3px; color:#374151; }
-#resultado-patente-ia .notas-tec { background:#fffdf5; border-left:3px solid #ffc800; padding:6px 8px; border-radius:4px; margin-top:6px; font-size:0.82rem; }
-</style>
-<script>
-function buscarPatenteIA(e) {
-  e.preventDefault();
-  var pat = document.getElementById('input-patente-ia').value.trim().toUpperCase();
-  if (!pat) return;
-  var res = document.getElementById('resultado-patente-ia');
-  res.style.display = 'block';
-  res.innerHTML = '<div style="text-align:center; padding:20px; color:#999;"><i class="fas fa-spinner fa-spin"></i> Buscando...</div>';
-  fetch('https://llm-chat-app-template.estilosgrado33.workers.dev/api/consultar', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ patente: pat })
-  })
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    if (data.success && data.vehiculo) {
-      var v = data.vehiculo;
-      var html = '';
-      // Header del vehiculo
-      html += '<div style="background:#FFF4E8; border-radius:10px; padding:14px; margin-bottom:12px; border-left:4px solid #2563eb;">';
-      html += '<div style="font-weight:700; color:#1e3a8a; font-size:1.05rem;">' + v.marca + ' ' + v.modelo + ' (' + (v.anio||'N/A') + ')</div>';
-      html += '<div style="font-size:0.83rem; color:#1e40af; margin-top:4px;">Patente: ' + v.patente_placa + '</div>';
-      if (v.cilindrada || v.combustible || v.kilometraje) {
-        html += '<div style="font-size:0.82rem; color:#374151; margin-top:4px;">';
-        var specs = [];
-        if (v.cilindrada) specs.push('Cilindrada: ' + v.cilindrada);
-        if (v.combustible) specs.push('Combustible: ' + v.combustible);
-        if (v.kilometraje) specs.push('KM: ' + v.kilometraje);
-        html += specs.join(' | ');
-        html += '</div>';
-      }
-      html += '<div style="font-size:0.83rem; color:#1e40af; margin-top:4px;">Propietario: ' + (v.cliente?.nombre || 'N/A');
-      if (v.cliente?.rut) html += ' | RUT: ' + v.cliente.rut;
-      html += '</div>';
-      if (v.cliente?.email) html += '<div style="font-size:0.82rem; color:#374151;">Email: ' + v.cliente.email + '</div>';
-      html += '<div style="font-size:0.82rem; color:#1e40af; margin-top:4px;">' + v.total_ordenes + ' orden(es) encontrada(s)</div>';
-      html += '</div>';
-      // Ordenes de trabajo
-      for (var i = 0; i < v.ordenes.length; i++) {
-        var o = v.ordenes[i];
-        var estadoClass = (o.estado==='Cerrada'||o.estado_trabajo==='Cerrada') ? 'badge-ok' : 'badge-pend';
-        var num = String(o.numero_orden||0).padStart(6,'0');
-        var monto = Number(o.monto_total||0).toLocaleString('es-CL');
-        html += '<div class="ot-card">';
-        html += '<div class="ot-num">OT #' + num + ' <span class="ot-estado ' + estadoClass + '">' + (o.estado_trabajo||o.estado||'N/A') + '</span></div>';
-        html += '<div class="dato">Ingreso: <strong>' + (o.fecha_ingreso||'N/A') + '</strong>' + (o.hora_ingreso ? ' ' + o.hora_ingreso : '') + '</div>';
-        if (o.fecha_completado) html += '<div class="dato">Cierre: <strong>' + o.fecha_completado + '</strong></div>';
-        if (o.tecnico_nombre) html += '<div class="dato">Tecnico: <strong>' + o.tecnico_nombre + '</strong></div>';
-        if (o.recepcionista) html += '<div class="dato">Recepcionista: ' + o.recepcionista + '</div>';
-        if (o.direccion) html += '<div class="dato">Direccion: ' + o.direccion + '</div>';
-        if (o.referencia_direccion) html += '<div class="dato">Ref: ' + o.referencia_direccion + '</div>';
-        // Montos
-        html += '<div style="display:flex; gap:10px; flex-wrap:wrap; margin:6px 0; font-size:0.85rem;">';
-        html += '<span style="color:#E87722; font-weight:700;">Total: $' + monto + '</span>';
-        if (o.monto_abono > 0) html += '<span style="color:#059669; font-weight:600;">Abono: $' + Number(o.monto_abono).toLocaleString('es-CL') + '</span>';
-        if (o.monto_restante > 0) html += '<span style="color:#b91c1c; font-weight:600;">Restante: $' + Number(o.monto_restante).toLocaleString('es-CL') + '</span>';
-        html += '</div>';
-        if (o.metodo_pago) html += '<div class="dato">Pago: ' + o.metodo_pago + '</div>';
-        // Domicilio
-        if (o.distancia_km > 0) {
-          html += '<div style="background:#f0fdf4; padding:6px 8px; border-radius:6px; font-size:0.82rem; margin:4px 0; color:#166534;">';
-          html += '<i class="fas fa-truck" style="margin-right:4px;"></i> Domicilio: ' + Number(o.distancia_km).toFixed(1) + ' km';
-          if (o.cargo_domicilio > 0) html += ' | Cargo: $' + Number(o.cargo_domicilio).toLocaleString('es-CL');
-          html += '</div>';
-        }
-        html += '<div class="dato"><strong>Trabajos:</strong> ' + (o.servicios||'No especificado') + '</div>';
-        if (o.nivel_combustible) html += '<div class="dato">Combustible al ingreso: ' + o.nivel_combustible + '</div>';
-        // Danios
-        if (o.danios_carroceria && o.danios_carroceria.length > 0) {
-          html += '<div style="background:#fef2f2; padding:4px 8px; border-radius:4px; font-size:0.82rem; margin:4px 0; color:#991b1b;">';
-          html += '<i class="fas fa-car-crash" style="margin-right:4px;"></i> Danios: ' + o.danios_carroceria.join(', ');
-          html += '</div>';
-        }
-        // Fotos
-        if (o.fotos && o.fotos.length > 0) {
-          html += '<div style="margin:6px 0;">';
-          html += '<div style="font-size:0.82rem; font-weight:600; color:#374151; margin-bottom:4px;"><i class="fas fa-camera" style="margin-right:4px;"></i> Fotos (' + o.fotos.length + ')</div>';
-          html += '<div style="display:flex; gap:6px; flex-wrap:wrap;">';
-          for (var fi = 0; fi < o.fotos.length; fi++) {
-            var f = o.fotos[fi];
-            var desc = f.descripcion || f.tipo || 'Foto';
-            html += '<div style="text-align:center;">';
-            html += '<img src="' + f.url_imagen + '" alt="' + desc + '" style="width:60px; height:60px; object-fit:cover; border-radius:6px; border:1px solid #e5e7eb; cursor:pointer;" onclick="window.open(this.src,\'_blank\')" loading="lazy">';
-            html += '<div style="font-size:0.7rem; color:#6b7280; max-width:60px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + desc + '</div>';
-            html += '</div>';
-          }
-          html += '</div></div>';
-        }
-        // Notas del tecnico
-        if (o.notas_tecnico && o.notas_tecnico.length > 0) {
-          html += '<div class="notas-tec">';
-          html += '<div style="font-weight:600; margin-bottom:4px;"><i class="fas fa-sticky-note" style="margin-right:4px;"></i>Notas del tecnico:</div>';
-          for (var j = 0; j < o.notas_tecnico.length; j++) {
-            var n = o.notas_tecnico[j];
-            var fechaN = n.fecha ? n.fecha.replace('T', ' ').substring(0, 16) : '';
-            html += '<div style="margin-bottom:2px;">' + (fechaN ? '<span style="color:#92400e; font-size:0.75rem;">[' + fechaN + ']</span> ' : '') + n.nota + '</div>';
-          }
-          html += '</div>';
-        }
-        // Diagnostico
-        if (o.diagnostico_observaciones) {
-          html += '<div style="background:#eff6ff; border-left:3px solid #3b82f6; padding:6px 8px; border-radius:4px; margin:6px 0; font-size:0.82rem;"><strong>Diagnostico:</strong> ' + o.diagnostico_observaciones + '</div>';
-        }
-        // Notas generales
-        if (o.notas) {
-          html += '<div style="background:#f9fafb; padding:6px 8px; border-radius:4px; margin:6px 0; font-size:0.82rem;"><strong>Notas:</strong> ' + o.notas.replace(/\n/g, '<br>') + '</div>';
-        }
-        // Seguimiento
-        if (o.seguimiento && o.seguimiento.length > 0) {
-          html += '<div style="margin:6px 0;">';
-          html += '<div style="font-size:0.82rem; font-weight:600; color:#374151; margin-bottom:4px;"><i class="fas fa-tasks" style="margin-right:4px;"></i> Seguimiento:</div>';
-          for (var si = 0; si < o.seguimiento.length; si++) {
-            var s = o.seguimiento[si];
-            var fechaS = s.fecha ? s.fecha.replace('T', ' ').substring(0, 16) : '';
-            html += '<div style="font-size:0.8rem; padding:2px 0; border-bottom:1px solid #f3f4f6;">' + (fechaS ? '<span style="color:#6b7280; font-size:0.75rem;">[' + fechaS + ']</span> ' : '') + '<strong>' + s.estado + '</strong>' + (s.obs ? ' - ' + s.obs : '') + '</div>';
-          }
-          html += '</div>';
-        }
-        // Costos adicionales
-        if (o.costos_adicionales && o.costos_adicionales.length > 0) {
-          html += '<div style="margin:6px 0;">';
-          html += '<div style="font-size:0.82rem; font-weight:600; color:#374151; margin-bottom:4px;"><i class="fas fa-receipt" style="margin-right:4px;"></i> Gastos adicionales:</div>';
-          for (var ci = 0; ci < o.costos_adicionales.length; ci++) {
-            var c = o.costos_adicionales[ci];
-            html += '<div style="font-size:0.8rem; padding:2px 0;">' + c.concepto + ' (' + c.categoria + '): <strong>$' + Number(c.monto).toLocaleString('es-CL') + '</strong></div>';
-          }
-          html += '</div>';
-        }
-        // Pagos
-        if (o.pagos && o.pagos.length > 0) {
-          html += '<div style="margin:6px 0;">';
-          html += '<div style="font-size:0.82rem; font-weight:600; color:#374151; margin-bottom:4px;"><i class="fas fa-credit-card" style="margin-right:4px;"></i> Pagos registrados:</div>';
-          for (var pi = 0; pi < o.pagos.length; pi++) {
-            var p = o.pagos[pi];
-            var fechaP = p.fecha ? p.fecha.replace('T', ' ').substring(0, 16) : '';
-            html += '<div style="font-size:0.8rem; padding:2px 0; border-bottom:1px solid #f3f4f6;">$' + Number(p.monto).toLocaleString('es-CL') + ' via ' + p.metodo_pago + (fechaP ? ' [' + fechaP + ']' : '') + (p.observaciones ? ' - ' + p.observaciones : '') + '</div>';
-          }
-          html += '</div>';
-        }
-        html += '</div>';
-      }
-      html += '<div style="text-align:center; margin-top:12px;"><a href="https://llm-chat-app-template.estilosgrado33.workers.dev" target="_blank" style="color:#E87722; font-weight:600; text-decoration:none; font-size:0.85rem;"><i class="fas fa-comments"></i> Abrir chat completo con IA <i class="fas fa-external-link-alt"></i></a></div>';
-      res.innerHTML = html;
-    } else {
-      res.innerHTML = '<div style="text-align:center; padding:15px; color:#b91c1c;"><i class="fas fa-search"></i> No se encontraron registros para <strong>' + pat + '</strong></div>';
-    }
-  })
-  .catch(function() {
-    res.innerHTML = '<div style="text-align:center; padding:15px; color:#b91c1c;"><i class="fas fa-exclamation-triangle"></i> Error de conexion. Intenta de nuevo.</div>';
-  });
-}
-// Cerrar modal con click fuera
-document.getElementById('modal-chat-ia').addEventListener('click', function(e) {
-  if (e.target === this) cerrarModalGP('modal-chat-ia');
-});
-</script>
-
-<!-- ======================================================================= -->
-<!-- MODAL RECORDATORIO REVISION TECNICA -->
-<!-- ======================================================================= -->
-<div id="modal-recordatorio" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:10000; align-items:center; justify-content:center; padding:15px;">
-  <div style="background:#fff; border-radius:16px; max-width:480px; width:100%; max-height:90vh; overflow-y:auto; padding:28px 24px; position:relative; animation: modalSlideIn 0.3s ease-out;">
-    <button onclick="cerrarModalGP('modal-recordatorio')" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#999;">&times;</button>
-    <div style="text-align:center; margin-bottom:18px;">
-      <div style="width:60px; height:60px; background:linear-gradient(135deg,#FFC107,#FF9800); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; box-shadow:0 4px 15px rgba(255,152,0,0.4);">
-        <i class="fas fa-bell" style="font-size:1.8rem; color:#fff;"></i>
-      </div>
-      <h3 style="color:#E87722; font-weight:700; margin-bottom:4px; font-size:1.2rem;">Recorda tu Revision</h3>
-      <p style="color:#666; font-size:0.85rem;">Te avisaremos por WhatsApp a <strong>30, 15 y 7 dias</strong> antes de tu revision tecnica.</p>
-    </div>
-    <div style="margin-bottom:14px;">
-      <label style="display:block; font-weight:600; font-size:0.85rem; color:#4b5563; margin-bottom:5px;"><i class="fas fa-car" style="color:#E87722; margin-right:4px;"></i> Patente</label>
-      <div style="position:relative;">
-        <i class="fas fa-id-card" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:#9ca3af;"></i>
-        <input type="text" id="rec-patente" placeholder="Ej: ABCD12" required maxlength="10" style="width:100%; padding:12px 12px 12px 38px; border:2px solid #e5e7eb; border-radius:10px; font-size:1rem; text-transform:uppercase; outline:none; font-family:inherit;" oninput="detectarMesRevision()">
-      </div>
-      <div id="rec-mes-info" style="display:none; background:#ecfdf5; border:1px solid #a7f3d0; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:0.85rem; color:#065f46;">
-        <i class="fas fa-calendar-check" style="color:#059669; margin-right:6px;"></i>
-        <span id="rec-mes-text"></span>
-      </div>
-      <div id="rec-ya-registrado" style="display:none; background:#fffbeb; border:1px solid #fbbf24; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:0.85rem; color:#92400e;">
-        <i class="fas fa-info-circle" style="color:#f59e0b; margin-right:6px;"></i>
-        <span id="rec-ya-registrado-text"></span>
-      </div>
-    </div>
-    <div style="margin-bottom:14px;">
-      <label style="display:block; font-weight:600; font-size:0.85rem; color:#4b5563; margin-bottom:5px;"><i class="fas fa-calendar" style="color:#E87722; margin-right:4px;"></i> Mes de revision</label>
-      <div style="display:flex; gap:8px;">
-        <label style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; padding:10px; border:2px solid #e5e7eb; border-radius:8px; cursor:pointer; font-size:0.85rem; font-weight:600; text-align:center; transition:all 0.2s;"><input type="radio" name="rec-modo" value="auto" checked style="accent-color:#E87722;"> Automatico</label>
-        <label style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; padding:10px; border:2px solid #e5e7eb; border-radius:8px; cursor:pointer; font-size:0.85rem; font-weight:600; text-align:center; transition:all 0.2s;"><input type="radio" name="rec-modo" value="manual" style="accent-color:#E87722;"> Manual</label>
-      </div>
-      <div id="rec-mes-manual" style="display:none; margin-top:8px;">
-        <select id="rec-select-mes" style="width:100%; padding:10px 12px; border:2px solid #e5e7eb; border-radius:10px; font-size:0.95rem; outline:none; font-family:inherit;">
-          <option value="">-- Selecciona mes --</option>
-          <option value="1">Enero</option><option value="2">Febrero</option><option value="3">Marzo</option>
-          <option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option>
-          <option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option>
-          <option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option>
-        </select>
-      </div>
-    </div>
-    <div style="margin-bottom:14px;">
-      <label style="display:block; font-weight:600; font-size:0.85rem; color:#4b5563; margin-bottom:5px;"><i class="fab fa-whatsapp" style="color:#E87722; margin-right:4px;"></i> Tu WhatsApp</label>
-      <div style="position:relative;">
-        <i class="fas fa-phone" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:#9ca3af;"></i>
-        <input type="tel" id="rec-telefono" placeholder="Ej: +56 9 1234 5678" required style="width:100%; padding:12px 12px 12px 38px; border:2px solid #e5e7eb; border-radius:10px; font-size:1rem; outline:none; font-family:inherit;">
-      </div>
-    </div>
-    <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:16px; padding:10px; background:#f9fafb; border-radius:8px;">
-      <input type="checkbox" id="rec-consent" required style="width:18px; height:18px; margin-top:2px; accent-color:#E87722; flex-shrink:0;">
-      <label for="rec-consent" style="font-size:0.8rem; color:#6b7280; cursor:pointer;">Acepto recibir recordatorios de revision tecnica por WhatsApp. Puedo darme de baja cuando quiera.</label>
-    </div>
-    <button id="rec-submit" onclick="submitRecordatorio()" style="width:100%; padding:14px; background:#E87722; color:#fff; border:none; border-radius:10px; font-size:1rem; font-weight:700; cursor:pointer; transition:background 0.2s; display:flex; align-items:center; justify-content:center; gap:8px;" onmouseover="this.style.background='#8b0000'" onmouseout="this.style.background='#E87722'">
-      <i class="fas fa-bell"></i> RECORDARME
-    </button>
-    <div id="rec-resultado" style="margin-top:12px; display:none; padding:14px; border-radius:10px; font-size:0.88rem;"></div>
-  </div>
-</div>
-<script>
-// Modal recordatorio - radio manual/auto
-document.querySelectorAll('input[name="rec-modo"]').forEach(function(r) {
-  r.addEventListener('change', function() {
-    document.getElementById('rec-mes-manual').style.display = this.value === 'manual' ? 'block' : 'none';
-  });
-});
-// Cerrar modal con click fuera
-document.getElementById('modal-recordatorio').addEventListener('click', function(e) {
-  if (e.target === this) cerrarModalGP('modal-recordatorio');
-});
-// Detectar mes automatico y si ya esta registrado
-var recDebounce;
-function detectarMesRevision() {
-  clearTimeout(recDebounce);
-  recDebounce = setTimeout(async function() {
-    var pat = document.getElementById('rec-patente').value.trim().toUpperCase().replace(/[\s\.\-·]/g, '');
-    var info = document.getElementById('rec-mes-info');
-    var yaReg = document.getElementById('rec-ya-registrado');
-    if (pat.length < 5) { info.style.display = 'none'; yaReg.style.display = 'none'; return; }
-    try {
-      var r = await fetch('https://llanocarv3.estilosgrado33.workers.dev/api/check?patente=' + encodeURIComponent(pat));
-      var d = await r.json();
-      if (d.success && d.es_auto) {
-        document.getElementById('rec-mes-text').innerHTML = 'Tu revision vence en <strong>' + d.nombre_mes + '</strong>';
-        info.style.display = 'block';
-        document.querySelector('input[name="rec-modo"][value="auto"]').checked = true;
-        document.getElementById('rec-mes-manual').style.display = 'none';
-      } else if (d.success && d.necesita_manual) {
-        document.getElementById('rec-mes-text').innerHTML = 'Formato nuevo. <strong>Selecciona el mes manualmente.</strong>';
-        info.style.display = 'block';
-        document.querySelector('input[name="rec-modo"][value="manual"]').checked = true;
-        document.getElementById('rec-mes-manual').style.display = 'block';
-      } else { info.style.display = 'none'; }
-      // Verificar si ya esta registrado en la BD
-      if (d.success && d.registrado && d.registro) {
-        document.getElementById('rec-ya-registrado-text').innerHTML = '<strong>¡Ya te encuentras en nuestra base de datos!</strong><br>Revision: <strong>' + d.registro.nombre_mes + '</strong> | Tel: ' + d.registro.telefono + (d.registro.es_manual ? ' (mes manual)' : '');
-        yaReg.style.display = 'block';
-      } else {
-        yaReg.style.display = 'none';
-      }
-    } catch(e) { info.style.display = 'none'; yaReg.style.display = 'none'; }
-  }, 400);
-}
-// Enviar formulario
-async function submitRecordatorio() {
-  var patente = document.getElementById('rec-patente').value.trim().toUpperCase();
-  var telefono = document.getElementById('rec-telefono').value.trim();
-  var modo = document.querySelector('input[name="rec-modo"]:checked').value;
-  var mesManual = modo === 'manual' ? parseInt(document.getElementById('rec-select-mes').value) : null;
-  var resultado = document.getElementById('rec-resultado');
-  var btn = document.getElementById('rec-submit');
-  if (!patente || !telefono) { showRecResult('error', '<i class="fas fa-exclamation-circle"></i> Completa todos los campos.'); return; }
-  if (modo === 'manual' && (!mesManual || mesManual < 1 || mesManual > 12)) { showRecResult('error', '<i class="fas fa-exclamation-circle"></i> Selecciona un mes.'); return; }
-  if (!document.getElementById('rec-consent').checked) { showRecResult('error', '<i class="fas fa-exclamation-circle"></i> Acepta recibir recordatorios.'); return; }
-  btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registrando...'; resultado.style.display = 'none';
-  try {
-    var r = await fetch('https://llanocarv3.estilosgrado33.workers.dev/api/save-lead', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ patente: patente, telefono: telefono, mes_manual: mesManual || null })
-    });
-    var d = await r.json();
-    if (d.success) {
-      var msgExtra = d.ya_registrado ? '<br><small style="color:#92400e;"><i class="fas fa-info-circle"></i> Esta patente ya estaba registrada. Datos actualizados.</small>' : '';
-      showRecResult('success', '<i class="fas fa-check-circle"></i> <strong>¡Registrado!</strong><br>Patente: ' + d.patente + '<br>Mes de revision: <strong>' + d.nombre_mes + '</strong><br><small>Recibirás avisos a <strong>30, 15 y 7 días</strong> antes por WhatsApp.</small>' + msgExtra);
-      document.getElementById('rec-patente').value = ''; document.getElementById('rec-telefono').value = '';
-      document.getElementById('rec-mes-info').style.display = 'none';
-      document.getElementById('rec-ya-registrado').style.display = 'none';
-    } else { showRecResult('error', '<i class="fas fa-exclamation-circle"></i> ' + (d.error || 'Error. Intenta de nuevo.')); }
-  } catch(e) { showRecResult('error', '<i class="fas fa-wifi"></i> Error de conexion.'); }
-  finally { btn.disabled = false; btn.innerHTML = '<i class="fas fa-bell"></i> RECORDARME'; }
-}
-function showRecResult(type, html) {
-  var el = document.getElementById('rec-resultado');
-  el.style.display = 'block';
-  el.style.background = type === 'success' ? '#ecfdf5' : '#fef2f2';
-  el.style.border = type === 'success' ? '1px solid #a7f3d0' : '1px solid #fecaca';
-  el.style.color = type === 'success' ? '#065f46' : '#991b1b';
-  el.innerHTML = html;
-}
-</script>
-<!-- ======================================================================= -->
-<!-- MODAL AGENDA TU VISITA TECNICA -->
-<!-- ======================================================================= -->
-<div id="modal-agenda-visita" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.75); z-index:10000; align-items:center; justify-content:center; padding:15px;">
-  <div style="background:#fff; border-radius:20px; max-width:500px; width:100%; max-height:92vh; overflow-y:auto; position:relative; animation: modalSlideIn 0.3s ease-out; box-shadow:0 25px 60px rgba(0,0,0,0.4);">
-
-    <!-- Header naranja estilo express -->
-    <div style="background:linear-gradient(135deg, #ff6b00 0%, #ff8c33 50%, #ffaa55 100%); padding:28px 25px 18px; text-align:center; border-radius:20px 20px 0 0; position:relative;">
-      <button onclick="cerrarModalGP('modal-agenda-visita')" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.6rem; cursor:pointer; color:rgba(255,255,255,0.9); z-index:10;">&times;</button>
-      <div style="width:65px; height:65px; background:rgba(255,255,255,0.2); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; margin-bottom:10px; backdrop-filter:blur(10px); border:2px solid rgba(255,255,255,0.3);">
-        <i class="fas fa-bolt" style="font-size:1.7rem; color:#fff;"></i>
-      </div>
-      <h2 style="color:#fff; font-weight:900; font-size:1.35rem; margin-bottom:4px; letter-spacing:0.02em;">Agenda tu Visita Tecnica</h2>
-      <p style="color:rgba(255,255,255,0.85); font-size:0.85rem; margin-bottom:0;">LLANOCAR Automotriz &bull; Servicio Express</p>
-    </div>
-
-    <!-- Body formulario -->
-    <div style="padding:22px 24px 10px;">
-      <div id="agenda-error" style="display:none; background:#f8d7da; color:#721c24; border:1px solid #f5c6cb; border-radius:10px; padding:10px 14px; font-size:0.84rem; font-weight:500; margin-bottom:14px; align-items:center; gap:8px;">
-        <i class="fas fa-exclamation-circle"></i>
-        <span id="agenda-error-text"></span>
-      </div>
-
-      <form id="form-agenda-visita" onsubmit="enviarVisitaTecnica(event)">
-        <!-- Patente -->
-        <div style="margin-bottom:14px;">
-          <label style="display:block; font-weight:700; font-size:0.84rem; color:#333; margin-bottom:5px;"><i class="fas fa-car" style="color:#ff6b00; margin-right:5px;"></i>Patente / Placa</label>
-          <input type="text" id="agenda-patente" class="form-control" placeholder="ABCD12" maxlength="8" required autocomplete="off" autocapitalize="characters" style="font-size:1.5rem; font-weight:800; text-align:center; text-transform:uppercase; letter-spacing:4px; border:3px solid #ff6b00; border-radius:12px; padding:13px; background:#fffbf5;">
-        </div>
-
-        <!-- Marca y Modelo -->
-        <div style="display:flex; gap:10px; margin-bottom:14px;">
-          <div style="flex:1;">
-            <label style="display:block; font-weight:700; font-size:0.84rem; color:#333; margin-bottom:5px;"><i class="fas fa-industry" style="color:#ff6b00; margin-right:5px;"></i>Marca</label>
-            <input type="text" id="agenda-marca" class="form-control" placeholder="Toyota, Ford..." style="border:2px solid #ddd; border-radius:10px; padding:11px 13px; font-size:0.93rem;">
-          </div>
-          <div style="flex:1;">
-            <label style="display:block; font-weight:700; font-size:0.84rem; color:#333; margin-bottom:5px;"><i class="fas fa-car-side" style="color:#ff6b00; margin-right:5px;"></i>Modelo</label>
-            <input type="text" id="agenda-modelo" class="form-control" placeholder="Corolla, Focus..." style="border:2px solid #ddd; border-radius:10px; padding:11px 13px; font-size:0.93rem;">
-          </div>
-        </div>
-
-        <!-- Nombre -->
-        <div style="margin-bottom:14px;">
-          <label style="display:block; font-weight:700; font-size:0.84rem; color:#333; margin-bottom:5px;"><i class="fas fa-user" style="color:#ff6b00; margin-right:5px;"></i>Nombre</label>
-          <input type="text" id="agenda-nombre" class="form-control" placeholder="Tu nombre completo" required style="border:2px solid #ddd; border-radius:10px; padding:11px 13px; font-size:0.93rem;">
-        </div>
-
-        <!-- Telefono -->
-        <div style="margin-bottom:14px;">
-          <label style="display:block; font-weight:700; font-size:0.84rem; color:#333; margin-bottom:5px;"><i class="fas fa-phone" style="color:#ff6b00; margin-right:5px;"></i>Telefono</label>
-          <input type="tel" id="agenda-telefono" class="form-control" placeholder="+56 9 1234 5678" required style="border:2px solid #ddd; border-radius:10px; padding:11px 13px; font-size:0.93rem;">
-        </div>
-
-        <!-- Direccion -->
-        <div style="margin-bottom:14px;">
-          <label style="display:block; font-weight:700; font-size:0.84rem; color:#333; margin-bottom:5px;"><i class="fas fa-map-marker-alt" style="color:#ff6b00; margin-right:5px;"></i>Direccion del servicio</label>
-          <div style="display:flex; gap:8px; align-items:flex-start;">
-            <input type="text" id="agenda-direccion" class="form-control" placeholder="Calle, numero, comuna, ciudad" required style="flex:1; border:2px solid #ddd; border-radius:10px; padding:11px 13px; font-size:0.93rem;">
-            <button type="button" id="btn-toggle-mapa-agenda" onclick="toggleMapaAgenda()" style="flex-shrink:0; background:linear-gradient(135deg,#198754,#20c997); color:#fff; border:none; border-radius:10px; padding:10px 14px; font-size:0.8rem; font-weight:700; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:5px;">
-              <i class="fas fa-map"></i> Mapa
-            </button>
-          </div>
-          <small style="color:#999; font-size:0.78rem;">Ej: Av Providencia 1234, Providencia, Santiago</small>
-
-          <!-- Mapa picker (colapsable) -->
-          <div id="agenda-mapa-wrapper" style="display:none; margin-top:10px; border-radius:12px; overflow:hidden; border:2px solid #198754;">
-            <div style="background:#f0fff4; border-bottom:1px solid #c3e6cb; padding:8px 12px; font-size:0.78rem; color:#155724; display:flex; align-items:center; gap:6px;">
-              <i class="fas fa-mouse-pointer"></i>
-              Haz click en el mapa para seleccionar la ubicacion. La direccion se completara automaticamente.
-            </div>
-            <div id="agenda-mapa-container" style="height:260px; width:100%;"></div>
-            <div style="background:#fff; padding:8px 12px; border-top:1px solid #e0e0e0; display:flex; align-items:center; gap:6px; font-size:0.78rem;">
-              <i class="fas fa-map-pin" style="color:#198754;"></i>
-              <strong>Direccion:</strong>
-              <span id="agenda-mapa-direccion-preview" style="flex:1; color:#888;">Esperando seleccion...</span>
-            </div>
-          </div>
-
-          <!-- Badge coordenadas guardadas -->
-          <div id="agenda-coordenadas-badge" style="display:none; background:#e8f5e9; border:1px solid #a5d6a7; color:#2e7d32; border-radius:8px; padding:6px 10px; font-size:0.78rem; margin-top:8px; align-items:center; gap:6px;">
-            <i class="fas fa-check-circle"></i>
-            <span id="agenda-coordenadas-text">Ubicacion guardada</span>
-          </div>
-
-          <!-- Hidden fields para coordenadas -->
-          <input type="hidden" id="agenda-cliente-lat" value="0">
-          <input type="hidden" id="agenda-cliente-lng" value="0">
-        </div>
-
-        <!-- Referencia -->
-        <div style="margin-bottom:14px;">
-          <label style="display:block; font-weight:700; font-size:0.84rem; color:#333; margin-bottom:5px;"><i class="fas fa-sign" style="color:#ff6b00; margin-right:5px;"></i>Referencia <small style="color:#999; font-weight:400;">(opcional)</small></label>
-          <input type="text" id="agenda-referencia" class="form-control" placeholder="Depto, casa, local, punto de referencia..." style="border:2px solid #ddd; border-radius:10px; padding:11px 13px; font-size:0.93rem;">
-        </div>
-
-        <!-- Requerimientos -->
-        <div style="margin-bottom:18px;">
-          <label style="display:block; font-weight:700; font-size:0.84rem; color:#333; margin-bottom:5px;"><i class="fas fa-clipboard" style="color:#ff6b00; margin-right:5px;"></i>Requerimientos</label>
-          <textarea id="agenda-observaciones" class="form-control" rows="3" placeholder="Describe el problema o servicio que necesitas..." style="border:2px solid #ddd; border-radius:10px; padding:11px 13px; font-size:0.93rem; resize:vertical; min-height:80px;"></textarea>
-        </div>
-
-        <button type="submit" id="btn-agenda-enviar" style="width:100%; padding:15px; background:linear-gradient(135deg, #ff6b00, #ff8c33); color:#fff; border:none; border-radius:12px; font-size:1.05rem; font-weight:800; letter-spacing:0.04em; text-transform:uppercase; cursor:pointer; transition:all 0.3s; box-shadow:0 6px 20px rgba(255,107,0,0.35); display:flex; align-items:center; justify-content:center; gap:8px;">
-          <i class="fas fa-bolt"></i> Solicitar Orden Express
-        </button>
-      </form>
-
-      <p style="text-align:center; padding:12px 0 8px; color:#bbb; font-size:0.73rem; margin-bottom:0;">LLANOCAR Automotriz &bull; Atencion Express<br>Tu orden sera aprobada automaticamente</p>
-    </div>
-  </div>
-
-  <!-- Overlay de exito -->
-  <div id="agenda-success-overlay" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); z-index:10001; align-items:center; justify-content:center; padding:20px;">
-    <div style="background:#fff; border-radius:20px; padding:40px 30px; text-align:center; max-width:400px; width:100%; box-shadow:0 20px 60px rgba(0,0,0,0.3); animation: slideUp 0.4s ease;">
-      <div style="width:80px; height:80px; background:linear-gradient(135deg, #28a745, #20c997); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; margin-bottom:20px;">
-        <i class="fas fa-check" style="font-size:2.5rem; color:#fff;"></i>
-      </div>
-      <h2 style="color:#28a745; font-weight:800; font-size:1.3rem; margin-bottom:8px;">Orden Creada</h2>
-      <p style="color:#666; font-size:0.9rem; margin-bottom:5px;">Tu orden express ha sido registrada y aprobada</p>
-      <div id="agenda-orden-num" style="font-size:2rem; font-weight:900; color:#ff6b00; background:#fff5eb; border:2px solid #ff6b00; border-radius:12px; padding:12px 20px; display:inline-block; margin:15px 0;">EXP000000</div>
-      <p style="color:#666; font-size:0.9rem;">Nos comunicaremos contigo a la brevedad</p>
-      <button onclick="resetAgendaVisita()" style="background:linear-gradient(135deg, #ff6b00, #ff8c33); color:#fff; border:none; border-radius:10px; padding:10px 28px; font-weight:700; font-size:0.9rem; cursor:pointer; margin-top:15px; transition:all 0.2s;">
-        <i class="fas fa-plus" style="margin-right:5px;"></i>Crear otra orden
-      </button>
-    </div>
-  </div>
-</div>
-
-<style>
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@media (max-width: 480px) {
-  #modal-agenda-visita > div:first-child { max-height:95vh; }
-  #modal-agenda-visita input[type="text"].form-control[style*="text-align:center"] { font-size:1.3rem !important; letter-spacing:3px !important; }
-  #agenda-mapa-container { height: 260px; width: 100%; }
-}
-@media (max-width: 480px) {
-  #agenda-mapa-container { height: 200px; }
-}
-</style>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-// Auto-formato patente
-var agendaPatenteInput = document.getElementById('agenda-patente');
-if (agendaPatenteInput) {
-  agendaPatenteInput.addEventListener('input', function(e) {
-    e.target.value = e.target.value.toUpperCase().replace(/\s/g, '');
-  });
-}
-
-// Cerrar modal con click fuera
-document.getElementById('modal-agenda-visita').addEventListener('click', function(e) {
-  if (e.target === this) cerrarModalGP('modal-agenda-visita');
-});
-
-// ============================================
-// SISTEMA DE MODALES CON HISTORY API (boton Atras)
-// ============================================
-function abrirModalGP(id) {
-  document.getElementById(id).style.display = 'flex';
-  history.pushState({ modalGP: id }, '');
-}
-
-function cerrarModalGP(id) {
-  document.getElementById(id).style.display = 'none';
-  // Si hay un estado de modal en el historial, volver sin navegar
-  if (window.history.state && window.history.state.modalGP) {
-    history.back();
-  }
-}
-
-// Boton Atras del navegador: cerrar modal en vez de salir de la web
-window.addEventListener('popstate', function(e) {
-  // 1) Cerrar modales primero (prioridad alta)
-  var modales = ['modal-agenda-visita', 'modal-chat-ia', 'modal-recordatorio', 'imageModal'];
-  for (var i = 0; i < modales.length; i++) {
-    var el = document.getElementById(modales[i]);
-    if (el && el.style.display !== 'none' && el.style.display !== '') {
-      el.style.display = 'none';
-      // Cerrar mapa agenda si estaba abierto
-      if (modales[i] === 'modal-agenda-visita' && mapaAgendaVisible) {
-        var wrapper = document.getElementById('agenda-mapa-wrapper');
-        var btn = document.getElementById('btn-toggle-mapa-agenda');
-        if (wrapper) wrapper.style.display = 'none';
-        if (btn) { btn.style.background = 'linear-gradient(135deg,#198754,#20c997)'; btn.innerHTML = '<i class="fas fa-map"></i> Mapa'; }
-        mapaAgendaVisible = false;
-      }
-      return;
-    }
-  }
-
-  // 2) Cerrar dropdown de comunas si esta abierto
-  var dropdownComunas = document.querySelector('.dropdown-menu.show');
-  if (dropdownComunas) {
-    var toggleBtn = document.querySelector('.dropdown-toggle');
-    if (toggleBtn) bootstrap.Dropdown.getOrCreateInstance(toggleBtn).hide();
-    return;
-  }
-
-  // 3) Cerrar menu hamburguesa si esta abierto
-  var navbarCollapse = document.getElementById('navbarNav');
-  if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-    var toggler = document.querySelector('.navbar-toggler');
-    if (toggler) bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
-    return;
-  }
-});
-
-// ============================================
-// MENU HAMBURGUESA + DROPDOWN COMUNAS con History API
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-  var navbarCollapse = document.getElementById('navbarNav');
-  if (navbarCollapse) {
-    navbarCollapse.addEventListener('shown.bs.collapse', function() {
-      history.pushState({ gpComponent: 'navbar' }, '');
-    });
-    navbarCollapse.addEventListener('hidden.bs.collapse', function() {
-      if (window.history.state && window.history.state.gpComponent === 'navbar') {
-        history.back();
-      }
-    });
-  }
-
-  // Dropdown de comunas
-  var dropdownToggle = document.querySelector('.dropdown-toggle');
-  if (dropdownToggle) {
-    var dropdownEl = dropdownToggle.nextElementSibling;
-    if (dropdownEl) {
-      dropdownEl.addEventListener('shown.bs.dropdown', function() {
-        history.pushState({ gpComponent: 'dropdown' }, '');
-      });
-      dropdownEl.addEventListener('hidden.bs.dropdown', function() {
-        if (window.history.state && window.history.state.gpComponent === 'dropdown') {
-          history.back();
-        }
-      });
-    }
-  }
-});
-
-// ============================================
-// MAPA PICKER - MODAL AGENDA VISITA (Leaflet + Nominatim)
-// ============================================
-var mapaAgenda = null;
-var markerAgenda = null;
-var _agendaMapaLat = 0;
-var _agendaMapaLng = 0;
-var mapaAgendaVisible = false;
-
-function toggleMapaAgenda() {
-  var wrapper = document.getElementById('agenda-mapa-wrapper');
-  var btn = document.getElementById('btn-toggle-mapa-agenda');
-
-  if (mapaAgendaVisible) {
-    wrapper.style.display = 'none';
-    btn.style.background = 'linear-gradient(135deg,#198754,#20c997)';
-    btn.innerHTML = '<i class="fas fa-map"></i> Mapa';
-    mapaAgendaVisible = false;
-    return;
-  }
-
-  wrapper.style.display = 'block';
-  btn.style.background = 'linear-gradient(135deg,#dc3545,#e74c5a)';
-  btn.innerHTML = '<i class="fas fa-times"></i> Cerrar';
-  mapaAgendaVisible = true;
-
-  setTimeout(function() {
-    if (mapaAgenda) {
-      mapaAgenda.invalidateSize();
-      return;
-    }
-    // Centro: Santiago, Chile
-    mapaAgenda = L.map('agenda-mapa-container').setView([-33.4489, -70.6693], 12);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap',
-      maxZoom: 19
-    }).addTo(mapaAgenda);
-
-    mapaAgenda.on('click', function(e) {
-      var lat = e.latlng.lat;
-      var lng = e.latlng.lng;
-      _agendaMapaLat = lat;
-      _agendaMapaLng = lng;
-
-      if (markerAgenda) {
-        markerAgenda.setLatLng([lat, lng]);
-      } else {
-        var greenIcon = L.icon({
-          iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-          shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-          iconSize: [25, 41],
-          iconAnchor: [12, 41],
-          popupAnchor: [1, -34],
-          shadowSize: [41, 41]
-        });
-        markerAgenda = L.marker([lat, lng], { icon: greenIcon }).addTo(mapaAgenda);
-      }
-      markerAgenda.bindPopup('<b>Ubicacion seleccionada</b><br>Obteniendo direccion...').openPopup();
-
-      document.getElementById('agenda-mapa-direccion-preview').textContent = 'Detectando direccion...';
-      fetch('https://nominatim.openstreetmap.org/reverse?lat=' + lat + '&lon=' + lng + '&format=json&accept-language=es', {
-        headers: { 'User-Agent': 'LLANOCARAutomotriz/1.0' }
-      })
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        var direccion = '';
-        if (data && data.display_name) {
-          var parts = [];
-          if (data.address) {
-            if (data.address.road) parts.push(data.address.road);
-            if (data.address.house_number) parts.push(data.address.house_number);
-            if (data.address.suburb) parts.push(data.address.suburb);
-            if (data.address.city || data.address.town) parts.push(data.address.city || data.address.town);
-            if (data.address.state) parts.push(data.address.state);
-          }
-          if (parts.length > 0) {
-            direccion = parts.join(', ');
-          } else {
-            direccion = data.display_name.split(',').slice(0, 3).join(', ');
-          }
-        } else {
-          direccion = lat.toFixed(6) + ', ' + lng.toFixed(6);
-        }
-        document.getElementById('agenda-mapa-direccion-preview').textContent = direccion;
-        if (markerAgenda) markerAgenda.setPopupContent('<b>Ubicacion</b><br>' + direccion);
-
-        // Auto-llenar campo direccion
-        document.getElementById('agenda-direccion').value = direccion;
-        document.getElementById('agenda-cliente-lat').value = lat;
-        document.getElementById('agenda-cliente-lng').value = lng;
-
-        // Mostrar badge coordenadas
-        var badge = document.getElementById('agenda-coordenadas-badge');
-        badge.style.display = 'flex';
-        document.getElementById('agenda-coordenadas-text').textContent = 'Ubicacion guardada (' + lat.toFixed(4) + ', ' + lng.toFixed(4) + ')';
-      })
-      .catch(function() {
-        document.getElementById('agenda-mapa-direccion-preview').textContent = lat.toFixed(6) + ', ' + lng.toFixed(6) + ' (sin direccion detectada)';
-        document.getElementById('agenda-direccion').value = lat.toFixed(6) + ', ' + lng.toFixed(6);
-        document.getElementById('agenda-cliente-lat').value = lat;
-        document.getElementById('agenda-cliente-lng').value = lng;
-      });
-    });
-  }, 200);
-}
-
-// Enviar formulario de visita tecnica
-async function enviarVisitaTecnica(event) {
-  event.preventDefault();
-  var patente = document.getElementById('agenda-patente').value.trim().toUpperCase();
-  var marca = document.getElementById('agenda-marca').value.trim();
-  var modelo = document.getElementById('agenda-modelo').value.trim();
-  var nombre = document.getElementById('agenda-nombre').value.trim();
-  var telefono = document.getElementById('agenda-telefono').value.trim();
-  var direccion = document.getElementById('agenda-direccion').value.trim();
-  var referencia = document.getElementById('agenda-referencia').value.trim();
-  var observaciones = document.getElementById('agenda-observaciones').value.trim();
-  var clienteLat = parseFloat(document.getElementById('agenda-cliente-lat').value) || 0;
-  var clienteLng = parseFloat(document.getElementById('agenda-cliente-lng').value) || 0;
-
-  if (!patente || !nombre || !telefono || !direccion) {
-    var errDiv = document.getElementById('agenda-error');
-    document.getElementById('agenda-error-text').textContent = 'Completa todos los campos obligatorios';
-    errDiv.style.display = 'flex';
-    return;
-  }
-
-  var btn = document.getElementById('btn-agenda-enviar');
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>Enviando...';
-  document.getElementById('agenda-error').style.display = 'none';
-
-  try {
-    var response = await fetch('https://llanocarv2.pages.dev/api/public/crear-orden-express', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        patente: patente,
-        marca: marca,
-        modelo: modelo,
-        cliente: nombre,
-        telefono: telefono,
-        direccion: direccion,
-        referencia_direccion: referencia,
-        notas_diagnostico: observaciones,
-        express: true,
-        fecha_ingreso: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString().split('T')[0],
-        cliente_lat: clienteLat,
-        cliente_lng: clienteLng
-      })
-    });
-    var data = await response.json();
-    if (data.success) {
-      var numEXP = 'EXP' + String(data.numero_orden).padStart(6, '0');
-      document.getElementById('agenda-orden-num').textContent = numEXP;
-      document.getElementById('agenda-success-overlay').style.display = 'flex';
-    } else {
-      var errDiv = document.getElementById('agenda-error');
-      document.getElementById('agenda-error-text').textContent = data.error || 'No se pudo crear la orden. Intenta de nuevo.';
-      errDiv.style.display = 'flex';
-    }
-  } catch (e) {
-    var errDiv = document.getElementById('agenda-error');
-    document.getElementById('agenda-error-text').textContent = 'Error de conexion. Verifica tu internet e intenta de nuevo.';
-    errDiv.style.display = 'flex';
-  } finally {
-    btn.disabled = false;
-    btn.innerHTML = '<i class="fas fa-bolt"></i> Solicitar Orden Express';
-  }
-}
-
-function resetAgendaVisita() {
-  document.getElementById('agenda-success-overlay').style.display = 'none';
-  document.getElementById('agenda-patente').value = '';
-  document.getElementById('agenda-marca').value = '';
-  document.getElementById('agenda-modelo').value = '';
-  document.getElementById('agenda-nombre').value = '';
-  document.getElementById('agenda-telefono').value = '';
-  document.getElementById('agenda-direccion').value = '';
-  document.getElementById('agenda-referencia').value = '';
-  document.getElementById('agenda-observaciones').value = '';
-  document.getElementById('agenda-error').style.display = 'none';
-  document.getElementById('agenda-cliente-lat').value = '0';
-  document.getElementById('agenda-cliente-lng').value = '0';
-  document.getElementById('agenda-coordenadas-badge').style.display = 'none';
-  document.getElementById('agenda-mapa-direccion-preview').textContent = 'Esperando seleccion...';
-  _agendaMapaLat = 0;
-  _agendaMapaLng = 0;
-  if (markerAgenda && mapaAgenda) {
-    mapaAgenda.removeLayer(markerAgenda);
-    markerAgenda = null;
-  }
-}
-</script>
-
-<!-- ======================================================================= -->
 <!-- FOOTER INFERIOR FIJO (STICKY BOTTOM BAR) - NUEVO DISEÑO MASIVO -->
 <!-- ======================================================================= -->
 <div class="sticky-bottom-bar">
@@ -3519,21 +2343,16 @@ function resetAgendaVisita() {
     var modalImg = document.getElementById("modalImg");
     modal.style.display = "block";
     modalImg.src = imgSrc;
-    history.pushState({ modalGP: 'imageModal' }, '');
   }
   function closeModal() {
-    cerrarModalGP('imageModal');
+    var modal = document.getElementById("imageModal");
+    modal.style.display = "none";
   }
   document.addEventListener('keydown', function(event) {
     if (event.key === "Escape") {
-      // Cerrar cualquier modal abierto
-      var modales = ['imageModal', 'modal-agenda-visita', 'modal-chat-ia', 'modal-recordatorio'];
-      for (var i = 0; i < modales.length; i++) {
-        var el = document.getElementById(modales[i]);
-        if (el && el.style.display !== 'none' && el.style.display !== '') {
-          cerrarModalGP(modales[i]);
-          return;
-        }
+      var modal = document.getElementById("imageModal");
+      if (modal && modal.style.display !== 'none' && modal.style.display !== '') {
+        modal.style.display = "none";
       }
     }
   });
