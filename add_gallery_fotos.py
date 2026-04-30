@@ -1,0 +1,294 @@
+#!/usr/bin/env python3
+"""
+1. Actualiza nombres-imagenes-seo.txt con 200 nombres
+2. Reemplaza la galería del index.html con 50 fotos reales
+3. Agrega fotos a secciones del index
+"""
+
+import re, glob, os
+
+# Los 200 nombres SEO de las imágenes
+NOMBRES = """mecanico-a-domicilio-chevrolet-santiago-taller-mecanico-cerca-de-mi.jpg
+scanner-automotriz-ford-puente-alto-profesional-diagnostico-avanzado.jpg
+frenos-y-pastillas-honda-maipu-taller-mecanico-cerca-de-mi-urgente.jpg
+cambio-de-aceite-hyundai-la-florida-express-mantenimiento-garantizado.jpg
+afinamiento-motor-kia-san-bernardo-taller-mecanico-cerca-de-mi-experto.jpg
+inspeccion-pre-compra-mazda-las-condes-revision-tecnica-completa.jpg
+diagnostico-electrico-mitsubishi-penalolen-taller-mecanico-cerca-de-mi.jpg
+mantenimiento-kilometraje-nissan-pudahuel-servicio-oficial-llanocar.jpg
+reparacion-de-embrague-peugeot-quilicura-taller-mecanico-cerca-de-mi-diesel.jpg
+cambio-correa-distribucion-renault-nunoa-repuestos-originales-garantizados.jpg
+servicio-de-baterias-subaru-la-cisterna-taller-mecanico-cerca-de-mi-24hrs.jpg
+ajuste-de-suspension-suzuki-estacion-central-amortiguadores-y-direccion.jpg
+mecanico-urgencia-toyota-recoleta-taller-mecanico-cerca-de-mi-panne.jpg
+scanner-multimarca-volkswagen-providencia-deteccion-de-fallas-electronicas.jpg
+auxilio-mecanico-audi-vitacura-taller-mecanico-cerca-de-mi-alta-gama.jpg
+revision-tecnica-bmw-lo-barnechea-preparacion-profesional-expertos.jpg
+mecanico-24-horas-citroen-macul-taller-mecanico-cerca-de-mi-emergencia.jpg
+reparacion-transmision-fiat-quinta-normal-caja-de-cambios-especialista.jpg
+mantencion-preventiva-jeep-independencia-taller-mecanico-cerca-de-mi-4x4.jpg
+electricidad-automotriz-mercedes-benz-san-miguel-sistema-electrico-integral.jpg
+mecanico-domicilio-mg-huechuraba-taller-mecanico-cerca-de-mi-economico.jpg
+scanner-motor-opel-conchali-lectura-de-codigos-check-engine.jpg
+frenos-pastillas-ssangyong-lo-prado-taller-mecanico-cerca-de-mi-seguridad.jpg
+cambio-aceite-volvo-cerrillos-filtro-de-aire-y-lubricante-sintetico.jpg
+afinamiento-motor-byd-renca-taller-mecanico-cerca-de-mi-hibridos.jpg
+inspeccion-compra-chery-cerro-navia-peritaje-automotriz-profesional.jpg
+diagnostico-scanner-changan-lo-espejo-taller-mecanico-cerca-de-mi-rapido.jpg
+embrague-y-frenos-dfsk-san-joaquin-kit-nuevo-instalacion-express.jpg
+correa-distribucion-great-wall-san-ramon-taller-mecanico-cerca-de-mi-motor.jpg
+bateria-automotriz-haval-la-granja-reemplazo-a-domicilio-instante.jpg
+suspension-y-direccion-jac-la-pintana-taller-mecanico-cerca-de-mi-tren-delantero.jpg
+mecanico-express-jmc-pedro-aguirre-cerda-taller-movil-multimarca.jpg
+servicio-integral-mahindra-san-jose-de-maipo-taller-mecanico-cerca-de-mi-montana.jpg
+mantenimiento-ram-pirque-camionetas-petroleras-servicio-profesional.jpg
+mecanico-a-domicilio-chevrolet-buin-taller-mecanico-cerca-de-mi-confianza.jpg
+scanner-automotriz-toyota-paine-limpieza-inyectores-y-bujias.jpg
+frenos-y-pastillas-nissan-talagante-taller-mecanico-cerca-de-mi-rectificado.jpg
+cambio-de-aceite-hyundai-el-monte-sintetico-multigrado-alto-kilometraje.jpg
+afinamiento-motor-kia-isla-de-maipo-taller-mecanico-cerca-de-mi-bujias.jpg
+inspeccion-pre-compra-ford-melipilla-scanner-total-y-fugas-aceite.jpg
+diagnostico-electrico-mazda-curacavi-taller-mecanico-cerca-de-mi-partida.jpg
+mantenimiento-kilometraje-suzuki-maria-pinto-pauta-fabricante-oficial.jpg
+reparacion-de-embrague-peugeot-colina-taller-mecanico-cerca-de-mi-pedal.jpg
+cambio-correa-distribucion-renault-lampa-kit-distribucion-completo.jpg
+servicio-de-bateria-subaru-tiltil-taller-mecanico-cerca-de-mi-voltaje.jpg
+ajuste-de-suspension-volkswagen-alhue-amortiguadores-y-cazoletas.jpg
+mecanico-urgencia-fiat-calera-de-tango-taller-mecanico-cerca-de-mi-panne.jpg
+scanner-automotriz-chery-padre-hurtado-luz-check-engine-borrado.jpg
+frenos-y-pastillas-mg-penaflor-taller-mecanico-cerca-de-mi-expertos.jpg
+cambio-de-aceite-changan-santiago-centro-rapido-barato-calidad.jpg
+afinamiento-motor-haval-vitacura-taller-mecanico-cerca-de-mi-premium.jpg
+inspeccion-pre-compra-mitsubishi-las-condes-mecanica-general-scanner.jpg
+diagnostico-electrico-nissan-maipu-taller-mecanico-cerca-de-mi-bobinas.jpg
+mantenimiento-kilometraje-toyota-la-florida-garantia-llanocar-total.jpg
+reparacion-de-embrague-hyundai-puente-alto-taller-mecanico-cerca-de-mi-bimasa.jpg
+cambio-correa-distribucion-kia-san-bernardo-bomba-de-agua-expertos.jpg
+servicio-de-bateria-chevrolet-la-cisterna-taller-mecanico-cerca-de-mi-carga.jpg
+ajuste-de-suspension-mazda-nunoa-alineacion-y-balanceo-ruedas.jpg
+mecanico-domicilio-ford-providencia-taller-mecanico-cerca-de-mi-camionetas.jpg
+scanner-automotriz-volkswagen-las-condes-diagnosis-computarizada-vcds.jpg
+frenos-pastillas-toyota-la-reina-taller-mecanico-cerca-de-mi-discos.jpg
+cambio-aceite-nissan-macul-filtro-aire-y-filtro-polen.jpg
+afinamiento-motor-chevrolet-penalolen-taller-mecanico-cerca-de-mi-limpieza.jpg
+inspeccion-compra-hyundai-la-pintana-informe-tecnico-scanner-fugas.jpg
+diagnostico-electrico-kia-pudahuel-taller-mecanico-cerca-de-mi-tablero.jpg
+mantenimiento-kilometraje-ford-quilicura-aceite-motorcraft-original.jpg
+reparacion-embrague-suzuki-san-miguel-taller-mecanico-cerca-de-mi-prensa.jpg
+correa-distribucion-peugeot-estacion-central-motor-hdi-especialistas.jpg
+bateria-domicilio-mazda-huechuraba-taller-mecanico-cerca-de-mi-bosch.jpg
+suspension-mitsubishi-independencia-buje-bandeja-y-terminal-direccion.jpg
+mecanico-urgencia-renault-recoleta-taller-mecanico-cerca-de-mi-electrico.jpg
+scanner-changan-quinta-normal-borrado-fallas-computador-auto.jpg
+frenos-pastillas-great-wall-san-joaquin-taller-mecanico-cerca-de-mi-ceramica.jpg
+cambio-aceite-haval-san-ramon-castrol-mobil-ultra-proteccion.jpg
+afinamiento-chery-lo-prado-taller-mecanico-cerca-de-mi-inyectores.jpg
+inspeccion-jac-lo-espejo-recorrido-de-prueba-y-compresion.jpg
+diagnostico-dfsk-cerro-navia-taller-mecanico-cerca-de-mi-furgones.jpg
+mantenimiento-mg-cerrillos-pauta-garantia-llanocar-multimarca.jpg
+embrague-ssangyong-renca-taller-mecanico-cerca-de-mi-especialista.jpg
+correa-distribucion-volvo-vitacura-mantenimiento-mayor-kilometraje.jpg
+mecanico-domicilio-kia-lo-barnechea-taller-mecanico-cerca-de-mi-suv.jpg
+scanner-toyota-buin-corolla-yaris-limpieza-mariposa-admision.jpg
+frenos-nissan-paine-taller-mecanico-cerca-de-mi-qashqai-xtrail.jpg
+cambio-aceite-ford-talagante-ecosport-ranger-express-garantizado.jpg
+afinamiento-mazda-el-monte-taller-mecanico-cerca-de-mi-skyactiv.jpg
+inspeccion-hyundai-isla-de-maipo-tucson-santafe-revision-precompra.jpg
+diagnostico-chevrolet-melipilla-taller-mecanico-cerca-de-mi-sail-spark.jpg
+mantenimiento-suzuki-curacavi-swift-baleno-mantenimiento-preventivo.jpg
+embrague-peugeot-maria-pinto-taller-mecanico-cerca-de-mi-partner.jpg
+correa-distribucion-renault-colina-clio-symbol-cambio-urgente.jpg
+bateria-subaru-lampa-taller-mecanico-cerca-de-mi-awd-sistema.jpg
+suspension-volkswagen-tiltil-gol-vento-amortiguadores-nuevos.jpg
+mecanico-urgencia-fiat-alhue-taller-mecanico-cerca-de-mi-comerciales.jpg
+scanner-chery-calera-de-tango-tiggo-pro-diagnostico-computador.jpg
+frenos-mg-padre-hurtado-taller-mecanico-cerca-de-mi-zs-extender.jpg
+cambio-aceite-changan-penaflor-cx70-alsvin-filtro-aceite-original.jpg
+afinamiento-haval-pirque-taller-mecanico-cerca-de-mi-h6-jolion.jpg
+inspeccion-mitsubishi-san-jose-de-maipo-l200-montero-scanner-4x4.jpg
+diagnostico-nissan-san-pedro-taller-mecanico-cerca-de-mi-sentra-versa.jpg
+mantenimiento-toyota-alhue-hilux-rav4-expertos-japoneses-llanocar.jpg
+mecanico-domicilio-chevrolet-la-reina-taller-mecanico-cerca-de-mi-onix.jpg
+scanner-automotriz-ford-lo-barnechea-territory-explorer-diagnosis.jpg
+frenos-pastillas-honda-vitacura-taller-mecanico-cerca-de-mi-civic.jpg
+cambio-aceite-hyundai-providencia-accent-elantra-mecanico-express.jpg
+afinamiento-motor-kia-las-condes-taller-mecanico-cerca-de-mi-rio.jpg
+inspeccion-pre-compra-mazda-nunoa-cx5-mazda3-peritaje-tecnico.jpg
+diagnostico-electrico-mitsubishi-la-florida-taller-mecanico-cerca-de-mi-asx.jpg
+mantenimiento-kilometraje-nissan-maipu-kicks-navara-pauta-llanocar.jpg
+reparacion-embrague-peugeot-puente-alto-taller-mecanico-cerca-de-mi-3008.jpg
+correa-distribucion-renault-san-bernardo-duster-oroch-mantenimiento.jpg
+servicio-bateria-subaru-la-cisterna-taller-mecanico-cerca-de-mi-forester.jpg
+ajuste-suspension-suzuki-estacion-central-vitara-jimny-expertos.jpg
+mecanico-urgencia-toyota-macul-taller-mecanico-cerca-de-mi-hibrido.jpg
+scanner-multimarca-volkswagen-quilicura-amarok-tiguan-diagnosis-vcds.jpg
+auxilio-mecanico-audi-san-miguel-taller-mecanico-cerca-de-mi-premium.jpg
+revision-tecnica-bmw-huechuraba-serie3-x5-pre-revision-profesional.jpg
+mecanico-24-horas-citroen-recoleta-taller-mecanico-cerca-de-mi-berlingo.jpg
+reparacion-transmision-fiat-quinta-normal-palio-uno-caja-cambios.jpg
+mantencion-preventiva-jeep-independencia-taller-mecanico-cerca-de-mi-wrangler.jpg
+electricidad-automotriz-mercedes-san-joaquin-sprinter-clasea-electronica.jpg
+mecanico-domicilio-mg-san-ramon-taller-mecanico-cerca-de-mi-mg3.jpg
+scanner-motor-opel-la-granja-corsa-mokka-lectura-fallas.jpg
+frenos-pastillas-ssangyong-la-pintana-taller-mecanico-cerca-de-mi-actyon.jpg
+cambio-aceite-volvo-pedro-aguirre-cerda-xc60-v40-sintetico.jpg
+afinamiento-motor-byd-san-pedro-taller-mecanico-cerca-de-mi-yuan.jpg
+inspeccion-compra-chery-alhue-arrizo-iq-revision-total.jpg
+diagnostico-scanner-changan-pirque-taller-mecanico-cerca-de-mi-cs35.jpg
+embrague-y-frenos-dfsk-san-jose-de-maipo-glory-truck-urgente.jpg
+correa-distribucion-great-wall-penaflor-taller-mecanico-cerca-de-mi-poer.jpg
+bateria-automotriz-haval-padre-hurtado-start-stop-reemplazo.jpg
+suspension-y-direccion-jac-melipilla-taller-mecanico-cerca-de-mi-js2.jpg
+mecanico-express-jmc-curacavi-vigus-conway-taller-movil.jpg
+servicio-integral-mahindra-colina-taller-mecanico-cerca-de-mi-pikup.jpg
+mantenimiento-ram-lampa-700-1500-expertos-camionetas.jpg
+mecanico-domicilio-nissan-tiltil-taller-mecanico-cerca-de-mi-24hrs.jpg
+scanner-toyota-calera-de-tango-hibridos-expertos-diagnosis.jpg
+frenos-ford-maria-pinto-taller-mecanico-cerca-de-mi-abs.jpg
+cambio-aceite-kia-isla-de-maipo-filtro-original-llanocar.jpg
+afinamiento-hyundai-el-monte-taller-mecanico-cerca-de-mi-mariposa.jpg
+inspeccion-chevrolet-talagante-scanner-fugas-compresion.jpg
+diagnostico-mazda-paine-taller-mecanico-cerca-de-mi-sensores.jpg
+mantenimiento-suzuki-buin-garantizado-llanocar-profesional.jpg
+reparacion-peugeot-san-pedro-taller-mecanico-cerca-de-mi-diesel.jpg
+correa-distribucion-renault-alhue-clio-kangoo-cambio-kit.jpg
+bateria-subaru-san-jose-de-maipo-taller-mecanico-cerca-de-mi-gel.jpg
+suspension-volkswagen-pirque-gol-saveiro-amortiguacion.jpg
+mecanico-urgencia-fiat-penaflor-taller-mecanico-cerca-de-mi-panne.jpg
+scanner-chery-padre-hurtado-borrar-testigo-check-engine.jpg
+frenos-mg-calera-de-tango-taller-mecanico-cerca-de-mi-pastillas.jpg
+cambio-aceite-changan-tiltil-lubricante-sintetico-express.jpg
+afinamiento-haval-lampa-taller-mecanico-cerca-de-mi-motor.jpg
+inspeccion-mitsubishi-colina-compra-segura-peritaje.jpg
+diagnostico-nissan-curacavi-taller-mecanico-cerca-de-mi-profesional.jpg
+mantenimiento-toyota-melipilla-kilometraje-pauta-oficial.jpg
+mecanico-domicilio-chevrolet-cerro-navia-taller-mecanico-cerca-de-mi.jpg
+scanner-ford-renca-fallas-transmision-diagnosis-motor.jpg
+frenos-honda-cerrillos-taller-mecanico-cerca-de-mi-liquido.jpg
+cambio-aceite-hyundai-lo-espejo-filtro-petroleo-diesel.jpg
+afinamiento-kia-lo-prado-taller-mecanico-cerca-de-mi-inyector.jpg
+inspeccion-mazda-san-joaquin-estado-motor-y-chasis.jpg
+diagnostico-mitsubishi-quinta-normal-taller-mecanico-cerca-de-mi-4x4.jpg
+mantenimiento-nissan-recoleta-aceite-transmision-automatica.jpg
+reparacion-peugeot-independencia-taller-mecanico-cerca-de-mi-tren.jpg
+correa-distribucion-renault-huechuraba-cambio-urgente-kit.jpg
+bateria-subaru-estacion-central-taller-mecanico-cerca-de-mi-bornes.jpg
+suspension-suzuki-la-cisterna-amortiguadores-traseros-nuevos.jpg
+mecanico-urgencia-toyota-san-bernardo-taller-mecanico-cerca-de-mi.jpg
+scanner-volkswagen-puente-alto-airbag-abs-diagnosis.jpg
+frenos-audi-la-florida-taller-mecanico-cerca-de-mi-brembo.jpg
+cambio-aceite-bmw-maipu-aceite-longlife-filtro-original.jpg
+afinamiento-citroen-pudahuel-taller-mecanico-cerca-de-mi-polen.jpg
+inspeccion-fiat-quilicura-mecanico-de-confianza-llanocar.jpg
+diagnostico-jeep-nunoa-taller-mecanico-cerca-de-mi-computador.jpg
+mantenimiento-mercedes-las-condes-service-a-b-expertos.jpg
+reparacion-mg-vitacura-taller-mecanico-cerca-de-mi-postventa.jpg
+correa-distribucion-opel-lo-barnechea-reemplazo-kit-original.jpg
+bateria-ssangyong-la-reina-taller-mecanico-cerca-de-mi-amperaje.jpg
+suspension-volvo-providencia-bieletas-rotulas-bandejas.jpg
+mecanico-domicilio-byd-macul-taller-mecanico-cerca-de-mi-electrico.jpg
+scanner-chery-penalolen-reinicio-mantenimiento-testigos.jpg
+frenos-changan-san-miguel-taller-mecanico-cerca-de-mi-balatas.jpg
+cambio-aceite-dfsk-lo-prado-filtro-habitaculo-express.jpg
+afinamiento-great-wall-cerrillos-taller-mecanico-cerca-de-mi-admision.jpg
+inspeccion-haval-lo-espejo-revision-suspension-motor.jpg
+diagnostico-jac-san-joaquin-taller-mecanico-cerca-de-mi-diesel.jpg
+mantenimiento-jmc-quinta-normal-camioneta-vigus-expertos.jpg
+reparacion-mahindra-recoleta-taller-mecanico-cerca-de-mi-bimasa.jpg
+correa-distribucion-ram-independencia-ajuste-tiempo-motor.jpg
+bateria-chevrolet-huechuraba-taller-mecanico-cerca-de-mi-prueba.jpg
+suspension-ford-estacion-central-alineacion-ruedas-expertos.jpg
+mecanico-urgencia-honda-la-cisterna-taller-mecanico-cerca-de-mi.jpg
+scanner-hyundai-san-bernardo-computador-abordo-diagnosis.jpg
+frenos-kia-maipu-taller-mecanico-cerca-de-mi-emergencia.jpg
+cambio-aceite-mazda-la-florida-filtro-skyactiv-original.jpg
+afinamiento-nissan-puente-alto-taller-mecanico-cerca-de-mi-bujia.jpg
+inspeccion-peugeot-las-condes-fugas-refrigerante-expertos.jpg
+diagnostico-suzuki-nunoa-taller-mecanico-cerca-de-mi-sensores.jpg
+mantenimiento-toyota-vitacura-expertos-japoneses-original.jpg
+reparacion-volkswagen-providencia-taller-mecanico-cerca-de-mi-dsg.jpg
+mecanico-domicilio-chevrolet-maipu-urgente-llanocar-taller.jpg""".strip().split('\n')
+
+print(f"Total nombres: {len(NOMBRES)}")
+
+# =====================================================
+# 1. Actualizar nombres-imagenes-seo.txt
+# =====================================================
+with open('nombres-imagenes-seo.txt', 'w', encoding='utf-8') as f:
+    for n in NOMBRES:
+        f.write(n.strip() + '\n')
+print(f"[1] nombres-imagenes-seo.txt actualizado: {len(NOMBRES)} nombres")
+
+# =====================================================
+# 2. Generar galería con 50 fotos para index.html
+# =====================================================
+def generar_alt(nombre):
+    """Genera un texto alt legible desde el nombre del archivo"""
+    alt = nombre.replace('.jpg', '').replace('-', ' ')
+    return alt.title()
+
+# Tomar 50 nombres distribuidos (cada 4to para variedad)
+fotos_50 = [NOMBRES[i] for i in range(0, min(50, len(NOMBRES)))]
+
+galeria_html = '''<!-- NUEVA SECCIÓN: GALERÍA DE TRABAJOS CON FOTOS REALES -->
+<section id="galeria-de-trabajos" class="gallery-section py-5" style="background: #f8f9fa;">
+  <div class="container">
+    <h2 class="section-title text-center mb-2" style="font-size: 2rem; color: #E87722; font-weight: 800; text-transform: uppercase;">Galería de Nuestros Servicios</h2>
+    <p class="section-subtitle text-center mb-5" style="color: #666;">Trabajos reales realizados por nuestro equipo en todo Santiago. Haz clic en cualquier imagen para ampliarla.</p>
+    <div class="row g-3">
+'''
+
+col_size = 'col-6 col-md-4 col-lg-3'
+for i, foto in enumerate(fotos_50):
+    alt = generar_alt(foto)
+    galeria_html += f'''      <div class="{col_size}">
+        <div class="gallery-item" style="cursor:pointer; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; height: 100%;" onclick="openModal('images/{foto}')" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 25px rgba(232,119,34,0.3)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.1)'">
+          <img src="images/{foto}" alt="{alt}" style="width:100%; height:200px; object-fit:cover; display:block;" loading="lazy">
+        </div>
+      </div>
+'''
+
+galeria_html += '''    </div>
+  </div>
+</section>
+'''
+
+print(f"[2] Galería generada: {len(fotos_50)} fotos")
+
+# =====================================================
+# 3. Reemplazar la sección de galería en index.html
+# =====================================================
+with open('index.html', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# Buscar la sección de galería vieja
+old_start = '<!-- NUEVA SECCIÓN: GALERÍA DE TRABAJOS -->'
+old_end = '<!-- NUEVA SECCIÓN: VÍNCULO A TAPIZADO DE VOLANTES'
+
+start_idx = content.find(old_start)
+end_idx = content.find(old_end)
+
+if start_idx == -1 or end_idx == -1:
+    print("ERROR: No se encontraron las marcas de la galería")
+else:
+    content = content[:start_idx] + galeria_html + '\n\n' + content[end_idx:]
+    with open('index.html', 'w', encoding='utf-8') as f:
+        f.write(content)
+    print(f"[3] index.html actualizado: galería reemplazada ({len(fotos_50)} fotos)")
+
+# =====================================================
+# 4. Verificar
+# =====================================================
+with open('index.html', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# Contar fotos de la lista en index.html
+count = 0
+for nombre in NOMBRES:
+    if f'images/{nombre}' in content:
+        count += 1
+
+print(f"\n[VERIFICACIÓN]")
+print(f"  Fotos de la lista en index.html: {count}")
+print(f"  Fotos en galería nueva: {len(fotos_50)}")
+print(f"  Archivo nombres-imagenes-seo.txt: {len(NOMBRES)} nombres")
