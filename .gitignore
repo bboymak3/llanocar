@@ -1,0 +1,17 @@
+# No incluir otros repos del workspace
+Globalpro/
+Globalprov2/
+repo-analysis/
+.env
+__pycache__/
+*.pyc
+skills/
+download/
+upload/
+ver-ot.json
+worklog.md
+fix_keywords.py
+generate_landing_pages.py
+generate_maestro_v8.py
+vitaminize_comunas.py
+vitaminize_vehicles.py
