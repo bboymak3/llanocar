@@ -1,11 +1,11 @@
 # ===================================================
-# robots.txt - GlobalPro Automotriz
-# https://globalpro.pages.dev
+# robots.txt - LLANOCAR Automotriz
+# https://llanocar.pages.dev
 # ===================================================
 
 # Sitemaps
-Sitemap: https://globalpro.pages.dev/sitemap.xml
-Sitemap: https://mecanico247.com/sitemap.xml
+Sitemap: https://llanocar.pages.dev/sitemap.xml
+Sitemap: https://llanocar.pages.dev/sitemap.xml
 
 # Permitir todo el acceso a los crawlers
 User-agent: *
