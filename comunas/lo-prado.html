@@ -29,8 +29,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <link rel="stylesheet" href="../css/styles.css"/>
-<script src="https://elfsightcdn.com/platform.js" async></script>
-
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -316,12 +314,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transition: transform 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   }
   .btn-massive-wa:hover { transform: scale(1.02); background-color: #1ebc57; color: white; }
-  .btn-small-chat {
-    width: 50px; height: 50px; background-color: #FFC107; color: black;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem; text-decoration: none; flex-shrink: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); border: 2px solid white;
-  }
   .btn-small-chat:hover { background-color: #ffca2c; transform: scale(1.1); }
 
   @media (min-width: 992px) {
@@ -406,19 +398,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     from { transform: translateY(30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
-  .btn-small-chat { animation: pulseChat 2s infinite; }
-  @keyframes pulseChat {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255,193,7,0.7); }
     50% { box-shadow: 0 0 0 10px rgba(255,193,7,0); }
   }
-  #resultado-patente-ia { max-height: 300px; overflow-y: auto; }
-  #resultado-patente-ia .ot-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; margin-bottom: 10px; }
-  #resultado-patente-ia .ot-num { font-weight: 700; color: #E87722; }
-  #resultado-patente-ia .ot-estado { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; font-weight: 600; }
-  #resultado-patente-ia .badge-ok { background: #d4edda; color: #155724; }
-  #resultado-patente-ia .badge-pend { background: #fff3cd; color: #856404; }
-  #resultado-patente-ia .dato { font-size: 0.85rem; margin-bottom: 3px; color: #374151; }
-  #resultado-patente-ia .notas-tec { background: #fffdf5; border-left: 3px solid #ffc800; padding: 6px 8px; border-radius: 4px; margin-top: 6px; font-size: 0.82rem; }
 </style>
 </head>
 <body>
@@ -1260,33 +1241,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<!-- ======================================================================= -->
-<!-- MODAL CHAT IA -->
-<!-- ======================================================================= -->
-<div id="modal-chat-ia" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:10000; align-items:center; justify-content:center; padding:20px;">
-  <div style="background:#fff; border-radius:16px; max-width:480px; width:100%; padding:30px; position:relative; animation: modalSlideIn 0.3s ease-out;">
-    <button onclick="document.getElementById('modal-chat-ia').style.display='none'" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#999;">&times;</button>
-    <div style="text-align:center; margin-bottom:20px;">
-      <div style="width:70px; height:70px; background:linear-gradient(135deg,#FFC107,#FF9800); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; box-shadow:0 4px 15px rgba(255,152,0,0.4);">
-        <i class="fas fa-robot" style="font-size:2rem; color:#fff;"></i>
-      </div>
-      <h3 style="color:#E87722; font-weight:700; margin-bottom:6px;">Consulta tu Vehículo</h3>
-      <p style="color:#666; font-size:0.9rem;">Ingresa tu patente y revisa el historial completo de trabajos, notas del técnico, fechas y más.</p>
-    </div>
-    <form id="form-patente-ia" onsubmit="buscarPatenteIA(event)" style="display:flex; gap:10px;">
-      <input type="text" id="input-patente-ia" placeholder="Ej: ABCD12" required maxlength="10" style="flex:1; padding:14px 18px; border:2px solid #e5e7eb; border-radius:12px; font-size:1.1rem; text-transform:uppercase; outline:none; font-family:inherit;" onfocus="this.style.borderColor='#E87722'" onblur="this.style.borderColor='#e5e7eb'">
-      <button type="submit" style="padding:14px 24px; background:#E87722; color:#fff; border:none; border-radius:12px; font-weight:700; cursor:pointer; font-size:1rem; white-space:nowrap; transition:background 0.2s;" onmouseover="this.style.background='#8b0000'" onmouseout="this.style.background='#E87722'">BUSCAR</button>
-    </form>
-    <div id="resultado-patente-ia" style="margin-top:16px; display:none;"></div>
-    <div style="text-align:center; margin-top:16px;">
-      <a href="https://llm-chat-app-template.estilosgrado33.workers.dev" target="_blank" style="color:#E87722; text-decoration:none; font-size:0.85rem; font-weight:600;">
-        <i class="fas fa-comments"></i> Abrir chat completo con IA
-      </a>
-    </div>
-  </div>
-</div>
 
-<!-- ======================================================================= -->
 <!-- STICKY BOTTOM BAR -->
 <!-- ======================================================================= -->
 <div class="sticky-bottom-bar">
@@ -1296,9 +1251,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <a href="https://wa.me/56933261085?text=Hola%20necesito%20un%20mecanico%20a%20domicilio%20en%20lo%20prado" class="btn-massive-wa" target="_blank">
       <i class="fab fa-whatsapp"></i> WHATSAPP
-    </a>
-    <a href="#" class="btn-small-chat" title="Consulta tu vehículo por patente" onclick="document.getElementById('modal-chat-ia').style.display='flex'; return false;">
-      <i class="fas fa-robot"></i>
     </a>
   </div>
 </div>
@@ -1337,53 +1289,7 @@ gsap.from(".section-title", {
 });
 </script>
 
-<script>
-// Modal Chat IA
-function buscarPatenteIA(e) {
-  e.preventDefault();
-  var pat = document.getElementById('input-patente-ia').value.trim().toUpperCase();
-  if (!pat) return;
-  var res = document.getElementById('resultado-patente-ia');
-  res.style.display = 'block';
-  res.innerHTML = '<div style="text-align:center; padding:20px; color:#999;"><i class="fas fa-spinner fa-spin"></i> Buscando...</div>';
-  fetch('https://llm-chat-app-template.estilosgrado33.workers.dev/api/consultar', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ patente: pat })
-  })
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    if (data.success && data.vehiculo) {
-      var v = data.vehiculo;
-      var html = '<div style="background:#FFF4E8; border-radius:8px; padding:10px; margin-bottom:10px; border-left:3px solid #2563eb;">';
-      html += '<strong style="color:#1e3a8a;">' + v.marca + ' ' + v.modelo + ' (' + (v.anio||'N/A') + ')</strong>';
-      html += '<div style="font-size:0.83rem; color:#1e40af;">Patente: ' + v.patente_placa + ' | Propietario: ' + (v.cliente?.nombre || 'N/A') + '</div>';
-      html += '<div style="font-size:0.83rem; color:#1e40af;">' + v.total_ordenes + ' orden(es) encontrada(s)</div></div>';
-      for (var i = 0; i < v.ordenes.length; i++) {
-        var o = v.ordenes[i];
-        var estadoClass = (o.estado==='Cerrada'||o.estado_trabajo==='Cerrada') ? 'badge-ok' : 'badge-pend';
-        var num = String(o.numero_orden||0).padStart(6,'0');
-        html += '<div class="ot-card">';
-        html += '<div class="ot-num">OT #' + num + ' <span class="ot-estado ' + estadoClass + '">' + (o.estado_trabajo||o.estado||'N/A') + '</span></div>';
-        html += '<div class="dato">Ingreso: ' + (o.fecha_ingreso||'N/A') + '</div>';
-        if (o.fecha_completado) html += '<div class="dato">Cierre: ' + o.fecha_completado + '</div>';
-        html += '</div>';
-      }
-      res.innerHTML = html;
-    } else {
-      res.innerHTML = '<div style="text-align:center; padding:20px; color:#999;">No se encontró información para la patente ' + pat + '</div>';
-    }
-  })
-  .catch(function() {
-    res.innerHTML = '<div style="text-align:center; padding:20px; color:#E87722;">Error al consultar. Intenta nuevamente.</div>';
-  });
-}
 
-// Close modal on outside click
-document.getElementById('modal-chat-ia').addEventListener('click', function(e) {
-  if (e.target === this) this.style.display = 'none';
-});
-</script>
 
 </body>
 </html>
