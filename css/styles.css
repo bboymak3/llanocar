@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- Hero Section --- */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/image1.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/cambio-de-aceite-volkswagen-gol.jpg') no-repeat center center/cover;
     min-height: 90vh;
     display: flex;
     align-items: center;
