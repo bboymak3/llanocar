@@ -19,9 +19,18 @@ archivo_nombres = r'E:\Documents\fogo\fogo.txt'
 
 os.makedirs(carpeta_destino, exist_ok=True)
 
-# Leer nombres del txt
+# Leer nombres del txt (soporta con o sin numeros: "1. nombre.jpg" o "nombre.jpg")
+import re
 with open(archivo_nombres, 'r', encoding='utf-8') as f:
-    nombres = [linea.strip() for linea in f if linea.strip()]
+    nombres = []
+    for linea in f:
+        linea = linea.strip()
+        if not linea:
+            continue
+        # Quitar numero inicial tipo "1. " o "10. "
+        linea = re.sub(r'^\d+\.\s+', '', linea)
+        if linea:
+            nombres.append(linea)
 
 print(f'Nombres cargados: {len(nombres)}')
 
