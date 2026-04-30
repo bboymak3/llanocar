@@ -5,7 +5,6 @@
 
 # Sitemaps
 Sitemap: https://llanocar.pages.dev/sitemap.xml
-Sitemap: https://llanocar.pages.dev/sitemap.xml
 
 # Permitir todo el acceso a los crawlers
 User-agent: *
@@ -16,6 +15,9 @@ Disallow: /css/
 Disallow: /js/
 Disallow: /images/icons/
 Disallow: /assets/
+Disallow: /skills/
+Disallow: /upload/
+Disallow: /download/
 
 # Bloquear bots maliciosos o innecesarios
 User-agent: AhrefsBot
