@@ -643,19 +643,620 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
   }
   </script>
+  <style>
+    /* ========== NEW CONTENT STYLES ========== */
+    .hero-intro-section {
+      background: #121212;
+      padding: 80px 0;
+      color: #fff;
+    }
+    .hero-intro-section h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .hero-intro-section .subtitle {
+      font-size: 1.3rem;
+      color: var(--llanocar-primary);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .hero-intro-section .description {
+      font-size: 1.05rem;
+      color: #ccc;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .highlight-box {
+      border: 2px solid var(--llanocar-primary);
+      border-radius: 12px;
+      padding: 20px;
+      background: rgba(232,119,34,0.08);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+    .highlight-box strong { color: var(--llanocar-primary); }
+
+    .cotizar-btn {
+      display: inline-block;
+      background: var(--llanocar-primary);
+      color: #fff !important;
+      font-weight: 800;
+      font-size: 1.3rem;
+      padding: 14px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      border: none;
+    }
+    .cotizar-btn:hover {
+      background: #C4611A;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(232,119,34,0.4);
+    }
+    .phone-display {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--llanocar-primary);
+      margin-top: 1rem;
+    }
+
+    .experience-section {
+      background: #f8f9fa;
+      padding: 70px 0;
+      border-bottom: 5px solid var(--llanocar-primary);
+    }
+    .experience-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--llanocar-primary);
+      margin-bottom: 0.5rem;
+    }
+    .experience-section .h2-sub {
+      font-size: 1.2rem;
+      color: #666;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .experience-section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    .why-choose-section {
+      background: #121212;
+      padding: 70px 0;
+    }
+    .why-choose-section h2 {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.3s;
+      height: 100%;
+    }
+    .feature-card:hover {
+      background: rgba(232,119,34,0.12);
+      border-color: var(--llanocar-primary);
+      transform: translateY(-5px);
+    }
+    .feature-card .feature-icon {
+      width: 70px; height: 70px;
+      background: rgba(232,119,34,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 15px auto;
+    }
+    .feature-card .feature-icon i { font-size: 1.8rem; color: var(--llanocar-primary); }
+    .feature-card h5 { color: #fff; font-weight: 700; margin-bottom: 10px; font-size: 1.05rem; }
+    .feature-card p { color: #aaa; font-size: 0.9rem; line-height: 1.6; margin: 0; }
+
+    .services-section {
+      background: #f8f9fa;
+      padding: 70px 0;
+      border-bottom: 5px solid var(--llanocar-primary);
+    }
+    .services-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #333;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .service-card {
+      background: #fff;
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s;
+      height: 100%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .service-card .service-icon-wrap {
+      background: linear-gradient(135deg, var(--llanocar-primary), #C4611A);
+      padding: 25px;
+      text-align: center;
+    }
+    .service-card .service-icon-wrap i { font-size: 2.5rem; color: #fff; }
+    .service-card .service-body { padding: 20px; text-align: center; }
+    .service-card .service-body h5 { font-weight: 700; color: #333; margin-bottom: 10px; }
+    .service-card .service-body p { color: #666; font-size: 0.9rem; margin-bottom: 15px; }
+    .service-card .btn-ver-mas {
+      background: var(--llanocar-primary);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 8px 24px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .service-card .btn-ver-mas:hover { background: #C4611A; color: #fff; }
+
+    .llanocar-modal-header {
+      background: linear-gradient(135deg, var(--llanocar-primary), #C4611A) !important;
+      color: #fff !important;
+      border-bottom: none !important;
+    }
+    .llanocar-modal-header .btn-close { filter: brightness(0) invert(1); }
+    .llanocar-modal-header .modal-title { font-weight: 800; font-size: 1.3rem; }
+    .llanocar-modal-body p { font-size: 1rem; line-height: 1.8; color: #444; margin-bottom: 1rem; text-align: justify; }
+    .llanocar-modal-footer {
+      border-top: 2px solid var(--llanocar-primary);
+      background: #f8f9fa;
+    }
+
+    .vehicle-card-section {
+      background: #121212;
+      padding: 70px 0;
+    }
+    .vehicle-card-section h2 {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .vehicle-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s;
+      height: 100%;
+    }
+    .vehicle-card:hover {
+      border-color: var(--llanocar-primary);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(232,119,34,0.2);
+    }
+    .vehicle-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.05);
+      padding: 15px;
+    }
+    .vehicle-card .v-card-body { padding: 15px; }
+    .vehicle-card .v-card-body h6 { color: #fff; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+    .vehicle-card .v-card-body p { color: #aaa; font-size: 0.85rem; line-height: 1.5; margin-bottom: 12px; }
+    .vehicle-card .v-card-body a {
+      color: var(--llanocar-primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .vehicle-card .v-card-body a:hover { color: #FFB347; }
+
+    .distributed-images-grid {
+      padding: 60px 0;
+      background: #fff;
+    }
+    .distributed-images-grid h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #333;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .distributed-img-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+      margin-bottom: 20px;
+    }
+    .distributed-img-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .distributed-img-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .distributed-img-item .img-caption {
+      padding: 10px;
+      font-size: 0.8rem;
+      color: #555;
+      text-align: center;
+      background: #f8f9fa;
+    }
+
+    .gallery-section {
+      background: #f8f9fa;
+      padding: 70px 0;
+      border-bottom: 5px solid var(--llanocar-primary);
+    }
+    .gallery-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #333;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 991px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 767px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      aspect-ratio: 4/3;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-item::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover::after { opacity: 1; }
+    .gallery-hidden { display: none; }
+    .gallery-hidden.show { display: block; }
+
+    .trust-section {
+      background: linear-gradient(135deg, #0d5e0d, #1a8a1a);
+      padding: 70px 0;
+      color: #fff;
+      text-align: center;
+    }
+    .trust-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .trust-section p {
+      font-size: 1.1rem;
+      color: #d0f0d0;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .diesel-section {
+      background: #121212;
+      padding: 70px 0;
+      color: #fff;
+    }
+    .diesel-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #fff;
+    }
+    .diesel-symptom-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s;
+      height: 100%;
+    }
+    .diesel-symptom-card:hover {
+      border-color: var(--llanocar-primary);
+      background: rgba(232,119,34,0.08);
+    }
+    .diesel-symptom-card i { font-size: 2rem; color: var(--llanocar-primary); margin-bottom: 10px; }
+    .diesel-symptom-card h6 { color: #fff; font-weight: 700; margin-bottom: 8px; }
+    .diesel-symptom-card p { color: #aaa; font-size: 0.85rem; margin: 0; }
+    .diesel-service-box {
+      background: rgba(232,119,34,0.1);
+      border: 2px solid var(--llanocar-primary);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s;
+      height: 100%;
+    }
+    .diesel-service-box:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(232,119,34,0.2); }
+    .diesel-service-box i { font-size: 2rem; color: var(--llanocar-primary); margin-bottom: 10px; }
+    .diesel-service-box h5 { color: #fff; font-weight: 700; margin-bottom: 10px; }
+    .diesel-service-box p { color: #ccc; font-size: 0.9rem; margin: 0; }
+
+    .contact-form-section {
+      background: #f8f9fa;
+      padding: 70px 0;
+      border-bottom: 5px solid var(--llanocar-primary);
+    }
+    .contact-form-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #333;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .contact-form-section .form-control {
+      border-radius: 10px;
+      border: 2px solid #e0e0e0;
+      padding: 12px 16px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .contact-form-section .form-control:focus {
+      border-color: var(--llanocar-primary);
+      box-shadow: 0 0 0 0.2rem rgba(232,119,34,0.15);
+    }
+
+    .internal-links-section {
+      background: #fff;
+      padding: 60px 0;
+      border-bottom: 5px solid var(--llanocar-primary);
+    }
+    .internal-links-section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #333;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .internal-links-section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    .internal-links-section a {
+      color: var(--llanocar-primary);
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .internal-links-section a:hover {
+      color: #C4611A;
+      text-decoration: underline;
+    }
+
+    .volante-section {
+      background: #121212;
+      padding: 70px 0;
+      color: #fff;
+    }
+    .volante-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+    .volante-section p {
+      font-size: 1.05rem;
+      color: #ccc;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    .zonas-section {
+      background: #fff;
+      padding: 60px 0;
+    }
+    .zonas-section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #333;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .zonas-section .comuna-link {
+      display: inline-block;
+      margin: 4px 6px;
+      padding: 6px 14px;
+      background: #f0f0f0;
+      border-radius: 20px;
+      color: #333;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .zonas-section .comuna-link:hover {
+      background: var(--llanocar-primary);
+      color: #fff;
+    }
+    .zonas-section .comuna-link.comuna-destacada {
+      background: var(--llanocar-primary);
+      color: #fff;
+    }
+    }
+    .hero-intro-section h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .hero-intro-section .subtitle {
+      font-size: 1.3rem;
+      color: var(--llanocar-primary);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .hero-intro-section .description {
+      font-size: 1.05rem;
+      color: #ccc;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .highlight-box {
+      border: 2px solid var(--llanocar-primary);
+      border-radius: 12px;
+      padding: 20px;
+      background: rgba(232,119,34,0.08);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+    .highlight-box strong { color: var(--llanocar-primary); }
+
+    .cotizar-btn {
+      display: inline-block;
+      background: var(--llanocar-primary);
+      color: #fff !important;
+      font-weight: 800;
+      font-size: 1.3rem;
+      padding: 14px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      border: none;
+    }
+    .cotizar-btn:hover {
+      background: #C4611A;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(232,119,34,0.4);
+    }
+    .phone-display {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--llanocar-primary);
+      margin-top: 1rem;
+    }
+
+    .experience-section {
+      background: #f8f9fa;
+      padding: 70px 0;
+      border-bottom: 5px solid var(--llanocar-primary);
+    }
+    .experience-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--llanocar-primary);
+      margin-bottom: 0.5rem;
+    }
+    .experience-section .h2-sub {
+      font-size: 1.2rem;
+      color: #666;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .experience-section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    .why-choose-section {
+      background: #121212;
+      padding: 70px 0;
+    }
+    .why-choose-section h2 {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.3s;
+      height: 100%;
+    }
+    .feature-card:hover {
+      background: rgba(232,119,34,0.12);
+      border-color: var(--llanocar-primary);
+      transform: translateY(-5px);
+    }
+    .feature-card .feature-icon {
+      width: 70px; height: 70px;
+      background: rgba(232,119,34,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 15px auto;
+    }
+    .feature-card .feature-icon i { font-size: 1.8rem; color: var(--llanocar-primary); }
+    .feature-card h5 { color: #fff; font-weight: 700; margin-bottom: 10px; font-size: 1.05rem; }
+    .feature-card p { color: #aaa; font-size: 0.9rem; line-height: 1.6; margin: 0; }
+
+    .services-section {
+      background: #f8f9fa;
+      padding: 70px 0;
+      border-bottom: 5px solid var(--llanocar-primary);
+    }
+    .services-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #333;
+      text-align: center;
+  </style>
 </head>
+
 <body>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK35S8FG"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK35S8FG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- BANNER -->
 <!-- BANNER FULL WIDTH LLANOCAR -->
 <div style="width:100%;margin:0;padding:0;overflow:hidden;">
   <img src="images/diagnostico-electrico-mitsubishi-penalolen-taller-mecanico-cerca-de-millanocar.jpg" alt="LLANOCAR Mecánico a Domicilio en Santiago Chile - Diagnóstico Eléctrico Automotriz Profesional" style="display:block;width:100%;height:auto;">
 </div>
-
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container nav-container">
@@ -781,364 +1382,1547 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </nav>
 
-<!-- CONTENIDO PRINCIPAL -->
-
-<!-- ========== SECCIÓN 1: MECÁNICO A DOMICILIO ========== -->
-<section id="mecanico-domicilio-seo" class="seo-section">
+<!-- ========== A. HERO INTRO SECTION ========== -->
+<section id="inicio" class="hero-intro-section">
   <div class="container">
-    <h1 class="seo-h1"><i class="fas fa-tools me-2"></i>Mecánico a Domicilio en Santiago — LLANOCAR 24/7</h1>
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="seo-text">
-          <p>En <strong class="seo-highlight">LLANOCAR</strong> entendemos que tu tiempo es valioso y que una falla mecánica inesperada puede arruinarte el día completo. Por eso ofrecemos el <strong>servicio de mecánico a domicilio en Santiago</strong> más completo y confiable de la Región Metropolitana, disponible las 24 horas del día, los 7 días de la semana. No importa si estás en tu casa, en la oficina o varado en plena autopista: nuestro equipo de técnicos certificados llega hasta tu ubicación con herramientas profesionales y repuestos de primera calidad para resolver cualquier problema mecánico en el acto.</p>
-          <p>Contamos con más de 5 años de experiencia atendiendo a miles de clientes en comunas como <strong>Maipú, Pudahuel, Estación Central, La Florida, Puente Alto, Las Condes, Providencia, Ñuñoa, San Bernardo</strong> y prácticamente toda la zona urbana y rural de Santiago. Nuestros mecánicos son especialistas en marcas nacionales, asiáticas, europeas y americanas, lo que significa que podemos diagnosticar y reparar tu vehículo sin importar la marca o modelo que tengas.</p>
-          <p>El proceso es simple: nos contactas por WhatsApp o llamada telefónica, nos explicas la situación, te damos un presupuesto preliminar sin compromiso y coordinamos la visita en el horario que más te convenga. Trabajamos con <strong>Transbank inalámbrico</strong> para que puedas pagar de forma segura y cómoda. Además, todas nuestras reparaciones incluyen <strong>garantía por escrito</strong>, porque confiamos plenamente en la calidad de nuestro trabajo. Ya sea que necesites una mantención rutinaria, un diagnóstico de falla o una reparación de emergencia, LLANOCAR es tu aliado mecánico de confianza en Santiago.</p>
-          <p>Olvídate de hacer filas interminables en el taller, de tener que coordinar traslados costosos con grúas y de perder jornadas completas esperando que tu auto esté listo. Con LLANOCAR, el taller se desplaza a tu ubicación. Nuestro servicio de mecánico a domicilio cubre desde el <strong>cambio de aceite y filtros</strong> hasta intervenciones más complejas como <strong>reparación de embrague, cambio de correa de distribución, diagnóstico eléctrico computarizado</strong> y mucho más. Cada intervención la realizamos con los más altos estándares de calidad, utilizando repuestos originales o de equivalencia certificada para asegurar la durabilidad de cada reparación.</p>
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h1>¿Buscas un Mecánico de Confianza para el Mantenimiento y Reparación de tu Vehículo?</h1>
+        <div class="subtitle">Servicios Mecánicos Multimarca con Atención Personalizada</div>
+        <p class="description">Somos técnicos expertos. Aquí nuestra atención es cálida y te explicamos todo en lenguaje simple. Con más de 30 años de experiencia, en LLANOCAR sabemos lo que tu vehículo necesita para rendir al máximo.</p>
+        <div class="highlight-box">
+          <i class="fas fa-truck me-2" style="color:var(--llanocar-primary);"></i>
+          <strong>Servicio de Entrega y Recepción a Domicilio</strong> en todo Santiago y <strong>SIN COSTO</strong> para las comunas de <strong>San Miguel, San Joaquín, La Florida, La Cisterna, La Granja y Santiago Centro</strong>.
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card shadow-sm border-0 p-4" style="border-radius:15px; border-left:5px solid var(--llanocar-primary)!important;">
-          <h5 class="fw-bold text-primary mb-3"><i class="fas fa-phone-alt me-2"></i>Contacta a LLANOCAR</h5>
-          <p class="small text-muted">Estamos disponibles de lunes a sábado de 09:00 a 19:30 hrs. Emergencias las 24 horas.</p>
-          <a href="tel:tel:933261085" class="btn btn-primary w-100 mb-2"><i class="fas fa-phone-alt me-2"></i>+56 9 3326 1085</a>
-          <a href="https://wa.me/56933261085?text=Hola%20LLANOCAR%20necesito%20un%20mecánico%20a%20domicilio" class="btn w-100" style="background:#25D366;color:white;border:none;" target="_blank"><i class="fab fa-whatsapp me-2"></i>WhatsApp Ahora</a>
-          <hr>
-          <ul class="list-unstyled small mt-3">
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Técnicos certificados</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Repuestos originales</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Garantía por escrito</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Pago con Transbank</li>
-            <li><i class="fas fa-check-circle text-primary me-2"></i>Toda la Región Metropolitana</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECCIÓN 2: SCANNER AUTOMOTRIZ ========== -->
-<section class="seo-section" style="background:#fff;">
-  <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-microchip me-2"></i>Scanner Automotriz a Domicilio — Diagnóstico Computarizado</h2>
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="seo-text">
-          <p>El <strong class="seo-highlight">scanner automotriz</strong> es la herramienta fundamental para cualquier diagnóstico moderno. En LLANOCAR contamos con <strong>scanners de última generación multimarca</strong> que nos permiten conectarnos a la computadora de tu vehículo y leer los códigos de falla almacenados en cada uno de los módulos electrónicos: motor, transmisión, ABS, airbag, climatización, dirección asistida y más. Este diagnóstico computarizado a domicilio te ahorra tiempo y dinero, ya que identificamos la raíz del problema sin tener que desarmar componentes a ciegas.</p>
-          <p>Cuando se enciende la luz del <strong>check engine</strong> en tu tablero, o cuando notas que tu auto no responde como antes —pierde potencia, consume más bencina, presenta vibraciones o simplemente se siente diferente—, es momento de realizar un escaneo completo. Nuestros técnicos se desplazan a tu ubicación en Santiago con equipos de diagnóstico profesionales que cubren las marcas más populares del mercado chileno: <strong>Chevrolet, Toyota, Nissan, Hyundai, Kia, Ford, Mazda, Renault, Suzuki, Peugeot, Volkswagen, BMW, Mercedes-Benz, Mitsubishi</strong> y muchas más.</p>
-          <p>El servicio incluye la lectura completa de códigos de falla (DTCs), la visualización en tiempo real de sensores y parámetros del motor (RPM, temperatura, flujo de aire, avance de encendido, oxígeno, entre otros), pruebas de sistemas específicos y un informe detallado con las recomendaciones de reparación. Una vez identificado el problema, te entregamos un presupuesto transparente con los costos exactos de repuestos y mano de obra para que tomes la mejor decisión. Si apruebas la reparación, la realizamos en el mismo acto a domicilio. En LLANOCAR creemos que un diagnóstico preciso es el primer paso hacia una reparación exitosa y duradera.</p>
-          <p>Nuestros scanners también nos permiten realizar <strong>borrado de códigos de falla</strong>, <strong>reseteo de mantenciones</strong> (reseteo de luz de servicio), <strong>programación de llaves</strong> en algunos modelos y <strong>adaptación de componentes nuevos</strong> como sensores de oxígeno, bobinas de encendido y actuadores varios. No dejes que una falla electrónica te tome desprevenido: agenda tu scanner a domicilio con LLANOCAR y recupera la tranquilidad de manejar un auto diagnosticado al 100%.</p>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card shadow-sm border-0 p-4" style="border-radius:15px; background:linear-gradient(135deg, #1a1a2e, #16213e); color:white;">
-          <h5 class="fw-bold mb-3" style="color:#FFB800;"><i class="fas fa-laptop-code me-2"></i>¿Qué detecta nuestro scanner?</h5>
-          <ul class="list-unstyled small">
-            <li class="mb-2"><i class="fas fa-caret-right me-2" style="color:#FFB800;"></i>Códigos de falla del motor (check engine)</li>
-            <li class="mb-2"><i class="fas fa-caret-right me-2" style="color:#FFB800;"></i>Fallas en sistema ABS y frenos</li>
-            <li class="mb-2"><i class="fas fa-caret-right me-2" style="color:#FFB800;"></i>Problemas de airbag y seguridad</li>
-            <li class="mb-2"><i class="fas fa-caret-right me-2" style="color:#FFB800;"></i>Sistema de transmisión automática</li>
-            <li class="mb-2"><i class="fas fa-caret-right me-2" style="color:#FFB800;"></i>Sensor de oxígeno y emisiones</li>
-            <li class="mb-2"><i class="fas fa-caret-right me-2" style="color:#FFB800;"></i>Bobinas, bujías y sistema de encendido</li>
-            <li class="mb-2"><i class="fas fa-caret-right me-2" style="color:#FFB800;"></i>Sistema de inyección electrónica</li>
-            <li class="mb-2"><i class="fas fa-caret-right me-2" style="color:#FFB800;"></i>Aire acondicionado y climatización</li>
-            <li class="mb-2"><i class="fas fa-caret-right me-2" style="color:#FFB800;"></i>Panel de instrumentos y kilometraje</li>
-            <li><i class="fas fa-caret-right me-2" style="color:#FFB800;"></i>Red CAN y módulos electrónicos</li>
-          </ul>
-          <a href="https://wa.me/56933261085?text=Hola%20LLANOCAR%20necesito%20un%20scanner%20automotriz%20a%20domicilio" class="btn w-100 mt-3" style="background:#FFB800;color:#1a1a2e;border:none;font-weight:700;" target="_blank"><i class="fab fa-whatsapp me-2"></i>Agendar Scanner</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECCIÓN 3: CAMBIO DE FRENOS / PASTILLAS ========== -->
-<section class="seo-section">
-  <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-compact-disc me-2"></i>Cambio de Frenos y Pastillas a Domicilio en Santiago</h2>
-    <div class="seo-text">
-      <p>El <strong class="seo-highlight">sistema de frenos</strong> es el componente más crítico de seguridad de tu vehículo. En LLANOCAR realizamos el <strong>cambio de pastillas de freno</strong>, <strong>cambio de discos de freno</strong> y la revisión completa del sistema hidráulico directamente en tu domicilio. Nuestros técnicos evalúan el estado de pastillas, discos, latas, cilindros, mangueras y líquido de frenos para garantizar que tu auto detenga con precisión y seguridad en cualquier condición de camino.</p>
-      <p>¿Sabías que las pastillas de freno desgastadas pueden causar daños irreversibles en los discos, incrementando significativamente el costo de reparación? Por eso recomendamos una inspección visual cada 10.000 km y un cambio preventivo antes de que el material de fricción llegue al límite mínimo. Los síntomas de frenos desgastados incluyen: chirrido al frenar, vibración en el volante, pedal esponjoso o bajo, y la luz de frenos encendida en el tablero. Si presentas alguno de estos síntomas, no esperes más: LLANOCAR llega a tu ubicación con <strong>pastillas y discos de las mejores marcas</strong> como Bosch, Brembo, ATE y TRW, todas con certificación de calidad europea.</p>
-      <p>Nuestro servicio de frenos a domicilio cubre vehículos livianos, SUVs, camionetas y vans. Realizamos el <strong>cambio de pastillas delanteras y traseras</strong>, rectificación o cambio de discos según su estado, purga del sistema hidráulico y recambio de líquido de frenos DOT 4 cuando corresponde. Todo el trabajo se realiza con herramientas profesionales y bajo protocolos estrictos que garantizan el correcto torque de apriete y el asentamiento adecuado de los componentes nuevos. Al finalizar, te entregamos un informe técnico con el estado general de tus frenos y recomendaciones de mantenimiento futuro.</p>
-      <p>En LLANOCAR entendemos que manejar con frenos en mal estado es un riesgo innecesario para ti y tu familia. Por eso ofrecemos un servicio <strong>rápido, profesional y garantizado</strong>. No necesitas llevar tu auto al taller ni esperar días para una cita agendada. Contáctanos por WhatsApp, cuéntanos tu modelo de vehículo y te daremos un presupuesto inmediato para el cambio de frenos a domicilio.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECCIÓN 4: CAMBIO DE ACEITE ========== -->
-<section class="seo-section" style="background:#fff;">
-  <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-oil-can me-2"></i>Cambio de Aceite a Domicilio — Mantención Rápida y Garantizada</h2>
-    <div class="seo-text">
-      <p>El <strong class="seo-highlight">cambio de aceite</strong> es la mantención más importante y frecuente que necesita tu vehículo. En LLANOCAR realizamos este servicio directamente en tu domicilio, ya sea en tu casa, oficina o estacionamiento. Utilizamos aceites sintéticos, semisintéticos y minerales de las mejores marcas del mercado — <strong>Mobil 1, Castrol EDGE, Shell Helix, Valvoline</strong> — junto con filtros de aceite originales o de equivalencia certificada para cada marca y modelo de vehículo.</p>
-      <p>¿Cuándo debes cambiar el aceite de tu motor? La respuesta depende del tipo de aceite y las condiciones de uso. Con aceite <strong>sintético</strong>, el intervalo recomendado es cada 10.000 a 15.000 km o 12 meses. Con aceite <strong>semisintético</strong>, cada 7.500 km. Con aceite <strong>mineral</strong>, cada 5.000 km. Sin embargo, si manejas frecuentemente en tráfico denso, hacemos trayectos cortos, o circulas por zonas polvorientas, recomendamos acortar estos intervalos para proteger mejor tu motor. Nuestros técnicos te asesorarán sobre el tipo de aceite ideal según las especificaciones del fabricante de tu vehículo (API SN/SP, ACEA C3, viscosity 5W-30, 10W-40, etc.).</p>
-      <p>El servicio completo de cambio de aceite a domicilio incluye: drenaje del aceite usado, reemplazo del filtro de aceite, llenado con aceite nuevo de la viscosidad y especificación correcta, verificación de niveles (líquido refrigerante, líquido de frenos, líquido de dirección hidráulica), inspección visual de mangueras y correas, y reseteo del contador de mantención en la computadora del vehículo. Todo en approximately 30 a 45 minutos, sin que tengas que moverte de tu ubicación.</p>
-      <p>El aceite usado es recolectado y eliminado de forma ecológica mediante empresas certificadas, cumpliendo con la normativa ambiental chilena. En LLANOCAR nos comprometemos con el medio ambiente y con la calidad de servicio. Agenda tu cambio de aceite por WhatsApp y recibe tu vehículo mantenido sin complicaciones.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECCIÓN 5: AFINAMIENTO DE MOTOR ========== -->
-<section class="seo-section">
-  <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-cogs me-2"></i>Afinamiento de Motor — Recupera la Potencia y Eficiencia de Tu Auto</h2>
-    <div class="seo-text">
-      <p>El <strong class="seo-highlight">afinamiento de motor</strong> es un servicio especializado que consiste en la revisión, calibración y reemplazo de los componentes clave del sistema de encendido y alimentación para restablecer el rendimiento óptimo del motor. En LLANOCAR realizamos afinamientos completos a domicilio con herramientas de diagnóstico computarizado y equipos de precisión que nos permiten dejar tu motor funcionando como recién salido de fábrica.</p>
-      <p>Un afinamiento profesional incluye el <strong>reemplazo de bujías</strong> (con el tipo y separación correcta para tu motor), la <strong>revisión y reemplazo de cables de bujía y bobinas de encendido</strong>, la <strong>limpieza de inyectores de combustible</strong>, la <strong>revisión del sistema de admisión de aire</strong> (filtro de aire, mariposa, sensor MAF), la <strong>verificación de sincronización de válvulas</strong> y el <strong>escaneo computarizado</strong> para confirmar que todos los parámetros del motor están dentro de los rangos especificados por el fabricante. También ajustamos las revoluciones de ralentí (RPM) y verificamos el avance de encendido cuando aplica.</p>
-      <p>¿Cuándo es momento de un afinamiento? Los signos más comunes son: pérdida de potencia, mayor consumo de combustible, dificultad para arrancar en frío, marcha irregular o titubeo al acelerar, olor a gasolina sin quemar, y falla en la prueba de emisiones (revisión técnica). Si presentas alguno de estos síntomas, un afinamiento de motor profesional puede resolver el problema y devolverle la vitalidad a tu vehículo.</p>
-      <p>En LLANOCAR nuestros técnicos son expertos en motores a gasolina y diésel de todas las marcas. Utilizamos bujías de marcas premium como NGK, Denso y Champion, cables de alta calidad y limpiadores de inyectores profesionales. Cada afinamiento incluye una prueba en ruta post-servicio para verificar que el motor responde correctamente bajo condiciones reales de manejo. Confía en LLANOCAR para el afinamiento de motor de tu vehículo.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECCIÓN 6: INSPECCIÓN PRE COMPRA ========== -->
-<section class="seo-section" style="background:#fff;">
-  <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-search-dollar me-2"></i>Inspección Pre Compra de Vehículos — Peritaje Automotriz Profesional</h2>
-    <div class="seo-text">
-      <p>Comprar un auto usado es una de las decisiones financieras más importantes y, si no se hace correctamente, puede convertirse en una pesadilla de reparaciones costosas. En <strong class="seo-highlight">LLANOCAR</strong> ofrecemos un <strong>servicio de inspección pre compra profesional</strong> que te da la tranquilidad de saber exactamente qué estado real tiene el vehículo que quieres adquirir, antes de firmar cualquier compromiso.</p>
-      <p>Nuestra inspección pre compra es una revisión mecánica integral de más de 50 puntos que cubre todos los sistemas críticos del vehículo: <strong>motor y transmisión</strong> (prueba de compresión, revisión de fugas de aceite y refrigerante, estado de correas, prueba de manejo), <strong>sistema eléctrico</strong> (escaneo computarizado completo, batería, alternador, arranque), <strong>carrocería y chasis</strong> (verificación de accidentes con detector de pintura, revisión de estructura, estado de suspensiones y tren delantero), <strong>frenos</strong> (discos, pastillas, latas, ABS), <strong>neumáticos</strong> (estado, alineación, presión), <strong>interior</strong> (aire acondicionado, tablero, computadora) y <strong>documentación</strong> (verificación de multas, revisión técnica vigente, padrones). Al finalizar, recibes un informe detallado con fotos, diagnóstico y valoración del vehículo.</p>
-      <p>El servicio se realiza en el lugar donde se encuentra el vehículo (concesionario, particular, patio de autos) y toma aproximadamente 60 a 90 minutos. Te acompañamos durante todo el proceso y te explicamos cada hallazgo en términos claros para que puedas negociar el precio o tomar una decisión informada. Muchos de nuestros clientes han evitado compras desastrosas gracias a nuestra inspección, ahorrándose millones de pesos en reparaciones no visibles a simple vista.</p>
-      <p>En LLANOCAR contamos con <strong>detectores de espesor de pintura profesionales</strong>, <strong>scanner automotriz multimarca</strong>, <strong>medidor de compresión</strong> y herramientas especializadas para evaluar cada componente. No compres un auto a ciegas: agenda tu inspección pre compra con LLANOCAR y toma la mejor decisión de compra.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECCIÓN 7: DIAGNÓSTICO ELÉCTRICO ========== -->
-<section class="seo-section">
-  <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-bolt me-2"></i>Diagnóstico Eléctrico Automotriz — Solución a Fallas Eléctricas</h2>
-    <div class="seo-text">
-      <p>Los <strong class="seo-highlight">sistemas eléctricos</strong> de los vehículos modernos son cada vez más complejos, con redes de módulos computacionales, sensores, actuadores y arneses que interconectan prácticamente todas las funciones del auto. Una falla eléctrica mal diagnosticada puede generar costosas reparaciones innecesarias. En LLANOCAR contamos con <strong>técnicos electricistas automotrices especializados</strong> y equipos de diagnóstico avanzados para identificar y resolver cualquier problema eléctrico en tu vehículo.</p>
-      <p>Nuestro servicio de diagnóstico eléctrico a domicilio cubre: <strong>baterías y sistemas de carga</strong> (medición de carga y descarga, prueba de alternador, verificación de regulador de voltaje), <strong>sistema de arranque</strong> (motor de arranque, solenoide, llave de contacto), <strong>instalación eléctrica</strong> (cortocircuitos, fallas en arneses, conexiones oxidadas, consumo de batería en reposo), <strong>luces y señalización</strong> (faros, balizas, stop, luces de emergencia, iluminación interior), <strong>instrumentación</strong> (tablero, sensores, indicadores de falla), <strong>accesorios eléctricos</strong> (ventilación, limpiaparabrisas, levantavidrios, espejos eléctricos, cierre centralizado) y <strong>systemas de seguridad</strong> (alarmas, inmovilizadores, GPS).</p>
-      <p>Utilizamos <strong>multímetros digitales de alta precisión</strong>, <strong>osciloscopios automotrices</strong>, <strong>scanners de diagnóstico</strong> con acceso a los módulos eléctricos del vehículo, y <strong>cámaras térmicas</strong> para detectar puntos calientes en conexiones defectuosas. Cada diagnóstico incluye la identificación precisa de la falla, un presupuesto transparente para la reparación y la ejecución inmediata del fix si el cliente lo aprueba. Reemplazamos cables, fusibles, relés, conectores, sensores, motores eléctricos y cualquier componente defectuoso con repuestos de calidad garantizada.</p>
-      <p>Si tu auto presenta síntomas como: <strong>batería que se descarga sin razón, fusibles que se queman repetidamente, luces que fallan intermitentemente, tablero con indicadores erráticos, accesorios que no funcionan, o consumo de batería en reposo</strong> — no lo ignores. Una falla eléctrica puede dejar varado en cualquier momento y, en el peor de los casos, provocar un incendio del vehículo. LLANOCAR resuelve problemas eléctricos a domicilio en toda Santiago.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECCIÓN 8: MANTENIMIENTO POR KILOMETRAJE ========== -->
-<section class="seo-section" style="background:#fff;">
-  <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-tachometer-alt me-2"></i>Mantenimiento por Kilometraje — Pautas de Mantención Oficial</h2>
-    <div class="seo-text">
-      <p>Cada fabricante establece una <strong class="seo-highlight">pauta de mantención por kilometraje</strong> específica para cada modelo de vehículo. Estas pautas definen los servicios que deben realizarse a intervalos regulares (generalmente cada 10.000, 20.000, 30.000, 40.000, 50.000, 60.000 km y así sucesivamente) para mantener la garantía del vehículo y asegurar su funcionamiento óptimo a lo largo de su vida útil. En LLANOCAR ofrecemos el <strong>servicio de mantenimiento por kilometraje a domicilio</strong>, siguiendo exactamente las especificaciones del fabricante de tu auto.</p>
-      <p>¿Qué incluye una mantención por kilometraje? Depende del intervalo, pero generalmente cubre: cambio de aceite y filtro de aceite, reemplazo de filtro de aire, filtro de habitáculo y filtro de combustible, revisión de pastillas y discos de freno, inspección de correas y mangueras, verificación de niveles de líquidos (refrigerante, frenos, dirección, limpiaparabrisas), revisión de suspensiones y tren delantero, diagnóstico con scanner para verificar que no haya códigos de falla, calibración de presión de neumáticos, lubricación de bisagras y cerraduras, y reseteo del contador de mantención. En intervalos mayores (40.000, 60.000 km), se agregan servicios como <strong>cambio de bujías, reemplazo de líquido de frenos, cambio de correa de distribución, servicio de transmisión automática y limpieza del sistema de enfriamiento</strong>.</p>
-      <p>Seguir la pauta de mantención del fabricante no solo protege tu inversión, sino que <strong>previene averías costosas</strong>, mejora el rendimiento del combustible, extiende la vida útil del motor y mantiene el valor de reventa de tu vehículo. Un auto con historial de mantenciones al día vale significativamente más en el mercado de usados que uno sin registro de mantenimiento.</p>
-      <p>En LLANOCAR registramos cada mantención realizada, te entregamos un comprobante detallado de los servicios ejecutados y los repuestos utilizados, y te recordamos automáticamente cuándo toca el próximo servicio según el kilometraje o la fecha. Así nunca más olvidarás una mantención importante. Llámanos o escríbenos por WhatsApp con la patente, marca y modelo de tu vehículo, y te indicaremos la pauta de mantención correspondiente con un presupuesto sin compromiso.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECCIÓN 9: REPARACIÓN DE EMBRAGUE ========== -->
-<section class="seo-section">
-  <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-cog me-2"></i>Reparación de Embrague — Kit de Embrague y Transmisión Manual</h2>
-    <div class="seo-text">
-      <p>El <strong class="seo-highlight">embrague</strong> es el componente encargado de conectar y desconectar el motor de la transmisión en vehículos con caja de cambios manual. Cuando el embrague se desgasta o falla, experimentas síntomas como: <strong>patinaje</strong> (el motor sube de RPM pero el auto no acelera), <strong>dureza al pisar el pedal</strong>, <strong>rugido al cambiar de velocidad</strong>, <strong>vibración al soltar el pedal</strong> o <strong>imposibilidad de engranar cambios</strong>. En LLANOCAR realizamos el diagnóstico y <strong>reparación de embrague a domicilio</strong> con repuestos de primera calidad.</p>
-      <p>El servicio de reparación de embrague incluye el <strong>reemplazo del kit completo</strong>: disco de embrague, plato de presión y cojinete o balero de empuje (throw-out bearing). Además, aprovechamos para inspeccionar y reemplazar si es necesario el <strong>volante motor o flywheel</strong> (si presenta surcos o quemaduras, lo rectificamos o cambiamos), los <strong>retenes de aceite del motor y caja de cambios</strong> (para evitar que aceite nuevo contamine el disco de embrague), y las <strong>bujías</strong> (ya que estamos en esa zona del motor). Utilizamos kits de embrague de marcas reconocidas como <strong>LUK, Sachs, Valeo y EXEDY</strong>, que son los proveedores originales de muchas marcas de vehículos.</p>
-      <p>Reparar el embrague a tiempo es fundamental para evitar daños adicionales costosos. Un embrague patinando puede generar sobrecalentamiento del volante motor, daños en la caja de cambios y desgaste prematuro del motor. Por otro lado, un embrague que no desengancha completamente puede dañar los sincronizadores de la caja de cambios, resultando en una reparación mucho más cara. En LLANOCAR evaluamos el estado completo del sistema y te damos un diagnóstico preciso antes de comenzar cualquier intervención.</p>
-      <p>La reparación de embrague es un trabajo que requiere experiencia y herramientas especializadas. Nuestros técnicos tienen amplia formación y experiencia en vehículos de todas las marcas y realizan este servicio con garantía por escrito. Contáctanos para una evaluación de tu embrague y recibe un presupuesto sin compromiso.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECCIÓN 10: CAMBIO CORREA DE DISTRIBUCIÓN ========== -->
-<section class="seo-section" style="background:#fff;">
-  <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-sync-alt me-2"></i>Cambio Correa de Distribución — Servicio Crítico de Mantención Mayor</h2>
-    <div class="seo-text">
-      <p>La <strong class="seo-highlight">correa de distribución</strong> (o correa de tiempo) es uno de los componentes más críticos del motor. Su función es sincronizar el movimiento de los pistones con la apertura y cierre de las válvulas, asegurando que el ciclo de combustión se realice con la precisión necesaria. Si esta correa se rompe mientras el motor está en funcionamiento, el resultado puede ser <strong>catastrófico</strong>: los pistones chocan contra las válvulas abiertas, causando daños severos al motor que pueden requerir su reemplazo completo. Por eso, cumplir con el cambio preventivo de la correa de distribución es absolutamente esencial.</p>
-      <p>¿Cuándo cambiar la correa de distribución? Cada fabricante especifica un intervalo diferente, pero generalmente se recomienda entre <strong>80.000 y 120.000 km</strong>, o cada 5 a 7 años, lo que ocurra primero. Sin embargo, factores como el clima extremo, el uso en ciudad con tráfico denso, o la exposición a aceites y fluidos pueden acelerar el deterioro. En LLANOCAR recomendamos una inspección visual a partir de los 60.000 km para evaluar el estado de la correa y sus componentes asociados.</p>
-      <p>Nuestro <strong>servicio de cambio de correa de distribución a domicilio</strong> incluye el <strong>kit completo</strong>: correa de distribución nueva, tensor mecánico o hidráulico (según corresponda), poleas guías, bomba de agua (si es accionada por la correa de distribución, que es el caso más común), y retenes de los árboles de levas y cigüeñal. También aprovechamos para inspeccionar y reemplazar la <strong>correa de accesorios</strong> (alternador, dirección hidráulica, aire acondicionado) si presenta desgaste. Utilizamos kits de distribución de marcas líderes como <strong>Gates, Continental, Dayco y INA</strong>.</p>
-      <p>Este servicio requiere alta precisión y experiencia técnica, ya que una sincronización incorrecta puede causar daños inmediatos al motor. En LLANOCAR nuestros técnicos cuentan con las herramientas específicas de cada modelo para realizar el bloqueo del cigüeñal y los árboles de levas, garantizar la sincronización perfecta y realizar los torques de apriete según las especificaciones del fabricante. No arriesgues tu motor: agenda el cambio de correa de distribución con LLANOCAR y duerme tranquilo sabiendo que tu motor está protegido.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECCIÓN 11: MECÁNICO DE EMERGENCIA ========== -->
-<section style="background:linear-gradient(135deg, #0d3d0d, #1a5c1a); padding:60px 0; color:white;">
-  <div class="container">
-    <h2 class="text-center mb-4" style="font-size:2.2rem; font-weight:800; color:#FFB800;"><i class="fas fa-exclamation-triangle me-2"></i>Mecánico de Emergencia 24/7 — Auxilio Mecánico en Santiago</h2>
-    <div class="row">
-      <div class="col-lg-8">
-        <p style="font-size:1.1rem; line-height:1.8; color:#e0e0e0;">Una falla mecánica no avisa. Puede ocurrir a las 3 de la mañana en una autopista, en pleno rush hour o un fin de semana cuando todos los talleres están cerrados. En <strong style="color:#FFB800;">LLANOCAR</strong> tenemos un <strong>servicio de mecánico de emergencia las 24 horas del día, los 7 días de la semana</strong>, para que nunca te quedes desamparado en la ruta. Nuestro equipo de emergencia llega a tu ubicación con herramientas completas y repuestos esenciales para resolver las fallas más comunes que dejan a un vehículo varado.</p>
-        <p style="font-size:1.1rem; line-height:1.8; color:#e0e0e0;">Entre las emergencias más frecuentes que atendemos están: <strong>batería descargada</strong> (realizamos carga o reemplazo con batería nueva en el acto), <strong>pinchadura o neumático desinflado</strong> (cambio de neumático o reparación temporal), <strong>sobrecalentamiento del motor</strong> (diagnóstico y solución temporal para poder mover el vehículo), <strong>arranque con cables</strong>, <strong>falla eléctrica que impide encendido</strong>, <strong>problemas de combustible</strong> (bomba, filtro, inyectores) y <strong>perdida de llaves</strong>. Nuestros técnicos evalúan la situación en el lugar y te brindan la solución más rápida y eficiente para que puedas continuar tu camino.</p>
-        <p style="font-size:1.1rem; line-height:1.8; color:#e0e0e0;">Si la falla requiere una reparación mayor que no puede realizarse en el lugar, coordinamos el traslado de tu vehículo a un taller de confianza con servicio de grúa. En LLANOCAR entendemos la angustia de quedarse varado, por eso priorizamos la rapidez de respuesta y la comunicación constante con el cliente durante todo el proceso.</p>
-      </div>
-      <div class="col-lg-4 d-flex align-items-center justify-content-center">
-        <a href="tel:tel:933261085" class="btn btn-lg w-100 mb-3" style="background:#FFB800; color:#1a1a2e; font-weight:800; font-size:1.5rem; border:none; border-radius:15px; padding:20px; text-align:center;">
-          <i class="fas fa-phone-alt me-2"></i>EMERGENCIA<br>+56 9 3326 1085
+        <a href="https://wa.me/56966688770?text=Hola%20LLANOCAR%20necesito%20un%20servicio%20mec%C3%A1nico" class="cotizar-btn" target="_blank">
+          <i class="fab fa-whatsapp me-2"></i>COTIZAR
         </a>
-        <a href="https://wa.me/56933261085?text=EMERGENCIA%20necesito%20un%20mecánico%20urgente" class="btn btn-lg w-100" style="background:#25D366; color:white; font-weight:700; font-size:1.2rem; border:none; border-radius:15px; padding:15px;" target="_blank">
-          <i class="fab fa-whatsapp me-2"></i>WhatsApp 24/7
-        </a>
+        <div class="phone-display">
+          <i class="fas fa-phone-alt me-2"></i>+56 9 6668 8770
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== SECCIÓN: POR QUÉ LLANOCAR ========== -->
-<section class="seo-section">
+
+<!-- ========== B. EXPERIENCE SECTION ========== -->
+<section class="experience-section">
   <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-star me-2"></i>¿Por Qué Elegir LLANOCAR?</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h2>Visita Nuestro Taller y Descubre Por Qué Nuestros Clientes Nos Prefieren</h2>
+        <div class="h2-sub">¡Nuestra Experiencia Puesta en tu Vehículo!</div>
+        <p>Con <strong>más de 30 años de experiencia</strong> en el rubro automotriz, LLANOCAR se ha consolidado como uno de los talleres mecánicos más confiables de Santiago. Nuestro equipo de técnicos expertos ha atendido a miles de clientes satisfechos, resolviendo desde mantenciones rutinarias hasta reparaciones complejas con la misma dedicación y profesionalismo. Cada vehículo que ingresa a nuestro taller recibe un trato personalizado y una atención que marca la diferencia.</p>
+        <p>Somos un <strong>taller multimarca</strong> especializado en vehículos bencineros y diésel. Ya sea que manejes un Chevrolet, Toyota, Nissan, Hyundai, Kia, Ford, Mazda, Renault, Suzuki, Peugeot, Honda, Subaru, Volkswagen, MG o cualquier otra marca, nuestros técnicos tienen la experiencia y las herramientas para diagnosticar y reparar tu vehículo con los más altos estándares de calidad. Utilizamos repuestos originales o de equivalencia certificada y respaldamos cada intervención con garantía por escrito.</p>
+        <p>Además, ofrecemos un <strong>servicio de entrega y recección a domicilio en todo Santiago</strong>, <strong>SIN COSTO</strong> para las comunas de <strong>San Miguel, San Joaquín, La Florida, La Cisterna, La Granja y Santiago Centro</strong>. Nuestra atención es cálida, familiar y te explicamos todo en lenguaje simple, sin tecnicismos. Creemos que un cliente informado es un cliente satisfecho, por eso te mantenemos al tanto de cada detalle durante todo el proceso de reparación.</p>
+        <div class="text-center mt-4">
+          <a href="https://wa.me/56966688770?text=Hola%20LLANOCAR%20necesito%20un%20servicio%20mec%C3%A1nico" class="cotizar-btn" target="_blank">
+            <i class="fab fa-whatsapp me-2"></i>COTIZAR
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== C. WHY CHOOSE US ========== -->
+<section class="why-choose-section">
+  <div class="container">
+    <h2>¿Por Qué Elegir LLANOCAR?</h2>
     <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 shadow-sm border-0 text-center p-4" style="border-radius:15px;">
-          <div style="width:70px;height:70px;background:var(--llanocar-cream);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px auto;">
-            <i class="fas fa-tools" style="font-size:1.8rem;color:var(--llanocar-primary);"></i>
+      
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-heart"></i></div>
+            <h5>Atención Personalizada y Cálida</h5>
+            <p>Tratamos a cada cliente como familia. Te explicamos cada detalle en lenguaje simple y te mantenemos informado durante todo el proceso.</p>
           </div>
-          <h6 class="fw-bold">Técnicos Certificados</h6>
-          <p class="small text-muted">Personal altamente capacitado con experiencia comprobada en todas las marcas y modelos de vehículos.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 shadow-sm border-0 text-center p-4" style="border-radius:15px;">
-          <div style="width:70px;height:70px;background:var(--llanocar-cream);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px auto;">
-            <i class="fas fa-shield-alt" style="font-size:1.8rem;color:var(--llanocar-primary);"></i>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-eye"></i></div>
+            <h5>Transparencia Total</h5>
+            <p>Sin costos ocultos ni sorpresas. Te entregamos un presupuesto detallado antes de comenzar cualquier trabajo y respetamos lo acordado.</p>
           </div>
-          <h6 class="fw-bold">Garantía Escrita</h6>
-          <p class="small text-muted">Todas nuestras reparaciones incluyen garantía por escrito. Confiamos en la calidad de nuestro trabajo.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 shadow-sm border-0 text-center p-4" style="border-radius:15px;">
-          <div style="width:70px;height:70px;background:var(--llanocar-cream);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px auto;">
-            <i class="fas fa-truck" style="font-size:1.8rem;color:var(--llanocar-primary);"></i>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-hand-holding-usd"></i></div>
+            <h5>Mejor Relación Precio / Calidad</h5>
+            <p>Precios justos y competitivos sin sacrificar calidad. Utilizamos repuestos originales o certificados con garantía por escrito.</p>
           </div>
-          <h6 class="fw-bold">Servicio a Domicilio</h6>
-          <p class="small text-muted">Llegamos a tu casa, oficina o donde te encuentres. Ahorra tiempo sin sacrificar calidad.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 shadow-sm border-0 text-center p-4" style="border-radius:15px;">
-          <div style="width:70px;height:70px;background:var(--llanocar-cream);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px auto;">
-            <i class="fas fa-dollar-sign" style="font-size:1.8rem;color:var(--llanocar-primary);"></i>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-truck"></i></div>
+            <h5>Entrega y Recepción a Domicilio</h5>
+            <p>Recogemos y entregamos tu vehículo en todo Santiago SIN COSTO en San Miguel, San Joaquín, La Florida, La Cisterna, La Granja y Santiago Centro.</p>
           </div>
-          <h6 class="fw-bold">Presupuesto Transparente</h6>
-          <p class="small text-muted">Sin sorpresas ni costos ocultos. Te informamos el precio total antes de comenzar cualquier trabajo.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 shadow-sm border-0 text-center p-4" style="border-radius:15px;">
-          <div style="width:70px;height:70px;background:var(--llanocar-cream);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px auto;">
-            <i class="fas fa-clock" style="font-size:1.8rem;color:var(--llanocar-primary);"></i>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-clipboard-check"></i></div>
+            <h5>Mantenimiento Completo</h5>
+            <p>Cada servicio incluye lavado exterior, pulverizado de motor y escáner computarizado GRATIS para detectar fallas ocultas.</p>
           </div>
-          <h6 class="fw-bold">Atención Inmediata</h6>
-          <p class="small text-muted">Emergencias 24/7 y servicio programado en horarios que se adapten a tu agenda.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 shadow-sm border-0 text-center p-4" style="border-radius:15px;">
-          <div style="width:70px;height:70px;background:var(--llanocar-cream);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px auto;">
-            <i class="fas fa-credit-card" style="font-size:1.8rem;color:var(--llanocar-primary);"></i>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-comments"></i></div>
+            <h5>Comunicación Constante</h5>
+            <p>Te enviamos fotos y videos del avance de la reparación por WhatsApp. Siempre sabrás qué está pasando con tu vehículo.</p>
           </div>
-          <h6 class="fw-bold">Transbank Inalámbrico</h6>
-          <p class="small text-muted">Paga con tarjeta de crédito o débito de forma segura en la comodidad de tu ubicación.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 shadow-sm border-0 text-center p-4" style="border-radius:15px;">
-          <div style="width:70px;height:70px;background:var(--llanocar-cream);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px auto;">
-            <i class="fas fa-map-marked-alt" style="font-size:1.8rem;color:var(--llanocar-primary);"></i>
-          </div>
-          <h6 class="fw-bold">Toda la RM</h6>
-          <p class="small text-muted">Cubrimos Santiago completo, desde Lo Barnechea hasta Puente Alto, y zonas rurales.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 shadow-sm border-0 text-center p-4" style="border-radius:15px;">
-          <div style="width:70px;height:70px;background:var(--llanocar-cream);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px auto;">
-            <i class="fas fa-car" style="font-size:1.8rem;color:var(--llanocar-primary);"></i>
-          </div>
-          <h6 class="fw-bold">Multimarca</h6>
-          <p class="small text-muted">Chevrolet, Toyota, Nissan, Hyundai, Kia, Ford, Mazda, Renault, Suzuki, BMW, Mercedes y más.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- ========== SECCIÓN: GRID DE SERVICIOS ========== -->
-<section style="background:#121212; padding:60px 0;">
+
+<!-- ========== D. SERVICES SECTION ========== -->
+<section id="servicios" class="services-section">
   <div class="container">
-    <h2 class="text-center mb-4" style="font-size:2rem; font-weight:800; color:#fff;">Nuestros Servicios en Santiago</h2>
-    <p class="text-center mb-4" style="color:#bbb; max-width:700px; margin:0 auto;">Prestamos servicios de mecánica a domicilio en toda la Región Metropolitana. Nos especializamos en mecánica ligera y ajustamos nuestro presupuesto a tus necesidades.</p>
+    <h2>Mantén tu Vehículo en Óptimas Condiciones con Nuestros Servicios</h2>
+    <div class="row g-4">
+      
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon-wrap"><i class="fas fa-tachometer-alt"></i></div>
+            <div class="service-body">
+              <h5>Mantenimiento por KM</h5>
+              <p>Pautas de mantención oficial por kilómetros para mantener la garantía y el rendimiento.</p>
+              <button class="btn-ver-mas" data-bs-toggle="modal" data-bs-target="#modalMantKM">Ver Más</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon-wrap"><i class="fas fa-cogs"></i></div>
+            <div class="service-body">
+              <h5>Servicio de Distribución</h5>
+              <p>Cambio de correa de distribución con kit completo: correa, tensores, poleas y bomba de agua.</p>
+              <button class="btn-ver-mas" data-bs-toggle="modal" data-bs-target="#modalDistribucion">Ver Más</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon-wrap"><i class="fas fa-circle-notch"></i></div>
+            <div class="service-body">
+              <h5>Servicio de Embrague</h5>
+              <p>Reparación y reemplazo de kit de embrague completo con garantía por escrito.</p>
+              <button class="btn-ver-mas" data-bs-toggle="modal" data-bs-target="#modalEmbrague">Ver Más</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon-wrap"><i class="fas fa-gas-pump"></i></div>
+            <div class="service-body">
+              <h5>Servicios Diésel</h5>
+              <p>Diagnóstico y reparación especializada para motores diésel: inyección, turbo, EGR y DPF.</p>
+              <button class="btn-ver-mas" data-bs-toggle="modal" data-bs-target="#modalDiesel">Ver Más</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon-wrap"><i class="fas fa-search"></i></div>
+            <div class="service-body">
+              <h5>Inspección Precompra</h5>
+              <p>Peritaje automotriz completo con más de 50 puntos de revisión antes de comprar.</p>
+              <button class="btn-ver-mas" data-bs-toggle="modal" data-bs-target="#modalInspeccion">Ver Más</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon-wrap"><i class="fas fa-car-side"></i></div>
+            <div class="service-body">
+              <h5>Suspensión y Tren Delantero</h5>
+              <p>Reparación de amortiguadores, rotulas, terminales, bieletas, alineación y balanceo.</p>
+              <button class="btn-ver-mas" data-bs-toggle="modal" data-bs-target="#modalSuspension">Ver Más</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== E. SERVICE MODALS ========== -->
+
+<!-- Modal: modalMantKM -->
+<div class="modal fade" id="modalMantKM" tabindex="-1" aria-labelledby="modalMantKMLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header llanocar-modal-header">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-tachometer-alt me-3" style="font-size:1.5rem;"></i>
+          <h5 class="modal-title" id="modalMantKMLabel">LLANOCAR — Mantenimiento por Kilometraje</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body llanocar-modal-body">
+        <p>En <strong>LLANOCAR</strong> ofrecemos el servicio de <strong>mantenimiento por kilometraje</strong> siguiendo las pautas exactas del fabricante de tu vehículo. Cada marca y modelo tiene intervalos específicos de mantención que deben cumplirse para mantener la garantía del vehículo y asegurar su funcionamiento óptimo a lo largo del tiempo. Nuestros técnicos revisan cada punto de la pauta con escáner automotriz, herramientas de diagnóstico y repuestos originales o de equivalencia certificada.</p><p>El <strong>mantenimiento preventivo</strong> es la inversión más inteligente que puedes hacer en tu vehículo. Cumplir con los intervalos de cambio de aceite, filtros, bujías, correas y fluidos previene averías costosas, mejora el rendimiento del combustible, reduce las emisiones contaminantes y extiende significativamente la vida útil del motor y los sistemas del vehículo. En LLANOCAR realizamos mantenciones cada 10.000, 20.000, 30.000, 40.000, 50.000 y 60.000 km según la marca y modelo de tu auto.</p><p>Nuestro servicio incluye: <strong>cambio de aceite</strong> (sintético, semisintético o mineral según especificación), <strong>reemplazo de filtros</strong> (aceite, aire, habitáculo, combustible), revisión de frenos, suspensión, tren delantero, niveles de fluidos, diagnóstico por escáner computarizado, calibración de presión de neumáticos y reseteo del contador de mantención. Todo esto con servicio de <strong>entrega y recepción a domicilio</strong> en Santiago, SIN COSTO para las comunas de San Miguel, San Joaquín, La Florida, La Cisterna, La Granja y Santiago Centro.</p><p>Confía en <strong>LLANOCAR</strong> para el mantenimiento de tu vehículo. Con más de 30 años de experiencia, nuestros técnicos conocen a fondo las especificaciones de Chevrolet, Toyota, Nissan, Hyundai, Kia, Ford, Mazda, Renault, Suzuki, Peugeot, Honda, Subaru, Volkswagen, MG y muchas más marcas. Agenda tu mantención por WhatsApp al +56 9 6668 8770 y recibe tu auto como nuevo.</p>
+      </div>
+      <div class="modal-footer llanocar-modal-footer">
+        <a href="https://wa.me/56966688770?text=Hola%20LLANOCAR%20necesito%20mantenimiento%20por%20kilometraje" class="btn btn-lg w-100" style="background:#25D366;color:#fff;border:none;font-weight:700;" target="_blank">
+          <i class="fab fa-whatsapp me-2"></i>Cotizar Mantenimiento por Kilometraje al +56 9 6668 8770
+        </a>
+        <button type="button" class="btn btn-secondary w-100 mt-2" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: modalDistribucion -->
+<div class="modal fade" id="modalDistribucion" tabindex="-1" aria-labelledby="modalDistribucionLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header llanocar-modal-header">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-cogs me-3" style="font-size:1.5rem;"></i>
+          <h5 class="modal-title" id="modalDistribucionLabel">LLANOCAR — Servicio de Distribución</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body llanocar-modal-body">
+        <p>La <strong>correa de distribución</strong> es uno de los componentes más críticos del motor de tu vehículo. Su función es sincronizar el movimiento de los pistones con la apertura y cierre de las válvulas. Si esta correa se rompe mientras el motor está en funcionamiento, las consecuencias pueden ser catastróficas: los pistones chocan contra las válvulas causando daños severos que pueden requerir el reemplazo completo del motor. En <strong>LLANOCAR</strong> realizamos el <strong>cambio de correa de distribución</strong> con kit completo, siguiendo las especificaciones del fabricante.</p><p>Nuestro servicio incluye: correa de distribución nueva, tensor mecánico o hidráulico, poleas guías, bomba de agua (cuando es accionada por la correa de distribución), retenes de árboles de levas y cigüeñal. Utilizamos marcas líderes como <strong>Gates, Continental, Dayco e INA</strong>, que son proveedores originales de muchas marcas de vehículos. Cada instalación se realiza con herramientas específicas para garantizar la sincronización perfecta y los torques de apriete correctos.</p><p>El intervalo de cambio varía según el fabricante, pero generalmente se recomienda entre <strong>80.000 y 120.000 km</strong>, o cada 5 a 7 años, lo que ocurra primero. En LLANOCAR evaluamos el estado de la correa a partir de los 60.000 km para anticipar su reemplazo. No arriesgues tu motor: una correa de distribución en mal estado puede causar daños por millones de pesos. Realizamos el servicio con <strong>entrega y recepción a domicilio</strong> en Santiago, sin costo adicional en las comunas de San Miguel, San Joaquín, La Florida, La Cisterna, La Granja y Santiago Centro.</p><p>Contáctanos por WhatsApp al <strong>+56 9 6668 8770</strong> para una evaluación del estado de tu correa de distribución. En LLANOCAR contamos con técnicos especializados en el cambio de distribución para vehículos bencineros y diésel de todas las marcas. Garantía por escrita en todas nuestras intervenciones.</p>
+      </div>
+      <div class="modal-footer llanocar-modal-footer">
+        <a href="https://wa.me/56966688770?text=Hola%20LLANOCAR%20necesito%20servicio%20de%20distribución" class="btn btn-lg w-100" style="background:#25D366;color:#fff;border:none;font-weight:700;" target="_blank">
+          <i class="fab fa-whatsapp me-2"></i>Cotizar Servicio de Distribución al +56 9 6668 8770
+        </a>
+        <button type="button" class="btn btn-secondary w-100 mt-2" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: modalEmbrague -->
+<div class="modal fade" id="modalEmbrague" tabindex="-1" aria-labelledby="modalEmbragueLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header llanocar-modal-header">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-circle-notch me-3" style="font-size:1.5rem;"></i>
+          <h5 class="modal-title" id="modalEmbragueLabel">LLANOCAR — Servicio de Embrague</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body llanocar-modal-body">
+        <p>El <strong>embrague</strong> es el sistema encargado de conectar y desconectar el motor de la transmisión en vehículos con caja manual. Cuando presenta fallas, experimentas síntomas como patinaje del motor (sube de RPM pero el auto no acelera), dureza al pisar el pedal, ruidos al cambiar de velocidad, vibración o imposibilidad de engranar cambios. En <strong>LLANOCAR</strong> realizamos el diagnóstico y <strong>reparación de embrague</strong> con repuestos de primera calidad y garantía por escrito.</p><p>El servicio incluye el <strong>reemplazo del kit completo</strong>: disco de embrague, plato de presión y cojinete de empuje (throw-out bearing). Además, inspeccionamos y reemplazamos si es necesario el volante motor (si presenta surcos lo rectificamos o cambiamos), los retenes de aceite del motor y caja de cambios, y las bujías. Utilizamos kits de embrague de marcas reconocidas como <strong>LUK, Sachs, Valeo y EXEDY</strong>, proveedores originales de las principales marcas de vehículos.</p><p>Reparar el embrague a tiempo es fundamental para evitar daños adicionales costosos. Un embrague patinando genera sobrecalentamiento del volante motor y puede dañar la caja de cambios. Un embrague que no desengancha puede dañar los sincronizadores. En LLANOCAR evaluamos el estado completo del sistema antes de intervenir y te entregamos un diagnóstico preciso. Ofrecemos servicio de <strong>entrega y recepción a domicilio</strong> SIN COSTO en San Miguel, San Joaquín, La Florida, La Cisterna, La Granja y Santiago Centro.</p><p>Confía en los más de 30 años de experiencia de <strong>LLANOCAR</strong> para la reparación de embrague de tu vehículo. Atendemos todas las marcas: Chevrolet, Toyota, Nissan, Hyundai, Kia, Ford, Mazda, Renault, Suzuki, Peugeot, Honda, Subaru, Volkswagen y más. Llámanos al <strong>+56 9 6668 8770</strong> o escríbenos por WhatsApp para una cotización sin compromiso.</p>
+      </div>
+      <div class="modal-footer llanocar-modal-footer">
+        <a href="https://wa.me/56966688770?text=Hola%20LLANOCAR%20necesito%20servicio%20de%20embrague" class="btn btn-lg w-100" style="background:#25D366;color:#fff;border:none;font-weight:700;" target="_blank">
+          <i class="fab fa-whatsapp me-2"></i>Cotizar Servicio de Embrague al +56 9 6668 8770
+        </a>
+        <button type="button" class="btn btn-secondary w-100 mt-2" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: modalDiesel -->
+<div class="modal fade" id="modalDiesel" tabindex="-1" aria-labelledby="modalDieselLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header llanocar-modal-header">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-gas-pump me-3" style="font-size:1.5rem;"></i>
+          <h5 class="modal-title" id="modalDieselLabel">LLANOCAR — Servicios Diésel Especializados</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body llanocar-modal-body">
+        <p>Los <strong>motores diésel</strong> requieren atención especializada diferente a los motores bencineros. En <strong>LLANOCAR</strong> contamos con técnicos expertos en motores diésel y equipos de diagnóstico específicos para resolver problemas como: exceso de humo (negro, blanco o azul), problemas de partida en frío, pérdida de potencia, ruido excesivo del motor, inestabilidad en ralentí y fallos en la aceleración. Sabemos diagnosticar y reparar sistemas de inyección diésel, turbocompresores, intercoolers, sistemas EGR y DPF.</p><p>Nuestros servicios diésel incluyen: <strong>limpieza de inyectores diésel</strong>, <strong>pruebas de retorno de inyectores</strong>, <strong>diagnóstico de bomba de inyección</strong>, <strong>revisión de turbocompresor</strong>, <strong>servicio de DPF (filtro de partículas)</strong>, <strong>EGR OFF profesional</strong>, <strong>compresión de cilindros diésel</strong> y <strong>diagnóstico por escáner especializado</strong> para sistemas diésel de última generación. Utilizamos herramientas de diagnóstico de alta gama compatibles con sistemas Common Rail, Unit Injector y Pumpe-Düse.</p><p>Si tu vehículo diésel presenta humo negro excesivo, puede indicar un problema de inyección, filtro de aire obstruido o turbo defectuoso. El humo blanco puede señalar fugas de coolant hacia las cámaras de combustión o problemas en la bomba inyectora. El humo azul indica consumo excesivo de aceite. Cualquiera de estos síntomas requiere atención inmediata. En LLANOCAR ofrecemos servicio de <strong>entrega y recepción a domicilio</strong> SIN COSTO en las comunas de San Miguel, San Joaquín, La Florida, La Cisterna, La Granja y Santiago Centro.</p><p>No dejes que un problema diésel se convierta en una reparación costosa. Agenda tu diagnóstico diésel especializado con <strong>LLANOCAR</strong> llamando al <strong>+56 9 6668 8770</strong> o por WhatsApp. Con más de 30 años de experiencia, somos tu mejor opción para el servicio de motores diésel en Santiago de Chile.</p>
+      </div>
+      <div class="modal-footer llanocar-modal-footer">
+        <a href="https://wa.me/56966688770?text=Hola%20LLANOCAR%20necesito%20servicios%20diésel%20especializados" class="btn btn-lg w-100" style="background:#25D366;color:#fff;border:none;font-weight:700;" target="_blank">
+          <i class="fab fa-whatsapp me-2"></i>Cotizar Servicios Diésel Especializados al +56 9 6668 8770
+        </a>
+        <button type="button" class="btn btn-secondary w-100 mt-2" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: modalInspeccion -->
+<div class="modal fade" id="modalInspeccion" tabindex="-1" aria-labelledby="modalInspeccionLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header llanocar-modal-header">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-search me-3" style="font-size:1.5rem;"></i>
+          <h5 class="modal-title" id="modalInspeccionLabel">LLANOCAR — Inspección Precompra</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body llanocar-modal-body">
+        <p>Comprar un auto usado es una decisión importante que puede convertirse en una pesadilla si no se realiza una <strong>inspección mecánica profesional</strong> antes de firmar. En <strong>LLANOCAR</strong> ofrecemos un servicio de <strong>inspección precompra</strong> integral de más de 50 puntos que evalúa todos los sistemas críticos del vehículo: motor, transmisión, sistema eléctrico, carrocería, chasis, frenos, suspensión, neumáticos, interior y documentación. Te entregamos un informe detallado con fotos para que tomes la mejor decisión.</p><p>Nuestra inspección precompra incluye: <strong>prueba de compresión</strong> de cilindros, <strong>escaneo computarizado completo</strong> para detectar códigos de falla en todos los módulos, <strong>verificación de fugas</strong> de aceite, refrigerante y fluidos, <strong>revisión de carrocería con detector de espesor de pintura</strong> para identificar accidentes o repinturas, <strong>prueba en ruta</strong> para evaluar comportamiento en condiciones reales, verificación de kilometraje, estado de correas, mangueras, amortiguadores, frenos, batería, alternador y mucho más.</p><p>El servicio se realiza en el lugar donde se encuentra el vehículo (concesionario, particular o patio de autos) y toma entre 60 y 90 minutos. Te acompañamos durante todo el proceso y te explicamos cada hallazgo en lenguaje simple, sin tecnicismos innecesarios. Muchos de nuestros clientes han evitado compras desastrosas gracias a nuestra inspección, ahorrándose millones de pesos en reparaciones no visibles a simple vista. Ofrecemos <strong>entrega y recepción a domicilio</strong> SIN COSTO en San Miguel, San Joaquín, La Florida, La Cisterna, La Granja y Santiago Centro.</p><p>Protege tu inversión con una inspección precompra de <strong>LLANOCAR</strong>. Contáctanos al <strong>+56 9 6668 8770</strong> o por WhatsApp y agenda tu peritaje automotriz profesional. Con más de 30 años de experiencia en el rubro, somos la opción más confiable de Santiago para evaluar vehículos usados.</p>
+      </div>
+      <div class="modal-footer llanocar-modal-footer">
+        <a href="https://wa.me/56966688770?text=Hola%20LLANOCAR%20necesito%20inspección%20precompra" class="btn btn-lg w-100" style="background:#25D366;color:#fff;border:none;font-weight:700;" target="_blank">
+          <i class="fab fa-whatsapp me-2"></i>Cotizar Inspección Precompra al +56 9 6668 8770
+        </a>
+        <button type="button" class="btn btn-secondary w-100 mt-2" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: modalSuspension -->
+<div class="modal fade" id="modalSuspension" tabindex="-1" aria-labelledby="modalSuspensionLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header llanocar-modal-header">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-car-side me-3" style="font-size:1.5rem;"></i>
+          <h5 class="modal-title" id="modalSuspensionLabel">LLANOCAR — Suspensión y Tren Delantero</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body llanocar-modal-body">
+        <p>La <strong>suspensión y el tren delantero</strong> son sistemas fundamentales para la seguridad, estabilidad y comodidad de tu vehículo. En <strong>LLANOCAR</strong> realizamos el diagnóstico y reparación completa de amortiguadores, resortes, rotulas, terminales, bieletas, bandejas, rótulas de suspensión, bujes, cofias, tirantes,/cazoletas, puntales y cremallera de dirección. Si tu auto presenta vibraciones, desgaste irregular de neumáticos, ruidos al pasar por baches o el volante desalineado, es momento de revisar la suspensión.</p><p>Nuestro servicio incluye: <strong>diagnóstico completo con escáner</strong> y revisión visual/manual, <strong>reemplazo de amortiguadores delanteros y traseros</strong>, <strong>cambio de rotulas y terminales</strong>, <strong>reparación de bieletas</strong>, <strong>servicio de rótulas de suspensión</strong>, <strong>alineación y balanceo computarizado</strong> y <strong>revisión de la cremallera de dirección</strong>. Utilizamos repuestos de marcas reconocidas como Monroe, Cofap, Sachs y KYB para garantizar la calidad y durabilidad de cada reparación.</p><p>Conducir con la suspensión en mal estado es peligroso: aumenta la distancia de frenado, reduce el agarre en curvas, provoca desgaste irregular de los neumáticos y puede causar pérdida de control del vehículo. Los amortiguadores deben revisarse cada 50.000 km y reemplazarse generalmente entre los 80.000 y 100.000 km. En LLANOCAR ofrecemos <strong>entrega y recepción a domicilio</strong> SIN COSTO en las comunas de San Miguel, San Joaquín, La Florida, La Cisterna, La Granja y Santiago Centro.</p><p>Confía en los más de 30 años de experiencia de <strong>LLANOCAR</strong> para el servicio de suspensión y tren delantero de tu vehículo. Atendemos todas las marcas y modelos. Llámanos al <strong>+56 9 6668 8770</strong> o escríbenos por WhatsApp para una evaluación completa y presupuesto sin compromiso.</p>
+      </div>
+      <div class="modal-footer llanocar-modal-footer">
+        <a href="https://wa.me/56966688770?text=Hola%20LLANOCAR%20necesito%20suspensión%20y%20tren%20delantero" class="btn btn-lg w-100" style="background:#25D366;color:#fff;border:none;font-weight:700;" target="_blank">
+          <i class="fab fa-whatsapp me-2"></i>Cotizar Suspensión y Tren Delantero al +56 9 6668 8770
+        </a>
+        <button type="button" class="btn btn-secondary w-100 mt-2" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ========== F. VEHICLE CARDS SECTION ========== -->
+<section class="vehicle-card-section">
+  <div class="container">
+    <h2>Vehículos que Atendemos en LLANOCAR</h2>
     <div class="row g-3">
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card border-0 text-center p-3" style="background:rgba(255,255,255,0.05); border-radius:12px; height:100%;">
-          <i class="fas fa-oil-can mb-2" style="font-size:1.5rem;color:#FFB800;"></i>
-          <h6 class="text-white small fw-bold mb-1">Cambio de Aceite</h6>
-          <p class="small" style="color:#888;">Mantención por kilometraje para que tu vehículo se mantenga siempre como nuevo</p>
+      
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/nissan-kicks-300x147.png" alt="Nissan Kicks - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Nissan Kicks</h6>
+              <p>Mantenimiento y reparación especializada para Nissan Kicks en Santiago.</p>
+              <a href="vehiculos/nissan-kicks.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card border-0 text-center p-3" style="background:rgba(255,255,255,0.05); border-radius:12px; height:100%;">
-          <i class="fas fa-microchip mb-2" style="font-size:1.5rem;color:#FFB800;"></i>
-          <h6 class="text-white small fw-bold mb-1">Scanner Automotriz</h6>
-          <p class="small" style="color:#888;">Detección de fallas difíciles de encontrar con equipos de última generación</p>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/chevrolet-sail.png" alt="Chevrolet Sail - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Chevrolet Sail</h6>
+              <p>Servicios mecánicos completos para Chevrolet Sail. Confía en LLANOCAR.</p>
+              <a href="vehiculos/chevrolet-sail.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card border-0 text-center p-3" style="background:rgba(255,255,255,0.05); border-radius:12px; height:100%;">
-          <i class="fas fa-bolt mb-2" style="font-size:1.5rem;color:#FFB800;"></i>
-          <h6 class="text-white small fw-bold mb-1">Electricidad General</h6>
-          <p class="small" style="color:#888;">Reparamos los sistemas eléctricos de tu vehículo para que no vuelvas a sufrir problemas</p>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/toyota-yaris-300x200.png" alt="Toyota Yaris - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Toyota Yaris</h6>
+              <p>Reparación y mantención Toyota Yaris. Taller multimarca en Santiago.</p>
+              <a href="vehiculos/toyota-yaris.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card border-0 text-center p-3" style="background:rgba(255,255,255,0.05); border-radius:12px; height:100%;">
-          <i class="fas fa-compact-disc mb-2" style="font-size:1.5rem;color:#FFB800;"></i>
-          <h6 class="text-white small fw-bold mb-1">Frenos</h6>
-          <p class="small" style="color:#888;">Cambio de pastillas, discos y revisión completa del sistema de frenos</p>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/hyundai-accent-300x199.png" alt="Hyundai Accent - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Hyundai Accent</h6>
+              <p>Servicio técnico Hyundai Accent. Diagnóstico y reparación garantizada.</p>
+              <a href="vehiculos/hyundai-accent.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card border-0 text-center p-3" style="background:rgba(255,255,255,0.05); border-radius:12px; height:100%;">
-          <i class="fas fa-cog mb-2" style="font-size:1.5rem;color:#FFB800;"></i>
-          <h6 class="text-white small fw-bold mb-1">Embrague</h6>
-          <p class="small" style="color:#888;">Kit de embrague completo con garantía en todas las reparaciones</p>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/kia-rio-300x180.png" alt="Kia Rio - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Kia Rio</h6>
+              <p>Mantención Kia Rio en Santiago. Embragues, frenos y más en LLANOCAR.</p>
+              <a href="vehiculos/kia-rio.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card border-0 text-center p-3" style="background:rgba(255,255,255,0.05); border-radius:12px; height:100%;">
-          <i class="fas fa-tachometer-alt mb-2" style="font-size:1.5rem;color:#FFB800;"></i>
-          <h6 class="text-white small fw-bold mb-1">Mantención por KM</h6>
-          <p class="small" style="color:#888;">Pautas de fabricante para mantener la garantía y el rendimiento óptimo</p>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/honda-civic-300x300.png" alt="Honda Civic - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Honda Civic</h6>
+              <p>Reparación Honda Civic. Técnicos certificados para tu vehículo Honda.</p>
+              <a href="vehiculos/honda-civic.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card border-0 text-center p-3" style="background:rgba(255,255,255,0.05); border-radius:12px; height:100%;">
-          <i class="fas fa-sync-alt mb-2" style="font-size:1.5rem;color:#FFB800;"></i>
-          <h6 class="text-white small fw-bold mb-1">Correa Distribución</h6>
-          <p class="small" style="color:#888;">Kit completo con bomba de agua, tensores y poleas para tu motor</p>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/renault-duster-300x158.png" alt="Renault Duster - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Renault Duster</h6>
+              <p>Servicio especializado Renault Duster. Diésel y bencinero en LLANOCAR.</p>
+              <a href="vehiculos/renault-duster.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card border-0 text-center p-3" style="background:rgba(255,255,255,0.05); border-radius:12px; height:100%;">
-          <i class="fas fa-cogs mb-2" style="font-size:1.5rem;color:#FFB800;"></i>
-          <h6 class="text-white small fw-bold mb-1">Afinamiento Motor</h6>
-          <p class="small" style="color:#888;">Bujías, inyectores, cables y calibración para recuperar potencia y eficiencia</p>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/ford-ecosport-300x184.png" alt="Ford EcoSport - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Ford EcoSport</h6>
+              <p>Mantenimiento Ford EcoSport. Reparación profesional en Santiago.</p>
+              <a href="vehiculos/ford-ecosport.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/mazda-3-300x158.png" alt="Mazda 3 - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Mazda 3</h6>
+              <p>Servicio Mazda 3 en LLANOCAR. Skyactiv y motores tradicionales.</p>
+              <a href="vehiculos/mazda-3.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/suzuki-baleno-300x196.png" alt="Suzuki Swift - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Suzuki Swift</h6>
+              <p>Reparación Suzuki Swift. Mantención multimarca garantizada.</p>
+              <a href="vehiculos/suzuki-swift.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/chevrolet-sonic-300x198.png" alt="Chevrolet Sonic - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Chevrolet Sonic</h6>
+              <p>Servicio Chevrolet Sonic. Diagnóstico y reparación en LLANOCAR.</p>
+              <a href="vehiculos/chevrolet-sonic.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/chevrolet-spark-300x225.png" alt="Chevrolet Spark - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Chevrolet Spark</h6>
+              <p>Mantención Chevrolet Spark. Taller mecánico especializado en Santiago.</p>
+              <a href="vehiculos/chevrolet-spark.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/ford-fiesta-300x199.png" alt="Fiat Bravo Tjet - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Fiat Bravo Tjet</h6>
+              <p>Reparación Fiat Bravo Tjet. Motor turbo especializado LLANOCAR.</p>
+              <a href="vehiculos/fiat-bravo-tjet.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/ford-fiesta-300x199.png" alt="Ford Fiesta - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Ford Fiesta</h6>
+              <p>Servicio Ford Fiesta. Mantención completa en Santiago, Chile.</p>
+              <a href="vehiculos/ford-fiesta.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/honda-city-300x225.png" alt="Honda City - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Honda City</h6>
+              <p>Reparación Honda City. Técnicos especializados en Honda en LLANOCAR.</p>
+              <a href="vehiculos/honda-city.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/honda-crv-300x225.png" alt="Honda CR-V - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Honda CR-V</h6>
+              <p>Mantenimiento Honda CR-V. SUV service garantizado en Santiago.</p>
+              <a href="vehiculos/honda-cr-v.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/hyundai-grandi10-300x137.png" alt="Hyundai Grand i10 - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Hyundai Grand i10</h6>
+              <p>Servicio Hyundai Grand i10. Reparación económica y confiable LLANOCAR.</p>
+              <a href="vehiculos/hyundai-grand-i10.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/hyundai-tucson-300x184.png" alt="Hyundai Tucson - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Hyundai Tucson</h6>
+              <p>Mantención Hyundai Tucson. SUV multimarca especialistas LLANOCAR.</p>
+              <a href="vehiculos/hyundai-tucson.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/33678-MORNING-300x225.jpg" alt="Kia Morning - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Kia Morning</h6>
+              <p>Reparación Kia Morning. Taller especializado en autos compactos.</p>
+              <a href="vehiculos/kia-morning.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/mazda-cx-5-300x199.png" alt="Mazda CX-5 - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Mazda CX-5</h6>
+              <p>Servicio Mazda CX-5. Mantención SUV premium en LLANOCAR Santiago.</p>
+              <a href="vehiculos/mazda-cx-5.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/mg-3-300x216.png" alt="MG 3 - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>MG 3</h6>
+              <p>Reparación MG 3. Mecánica especializada para vehículos chinos.</p>
+              <a href="vehiculos/mg-3.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/mg-zs-300x106.png" alt="MG ZS - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>MG ZS</h6>
+              <p>Mantenimiento MG ZS en Santiago. Servicio garantizado LLANOCAR.</p>
+              <a href="vehiculos/mg-zs.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/nissan-versa-300x200.png" alt="Nissan Versa - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Nissan Versa</h6>
+              <p>Servicio Nissan Versa. Diagnóstico y reparación multimarca.</p>
+              <a href="vehiculos/nissan-versa.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/peugeot-208-300x197.png" alt="Peugeot 208 - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Peugeot 208</h6>
+              <p>Reparación Peugeot 208. Técnicos especializados en marcas europeas.</p>
+              <a href="vehiculos/peugeot-208.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/peugeot-3008-300x199.png" alt="Peugeot 3008 - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Peugeot 3008</h6>
+              <p>Mantención Peugeot 3008. SUV francés servicio garantizado LLANOCAR.</p>
+              <a href="vehiculos/peugeot-3008.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/Renault-logan-300x225.png" alt="Renault Logan - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Renault Logan</h6>
+              <p>Servicio Renault Logan. Sedán robusto reparación garantizada.</p>
+              <a href="vehiculos/renault-logan.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/subaru-forester-300x172.png" alt="Subaru Forester - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Subaru Forester</h6>
+              <p>Mantenimiento Subaru Forester. AWD especialista LLANOCAR Santiago.</p>
+              <a href="vehiculos/subaru-forester.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/subaru-xv-300x225.png" alt="Subaru XV - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Subaru XV</h6>
+              <p>Reparación Subaru XV. Servicio AWD y boxer engine LLANOCAR.</p>
+              <a href="vehiculos/subaru-xv.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/suzuki-baleno-300x196.png" alt="Suzuki Baleno - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Suzuki Baleno</h6>
+              <p>Servicio Suzuki Baleno. Mantención eficiente garantizada.</p>
+              <a href="vehiculos/suzuki-baleno.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/suzuki-celerio-300x225.png" alt="Suzuki Celerio - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Suzuki Celerio</h6>
+              <p>Reparación Suzuki Celerio. Auto compacto especialista LLANOCAR.</p>
+              <a href="vehiculos/suzuki-celerio.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/toyota-corolla-300x225.png" alt="Toyota Corolla - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Toyota Corolla</h6>
+              <p>Mantenimiento Toyota Corolla. Sedán más vendido servicio LLANOCAR.</p>
+              <a href="vehiculos/toyota-corolla.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="vehicle-card">
+            <img src="images/wp-content/uploads/2024/10/volkswagen-gol-300x177.png" alt="Volkswagen Gol - Mantención y Reparación en LLANOCAR Santiago" loading="lazy">
+            <div class="v-card-body">
+              <h6>Volkswagen Gol</h6>
+              <p>Servicio Volkswagen Gol. Reparación alemana en Santiago Chile.</p>
+              <a href="vehiculos/volkswagen-gol.html"><i class="fas fa-wrench me-1"></i>Ver Servicios</a>
+            </div>
+          </div>
+        </div>
     </div>
-    <p class="text-center mt-3" style="color:#888; font-size:0.9rem;">
-      <i class="fas fa-map-marker-alt me-1"></i>Servicio en: <strong style="color:#ccc;">Santiago, Cerrillos, Providencia, Las Condes, Peñalolén, Macul, Recoleta, Maipú, Puente Alto, Pudahuel, Ñuñoa, San Bernardo, San Miguel, Quilicura</strong> y más.
-    </p>
   </div>
 </section>
 
-<!-- ========== SECCIÓN: ZONAS DE COBERTURA ========== -->
-<section class="seo-section" style="background:#fff;">
+
+<!-- ========== G. 50 DISTRIBUTED IMAGES ========== -->
+<section class="distributed-images-grid">
   <div class="container">
-    <h2 class="seo-h2"><i class="fas fa-map-marked-alt me-2"></i>Zonas de Cobertura — Mecánico a Domicilio en Toda Santiago</h2>
-    <div class="seo-text">
-      <p>LLANOCAR cubre la totalidad de la <strong class="seo-highlight">Región Metropolitana de Santiago</strong> con servicio de mecánico a domicilio. Nuestro equipo se desplaza a tu ubicación sin importar en qué comuna te encuentres. Contamos con cobertura en todas las comunas de Santiago, incluyendo las zonas más alejadas y rurales como Tiltil, Lampa, Curacaví, Melipilla, Pirque, Isla de Maipo, Alhué, María Pinto, Calera de Tango y Paine.</p>
-      <p>Entre nuestras zonas de mayor cobertura se encuentran: <strong>Pudahuel, Estación Central, Maipú, La Florida, Puente Alto, San Bernardo, Las Condes, Providencia, Ñuñoa, Santiago Centro, Quilicura, San Miguel, La Cisterna, La Granja, La Pintana, Peñalolén, Macul, Recoleta, Independencia, Renca, Cerro Navia, Lo Prado, Conchalí, Pedro Aguirre Cerda, El Bosque, Lo Espejo, San Joaququin, San Ramón, Cerrillos, Buin, Quinta Normal</strong> y muchas más. No importa dónde estés: si puedes llegar por camino, nosotros también.</p>
+    <h2>Nuestros Trabajos Realizados — LLANOCAR en Santiago</h2>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/mecanico-a-domicilio-chevrolet-santiago-taller-mecanico-cerca-de-mi.jpg" alt="mecanico a domicilio chevrolet santiago taller mecanico cerca de mi - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">mecanico a domicilio chevrolet santiago taller mecanico cerca de mi</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/cambio-de-aceite-hyundai-la-florida-express-mantenimiento-garantizado.jpg" alt="cambio de aceite hyundai la florida express mantenimiento garantizado - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">cambio de aceite hyundai la florida express mantenimiento garantizado</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/inspeccion-pre-compra-mazda-las-condes-revision-tecnica-completa.jpg" alt="inspeccion pre compra mazda las condes revision tecnica completa - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">inspeccion pre compra mazda las condes revision tecnica completa</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/reparacion-de-embrague-peugeot-quilicura-taller-mecanico-cerca-de-mi-diesel.jpg" alt="reparacion de embrague peugeot quilicura taller mecanico cerca de mi diesel - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">reparacion de embrague peugeot quilicura taller mecanico cerca de mi diesel</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/cambio-correa-distribucion-renault-nunoa-repuestos-originales-garantizados.jpg" alt="cambio correa distribucion renault nunoa repuestos originales garantizados - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">cambio correa distribucion renault nunoa repuestos originales garantizados</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/mecanico-urgencia-toyota-recoleta-taller-mecanico-cerca-de-mi-panne.jpg" alt="mecanico urgencia toyota recoleta taller mecanico cerca de mi panne - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">mecanico urgencia toyota recoleta taller mecanico cerca de mi panne</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/auxilio-mecanico-audi-vitacura-taller-mecanico-cerca-de-mi-alta-gama.jpg" alt="auxilio mecanico audi vitacura taller mecanico cerca de mi alta gama - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">auxilio mecanico audi vitacura taller mecanico cerca de mi alta gama</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/reparacion-transmision-fiat-quinta-normal-caja-de-cambios-especialista.jpg" alt="reparacion transmision fiat quinta normal caja de cambios especialista - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">reparacion transmision fiat quinta normal caja de cambios especialista</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/mantencion-preventiva-jeep-independencia-taller-mecanico-cerca-de-mi-4x4.jpg" alt="mantencion preventiva jeep independencia taller mecanico cerca de mi 4x4 - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">mantencion preventiva jeep independencia taller mecanico cerca de mi 4x4</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/scanner-motor-opel-conchali-lectura-de-codigos-check-engine.jpg" alt="scanner motor opel conchali lectura de codigos check engine - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">scanner motor opel conchali lectura de codigos check engine</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/cambio-aceite-volvo-cerrillos-filtro-de-aire-y-lubricante-sintetico.jpg" alt="cambio aceite volvo cerrillos filtro de aire y lubricante sintetico - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">cambio aceite volvo cerrillos filtro de aire y lubricante sintetico</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/diagnostico-scanner-changan-lo-espejo-taller-mecanico-cerca-de-mi-rapido.jpg" alt="diagnostico scanner changan lo espejo taller mecanico cerca de mi rapido - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">diagnostico scanner changan lo espejo taller mecanico cerca de mi rapido</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/embrague-y-frenos-dfsk-san-joaquin-kit-nuevo-instalacion-express.jpg" alt="embrague y frenos dfsk san joaquin kit nuevo instalacion express - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">embrague y frenos dfsk san joaquin kit nuevo instalacion express</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/suspension-y-direccion-jac-la-pintana-taller-mecanico-cerca-de-mi-tren-delantero.jpg" alt="suspension y direccion jac la pintana taller mecanico cerca de mi tren delantero - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">suspension y direccion jac la pintana taller mecanico cerca de mi tren delantero</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/servicio-integral-mahindra-san-jose-de-maipo-taller-mecanico-cerca-de-mi-montana.jpg" alt="servicio integral mahindra san jose de maipo taller mecanico cerca de mi montana - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">servicio integral mahindra san jose de maipo taller mecanico cerca de mi montana</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/scanner-automotriz-toyota-paine-limpieza-inyectores-y-bujias.jpg" alt="scanner automotriz toyota paine limpieza inyectores y bujias - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">scanner automotriz toyota paine limpieza inyectores y bujias</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/frenos-y-pastillas-nissan-talagante-taller-mecanico-cerca-de-mi-rectificado.jpg" alt="frenos y pastillas nissan talagante taller mecanico cerca de mi rectificado - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">frenos y pastillas nissan talagante taller mecanico cerca de mi rectificado</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/inspeccion-pre-compra-ford-melipilla-scanner-total-y-fugas-aceite.jpg" alt="inspeccion pre compra ford melipilla scanner total y fugas aceite - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">inspeccion pre compra ford melipilla scanner total y fugas aceite</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/mantenimiento-kilometraje-suzuki-maria-pinto-pauta-fabricante-oficial.jpg" alt="mantenimiento kilometraje suzuki maria pinto pauta fabricante oficial - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">mantenimiento kilometraje suzuki maria pinto pauta fabricante oficial</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/servicio-de-bateria-subaru-tiltil-taller-mecanico-cerca-de-mi-voltaje.jpg" alt="servicio de bateria subaru tiltil taller mecanico cerca de mi voltaje - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">servicio de bateria subaru tiltil taller mecanico cerca de mi voltaje</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/ajuste-de-suspension-volkswagen-alhue-amortiguadores-y-cazoletas.jpg" alt="ajuste de suspension volkswagen alhue amortiguadores y cazoletas - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">ajuste de suspension volkswagen alhue amortiguadores y cazoletas</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/frenos-y-pastillas-mg-penaflor-taller-mecanico-cerca-de-mi-expertos.jpg" alt="frenos y pastillas mg penaflor taller mecanico cerca de mi expertos - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">frenos y pastillas mg penaflor taller mecanico cerca de mi expertos</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/afinamiento-motor-haval-vitacura-taller-mecanico-cerca-de-mi-premium.jpg" alt="afinamiento motor haval vitacura taller mecanico cerca de mi premium - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">afinamiento motor haval vitacura taller mecanico cerca de mi premium</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/mantenimiento-kilometraje-toyota-la-florida-garantia-llanocar-total.jpg" alt="mantenimiento kilometraje toyota la florida garantia llanocar total - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">mantenimiento kilometraje toyota la florida garantia llanocar total</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/reparacion-de-embrague-hyundai-puente-alto-taller-mecanico-cerca-de-mi-bimasa.jpg" alt="reparacion de embrague hyundai puente alto taller mecanico cerca de mi bimasa - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">reparacion de embrague hyundai puente alto taller mecanico cerca de mi bimasa</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/ajuste-de-suspension-mazda-nunoa-alineacion-y-balanceo-ruedas.jpg" alt="ajuste de suspension mazda nunoa alineacion y balanceo ruedas - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">ajuste de suspension mazda nunoa alineacion y balanceo ruedas</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/scanner-automotriz-volkswagen-las-condes-diagnosis-computarizada-vcds.jpg" alt="scanner automotriz volkswagen las condes diagnosis computarizada vcds - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">scanner automotriz volkswagen las condes diagnosis computarizada vcds</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/afinamiento-motor-chevrolet-penalolen-taller-mecanico-cerca-de-mi-limpieza.jpg" alt="afinamiento motor chevrolet penalolen taller mecanico cerca de mi limpieza - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">afinamiento motor chevrolet penalolen taller mecanico cerca de mi limpieza</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/inspeccion-compra-hyundai-la-pintana-informe-tecnico-scanner-fugas.jpg" alt="inspeccion compra hyundai la pintana informe tecnico scanner fugas - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">inspeccion compra hyundai la pintana informe tecnico scanner fugas</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/reparacion-embrague-suzuki-san-miguel-taller-mecanico-cerca-de-mi-prensa.jpg" alt="reparacion embrague suzuki san miguel taller mecanico cerca de mi prensa - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">reparacion embrague suzuki san miguel taller mecanico cerca de mi prensa</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/bateria-domicilio-mazda-huechuraba-taller-mecanico-cerca-de-mi-bosch.jpg" alt="bateria domicilio mazda huechuraba taller mecanico cerca de mi bosch - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">bateria domicilio mazda huechuraba taller mecanico cerca de mi bosch</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/scanner-changan-quinta-normal-borrado-fallas-computador-auto.jpg" alt="scanner changan quinta normal borrado fallas computador auto - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">scanner changan quinta normal borrado fallas computador auto</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/frenos-pastillas-great-wall-san-joaquin-taller-mecanico-cerca-de-mi-ceramica.jpg" alt="frenos pastillas great wall san joaquin taller mecanico cerca de mi ceramica - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">frenos pastillas great wall san joaquin taller mecanico cerca de mi ceramica</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/inspeccion-jac-lo-espejo-recorrido-de-prueba-y-compresion.jpg" alt="inspeccion jac lo espejo recorrido de prueba y compresion - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">inspeccion jac lo espejo recorrido de prueba y compresion</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/mantenimiento-mg-cerrillos-pauta-garantia-llanocar-multimarca.jpg" alt="mantenimiento mg cerrillos pauta garantia llanocar multimarca - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">mantenimiento mg cerrillos pauta garantia llanocar multimarca</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/mecanico-domicilio-kia-lo-barnechea-taller-mecanico-cerca-de-mi-suv.jpg" alt="mecanico domicilio kia lo barnechea taller mecanico cerca de mi suv - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">mecanico domicilio kia lo barnechea taller mecanico cerca de mi suv</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/scanner-toyota-buin-corolla-yaris-limpieza-mariposa-admision.jpg" alt="scanner toyota buin corolla yaris limpieza mariposa admision - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">scanner toyota buin corolla yaris limpieza mariposa admision</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/afinamiento-mazda-el-monte-taller-mecanico-cerca-de-mi-skyactiv.jpg" alt="afinamiento mazda el monte taller mecanico cerca de mi skyactiv - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">afinamiento mazda el monte taller mecanico cerca de mi skyactiv</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/diagnostico-chevrolet-melipilla-taller-mecanico-cerca-de-mi-sail-spark.jpg" alt="diagnostico chevrolet melipilla taller mecanico cerca de mi sail spark - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">diagnostico chevrolet melipilla taller mecanico cerca de mi sail spark</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/correa-distribucion-renault-colina-clio-symbol-cambio-urgente.jpg" alt="correa distribucion renault colina clio symbol cambio urgente - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">correa distribucion renault colina clio symbol cambio urgente</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/bateria-subaru-lampa-taller-mecanico-cerca-de-mi-awd-sistema.jpg" alt="bateria subaru lampa taller mecanico cerca de mi awd sistema - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">bateria subaru lampa taller mecanico cerca de mi awd sistema</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/scanner-chery-calera-de-tango-tiggo-pro-diagnostico-computador.jpg" alt="scanner chery calera de tango tiggo pro diagnostico computador - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">scanner chery calera de tango tiggo pro diagnostico computador</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/cambio-aceite-changan-penaflor-cx70-alsvin-filtro-aceite-original.jpg" alt="cambio aceite changan penaflor cx70 alsvin filtro aceite original - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">cambio aceite changan penaflor cx70 alsvin filtro aceite original</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/diagnostico-nissan-san-pedro-taller-mecanico-cerca-de-mi-sentra-versa.jpg" alt="diagnostico nissan san pedro taller mecanico cerca de mi sentra versa - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">diagnostico nissan san pedro taller mecanico cerca de mi sentra versa</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/mantenimiento-toyota-alhue-hilux-rav4-expertos-japoneses-llanocar.jpg" alt="mantenimiento toyota alhue hilux rav4 expertos japoneses llanocar - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">mantenimiento toyota alhue hilux rav4 expertos japoneses llanocar</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/frenos-pastillas-honda-vitacura-taller-mecanico-cerca-de-mi-civic.jpg" alt="frenos pastillas honda vitacura taller mecanico cerca de mi civic - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">frenos pastillas honda vitacura taller mecanico cerca de mi civic</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/afinamiento-motor-kia-las-condes-taller-mecanico-cerca-de-mi-rio.jpg" alt="afinamiento motor kia las condes taller mecanico cerca de mi rio - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">afinamiento motor kia las condes taller mecanico cerca de mi rio</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/mantenimiento-kilometraje-nissan-maipu-kicks-navara-pauta-llanocar.jpg" alt="mantenimiento kilometraje nissan maipu kicks navara pauta llanocar - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">mantenimiento kilometraje nissan maipu kicks navara pauta llanocar</div>
+            </div>
+          </div>
+    </div>
+    <div class="row g-3 mb-2">
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/reparacion-embrague-peugeot-puente-alto-taller-mecanico-cerca-de-mi-3008.jpg" alt="reparacion embrague peugeot puente alto taller mecanico cerca de mi 3008 - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">reparacion embrague peugeot puente alto taller mecanico cerca de mi 3008</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="distributed-img-item">
+              <img src="images/ajuste-suspension-suzuki-estacion-central-vitara-jimny-expertos.jpg" alt="ajuste suspension suzuki estacion central vitara jimny expertos - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+              <div class="img-caption">ajuste suspension suzuki estacion central vitara jimny expertos</div>
+            </div>
+          </div>
     </div>
   </div>
 </section>
 
-<!-- ========== FAQ ========== -->
+
+<!-- ========== H. PHOTO GALLERY SECTION ========== -->
+<section id="galeria-de-trabajos" class="gallery-section">
+  <div class="container">
+    <h2>Galería de Trabajos Realizados por LLANOCAR</h2>
+    <div class="gallery-grid" id="galleryGrid">
+      
+        <div class="gallery-item" onclick="openModal('images/mecanico-a-domicilio-chevrolet-santiago-taller-mecanico-cerca-de-mi.jpg')">
+          <img src="images/mecanico-a-domicilio-chevrolet-santiago-taller-mecanico-cerca-de-mi.jpg" alt="mecanico a domicilio chevrolet santiago taller mecanico cerca de mi - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/scanner-automotriz-ford-puente-alto-profesional-diagnostico-avanzado.jpg')">
+          <img src="images/scanner-automotriz-ford-puente-alto-profesional-diagnostico-avanzado.jpg" alt="scanner automotriz ford puente alto profesional diagnostico avanzado - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/frenos-y-pastillas-honda-maipu-taller-mecanico-cerca-de-mi-urgente.jpg')">
+          <img src="images/frenos-y-pastillas-honda-maipu-taller-mecanico-cerca-de-mi-urgente.jpg" alt="frenos y pastillas honda maipu taller mecanico cerca de mi urgente - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/cambio-de-aceite-hyundai-la-florida-express-mantenimiento-garantizado.jpg')">
+          <img src="images/cambio-de-aceite-hyundai-la-florida-express-mantenimiento-garantizado.jpg" alt="cambio de aceite hyundai la florida express mantenimiento garantizado - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/afinamiento-motor-kia-san-bernardo-taller-mecanico-cerca-de-mi-experto.jpg')">
+          <img src="images/afinamiento-motor-kia-san-bernardo-taller-mecanico-cerca-de-mi-experto.jpg" alt="afinamiento motor kia san bernardo taller mecanico cerca de mi experto - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/inspeccion-pre-compra-mazda-las-condes-revision-tecnica-completa.jpg')">
+          <img src="images/inspeccion-pre-compra-mazda-las-condes-revision-tecnica-completa.jpg" alt="inspeccion pre compra mazda las condes revision tecnica completa - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/diagnostico-electrico-mitsubishi-penalolen-taller-mecanico-cerca-de-mi.jpg')">
+          <img src="images/diagnostico-electrico-mitsubishi-penalolen-taller-mecanico-cerca-de-mi.jpg" alt="diagnostico electrico mitsubishi penalolen taller mecanico cerca de mi - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/mantenimiento-kilometraje-nissan-pudahuel-servicio-oficial-llanocar.jpg')">
+          <img src="images/mantenimiento-kilometraje-nissan-pudahuel-servicio-oficial-llanocar.jpg" alt="mantenimiento kilometraje nissan pudahuel servicio oficial llanocar - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/reparacion-de-embrague-peugeot-quilicura-taller-mecanico-cerca-de-mi-diesel.jpg')">
+          <img src="images/reparacion-de-embrague-peugeot-quilicura-taller-mecanico-cerca-de-mi-diesel.jpg" alt="reparacion de embrague peugeot quilicura taller mecanico cerca de mi diesel - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/cambio-correa-distribucion-renault-nunoa-repuestos-originales-garantizados.jpg')">
+          <img src="images/cambio-correa-distribucion-renault-nunoa-repuestos-originales-garantizados.jpg" alt="cambio correa distribucion renault nunoa repuestos originales garantizados - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/servicio-de-baterias-subaru-la-cisterna-taller-mecanico-cerca-de-mi-24hrs.jpg')">
+          <img src="images/servicio-de-baterias-subaru-la-cisterna-taller-mecanico-cerca-de-mi-24hrs.jpg" alt="servicio de baterias subaru la cisterna taller mecanico cerca de mi 24hrs - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/ajuste-de-suspension-suzuki-estacion-central-amortiguadores-y-direccion.jpg')">
+          <img src="images/ajuste-de-suspension-suzuki-estacion-central-amortiguadores-y-direccion.jpg" alt="ajuste de suspension suzuki estacion central amortiguadores y direccion - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/mecanico-urgencia-toyota-recoleta-taller-mecanico-cerca-de-mi-panne.jpg')">
+          <img src="images/mecanico-urgencia-toyota-recoleta-taller-mecanico-cerca-de-mi-panne.jpg" alt="mecanico urgencia toyota recoleta taller mecanico cerca de mi panne - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/scanner-multimarca-volkswagen-providencia-deteccion-de-fallas-electronicas.jpg')">
+          <img src="images/scanner-multimarca-volkswagen-providencia-deteccion-de-fallas-electronicas.jpg" alt="scanner multimarca volkswagen providencia deteccion de fallas electronicas - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/auxilio-mecanico-audi-vitacura-taller-mecanico-cerca-de-mi-alta-gama.jpg')">
+          <img src="images/auxilio-mecanico-audi-vitacura-taller-mecanico-cerca-de-mi-alta-gama.jpg" alt="auxilio mecanico audi vitacura taller mecanico cerca de mi alta gama - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/revision-tecnica-bmw-lo-barnechea-preparacion-profesional-expertos.jpg')">
+          <img src="images/revision-tecnica-bmw-lo-barnechea-preparacion-profesional-expertos.jpg" alt="revision tecnica bmw lo barnechea preparacion profesional expertos - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/mecanico-24-horas-citroen-macul-taller-mecanico-cerca-de-mi-emergencia.jpg')">
+          <img src="images/mecanico-24-horas-citroen-macul-taller-mecanico-cerca-de-mi-emergencia.jpg" alt="mecanico 24 horas citroen macul taller mecanico cerca de mi emergencia - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/reparacion-transmision-fiat-quinta-normal-caja-de-cambios-especialista.jpg')">
+          <img src="images/reparacion-transmision-fiat-quinta-normal-caja-de-cambios-especialista.jpg" alt="reparacion transmision fiat quinta normal caja de cambios especialista - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/mantencion-preventiva-jeep-independencia-taller-mecanico-cerca-de-mi-4x4.jpg')">
+          <img src="images/mantencion-preventiva-jeep-independencia-taller-mecanico-cerca-de-mi-4x4.jpg" alt="mantencion preventiva jeep independencia taller mecanico cerca de mi 4x4 - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/electricidad-automotriz-mercedes-benz-san-miguel-sistema-electrico-integral.jpg')">
+          <img src="images/electricidad-automotriz-mercedes-benz-san-miguel-sistema-electrico-integral.jpg" alt="electricidad automotriz mercedes benz san miguel sistema electrico integral - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/mecanico-domicilio-mg-huechuraba-taller-mecanico-cerca-de-mi-economico.jpg')">
+          <img src="images/mecanico-domicilio-mg-huechuraba-taller-mecanico-cerca-de-mi-economico.jpg" alt="mecanico domicilio mg huechuraba taller mecanico cerca de mi economico - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/scanner-motor-opel-conchali-lectura-de-codigos-check-engine.jpg')">
+          <img src="images/scanner-motor-opel-conchali-lectura-de-codigos-check-engine.jpg" alt="scanner motor opel conchali lectura de codigos check engine - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/frenos-pastillas-ssangyong-lo-prado-taller-mecanico-cerca-de-mi-seguridad.jpg')">
+          <img src="images/frenos-pastillas-ssangyong-lo-prado-taller-mecanico-cerca-de-mi-seguridad.jpg" alt="frenos pastillas ssangyong lo prado taller mecanico cerca de mi seguridad - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openModal('images/cambio-aceite-volvo-cerrillos-filtro-de-aire-y-lubricante-sintetico.jpg')">
+          <img src="images/cambio-aceite-volvo-cerrillos-filtro-de-aire-y-lubricante-sintetico.jpg" alt="cambio aceite volvo cerrillos filtro de aire y lubricante sintetico - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+      
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/afinamiento-motor-byd-renca-taller-mecanico-cerca-de-mi-hibridos.jpg')">
+          <img src="images/afinamiento-motor-byd-renca-taller-mecanico-cerca-de-mi-hibridos.jpg" alt="afinamiento motor byd renca taller mecanico cerca de mi hibridos - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/inspeccion-compra-chery-cerro-navia-peritaje-automotriz-profesional.jpg')">
+          <img src="images/inspeccion-compra-chery-cerro-navia-peritaje-automotriz-profesional.jpg" alt="inspeccion compra chery cerro navia peritaje automotriz profesional - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/diagnostico-scanner-changan-lo-espejo-taller-mecanico-cerca-de-mi-rapido.jpg')">
+          <img src="images/diagnostico-scanner-changan-lo-espejo-taller-mecanico-cerca-de-mi-rapido.jpg" alt="diagnostico scanner changan lo espejo taller mecanico cerca de mi rapido - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/embrague-y-frenos-dfsk-san-joaquin-kit-nuevo-instalacion-express.jpg')">
+          <img src="images/embrague-y-frenos-dfsk-san-joaquin-kit-nuevo-instalacion-express.jpg" alt="embrague y frenos dfsk san joaquin kit nuevo instalacion express - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/correa-distribucion-great-wall-san-ramon-taller-mecanico-cerca-de-mi-motor.jpg')">
+          <img src="images/correa-distribucion-great-wall-san-ramon-taller-mecanico-cerca-de-mi-motor.jpg" alt="correa distribucion great wall san ramon taller mecanico cerca de mi motor - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/bateria-automotriz-haval-la-granja-reemplazo-a-domicilio-instante.jpg')">
+          <img src="images/bateria-automotriz-haval-la-granja-reemplazo-a-domicilio-instante.jpg" alt="bateria automotriz haval la granja reemplazo a domicilio instante - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/suspension-y-direccion-jac-la-pintana-taller-mecanico-cerca-de-mi-tren-delantero.jpg')">
+          <img src="images/suspension-y-direccion-jac-la-pintana-taller-mecanico-cerca-de-mi-tren-delantero.jpg" alt="suspension y direccion jac la pintana taller mecanico cerca de mi tren delantero - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mecanico-express-jmc-pedro-aguirre-cerda-taller-movil-multimarca.jpg')">
+          <img src="images/mecanico-express-jmc-pedro-aguirre-cerda-taller-movil-multimarca.jpg" alt="mecanico express jmc pedro aguirre cerda taller movil multimarca - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/servicio-integral-mahindra-san-jose-de-maipo-taller-mecanico-cerca-de-mi-montana.jpg')">
+          <img src="images/servicio-integral-mahindra-san-jose-de-maipo-taller-mecanico-cerca-de-mi-montana.jpg" alt="servicio integral mahindra san jose de maipo taller mecanico cerca de mi montana - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mantenimiento-ram-pirque-camionetas-petroleras-servicio-profesional.jpg')">
+          <img src="images/mantenimiento-ram-pirque-camionetas-petroleras-servicio-profesional.jpg" alt="mantenimiento ram pirque camionetas petroleras servicio profesional - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mecanico-a-domicilio-chevrolet-buin-taller-mecanico-cerca-de-mi-confianza.jpg')">
+          <img src="images/mecanico-a-domicilio-chevrolet-buin-taller-mecanico-cerca-de-mi-confianza.jpg" alt="mecanico a domicilio chevrolet buin taller mecanico cerca de mi confianza - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/scanner-automotriz-toyota-paine-limpieza-inyectores-y-bujias.jpg')">
+          <img src="images/scanner-automotriz-toyota-paine-limpieza-inyectores-y-bujias.jpg" alt="scanner automotriz toyota paine limpieza inyectores y bujias - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/frenos-y-pastillas-nissan-talagante-taller-mecanico-cerca-de-mi-rectificado.jpg')">
+          <img src="images/frenos-y-pastillas-nissan-talagante-taller-mecanico-cerca-de-mi-rectificado.jpg" alt="frenos y pastillas nissan talagante taller mecanico cerca de mi rectificado - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/cambio-de-aceite-hyundai-el-monte-sintetico-multigrado-alto-kilometraje.jpg')">
+          <img src="images/cambio-de-aceite-hyundai-el-monte-sintetico-multigrado-alto-kilometraje.jpg" alt="cambio de aceite hyundai el monte sintetico multigrado alto kilometraje - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/afinamiento-motor-kia-isla-de-maipo-taller-mecanico-cerca-de-mi-bujias.jpg')">
+          <img src="images/afinamiento-motor-kia-isla-de-maipo-taller-mecanico-cerca-de-mi-bujias.jpg" alt="afinamiento motor kia isla de maipo taller mecanico cerca de mi bujias - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/inspeccion-pre-compra-ford-melipilla-scanner-total-y-fugas-aceite.jpg')">
+          <img src="images/inspeccion-pre-compra-ford-melipilla-scanner-total-y-fugas-aceite.jpg" alt="inspeccion pre compra ford melipilla scanner total y fugas aceite - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/diagnostico-electrico-mazda-curacavi-taller-mecanico-cerca-de-mi-partida.jpg')">
+          <img src="images/diagnostico-electrico-mazda-curacavi-taller-mecanico-cerca-de-mi-partida.jpg" alt="diagnostico electrico mazda curacavi taller mecanico cerca de mi partida - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mantenimiento-kilometraje-suzuki-maria-pinto-pauta-fabricante-oficial.jpg')">
+          <img src="images/mantenimiento-kilometraje-suzuki-maria-pinto-pauta-fabricante-oficial.jpg" alt="mantenimiento kilometraje suzuki maria pinto pauta fabricante oficial - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/reparacion-de-embrague-peugeot-colina-taller-mecanico-cerca-de-mi-pedal.jpg')">
+          <img src="images/reparacion-de-embrague-peugeot-colina-taller-mecanico-cerca-de-mi-pedal.jpg" alt="reparacion de embrague peugeot colina taller mecanico cerca de mi pedal - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/cambio-correa-distribucion-renault-lampa-kit-distribucion-completo.jpg')">
+          <img src="images/cambio-correa-distribucion-renault-lampa-kit-distribucion-completo.jpg" alt="cambio correa distribucion renault lampa kit distribucion completo - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/servicio-de-bateria-subaru-tiltil-taller-mecanico-cerca-de-mi-voltaje.jpg')">
+          <img src="images/servicio-de-bateria-subaru-tiltil-taller-mecanico-cerca-de-mi-voltaje.jpg" alt="servicio de bateria subaru tiltil taller mecanico cerca de mi voltaje - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/ajuste-de-suspension-volkswagen-alhue-amortiguadores-y-cazoletas.jpg')">
+          <img src="images/ajuste-de-suspension-volkswagen-alhue-amortiguadores-y-cazoletas.jpg" alt="ajuste de suspension volkswagen alhue amortiguadores y cazoletas - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mecanico-urgencia-fiat-calera-de-tango-taller-mecanico-cerca-de-mi-panne.jpg')">
+          <img src="images/mecanico-urgencia-fiat-calera-de-tango-taller-mecanico-cerca-de-mi-panne.jpg" alt="mecanico urgencia fiat calera de tango taller mecanico cerca de mi panne - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/scanner-automotriz-chery-padre-hurtado-luz-check-engine-borrado.jpg')">
+          <img src="images/scanner-automotriz-chery-padre-hurtado-luz-check-engine-borrado.jpg" alt="scanner automotriz chery padre hurtado luz check engine borrado - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/frenos-y-pastillas-mg-penaflor-taller-mecanico-cerca-de-mi-expertos.jpg')">
+          <img src="images/frenos-y-pastillas-mg-penaflor-taller-mecanico-cerca-de-mi-expertos.jpg" alt="frenos y pastillas mg penaflor taller mecanico cerca de mi expertos - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/cambio-de-aceite-changan-santiago-centro-rapido-barato-calidad.jpg')">
+          <img src="images/cambio-de-aceite-changan-santiago-centro-rapido-barato-calidad.jpg" alt="cambio de aceite changan santiago centro rapido barato calidad - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/afinamiento-motor-haval-vitacura-taller-mecanico-cerca-de-mi-premium.jpg')">
+          <img src="images/afinamiento-motor-haval-vitacura-taller-mecanico-cerca-de-mi-premium.jpg" alt="afinamiento motor haval vitacura taller mecanico cerca de mi premium - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/inspeccion-pre-compra-mitsubishi-las-condes-mecanica-general-scanner.jpg')">
+          <img src="images/inspeccion-pre-compra-mitsubishi-las-condes-mecanica-general-scanner.jpg" alt="inspeccion pre compra mitsubishi las condes mecanica general scanner - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/diagnostico-electrico-nissan-maipu-taller-mecanico-cerca-de-mi-bobinas.jpg')">
+          <img src="images/diagnostico-electrico-nissan-maipu-taller-mecanico-cerca-de-mi-bobinas.jpg" alt="diagnostico electrico nissan maipu taller mecanico cerca de mi bobinas - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mantenimiento-kilometraje-toyota-la-florida-garantia-llanocar-total.jpg')">
+          <img src="images/mantenimiento-kilometraje-toyota-la-florida-garantia-llanocar-total.jpg" alt="mantenimiento kilometraje toyota la florida garantia llanocar total - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/reparacion-de-embrague-hyundai-puente-alto-taller-mecanico-cerca-de-mi-bimasa.jpg')">
+          <img src="images/reparacion-de-embrague-hyundai-puente-alto-taller-mecanico-cerca-de-mi-bimasa.jpg" alt="reparacion de embrague hyundai puente alto taller mecanico cerca de mi bimasa - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mecanico-domicilio-chevrolet-la-reina-taller-mecanico-cerca-de-mi-onix.jpg')">
+          <img src="images/mecanico-domicilio-chevrolet-la-reina-taller-mecanico-cerca-de-mi-onix.jpg" alt="mecanico domicilio chevrolet la reina taller mecanico cerca de mi onix - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/servicio-de-bateria-chevrolet-la-cisterna-taller-mecanico-cerca-de-mi-carga.jpg')">
+          <img src="images/servicio-de-bateria-chevrolet-la-cisterna-taller-mecanico-cerca-de-mi-carga.jpg" alt="servicio de bateria chevrolet la cisterna taller mecanico cerca de mi carga - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/ajuste-de-suspension-mazda-nunoa-alineacion-y-balanceo-ruedas.jpg')">
+          <img src="images/ajuste-de-suspension-mazda-nunoa-alineacion-y-balanceo-ruedas.jpg" alt="ajuste de suspension mazda nunoa alineacion y balanceo ruedas - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mecanico-domicilio-ford-providencia-taller-mecanico-cerca-de-mi-camionetas.jpg')">
+          <img src="images/mecanico-domicilio-ford-providencia-taller-mecanico-cerca-de-mi-camionetas.jpg" alt="mecanico domicilio ford providencia taller mecanico cerca de mi camionetas - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/scanner-automotriz-volkswagen-las-condes-diagnosis-computarizada-vcds.jpg')">
+          <img src="images/scanner-automotriz-volkswagen-las-condes-diagnosis-computarizada-vcds.jpg" alt="scanner automotriz volkswagen las condes diagnosis computarizada vcds - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/frenos-pastillas-toyota-la-reina-taller-mecanico-cerca-de-mi-discos.jpg')">
+          <img src="images/frenos-pastillas-toyota-la-reina-taller-mecanico-cerca-de-mi-discos.jpg" alt="frenos pastillas toyota la reina taller mecanico cerca de mi discos - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/cambio-aceite-nissan-macul-filtro-aire-y-filtro-polen.jpg')">
+          <img src="images/cambio-aceite-nissan-macul-filtro-aire-y-filtro-polen.jpg" alt="cambio aceite nissan macul filtro aire y filtro polen - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/afinamiento-motor-chevrolet-penalolen-taller-mecanico-cerca-de-mi-limpieza.jpg')">
+          <img src="images/afinamiento-motor-chevrolet-penalolen-taller-mecanico-cerca-de-mi-limpieza.jpg" alt="afinamiento motor chevrolet penalolen taller mecanico cerca de mi limpieza - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/inspeccion-compra-hyundai-la-pintana-informe-tecnico-scanner-fugas.jpg')">
+          <img src="images/inspeccion-compra-hyundai-la-pintana-informe-tecnico-scanner-fugas.jpg" alt="inspeccion compra hyundai la pintana informe tecnico scanner fugas - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/diagnostico-electrico-kia-pudahuel-taller-mecanico-cerca-de-mi-tablero.jpg')">
+          <img src="images/diagnostico-electrico-kia-pudahuel-taller-mecanico-cerca-de-mi-tablero.jpg" alt="diagnostico electrico kia pudahuel taller mecanico cerca de mi tablero - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mantenimiento-kilometraje-ford-quilicura-aceite-motorcraft-original.jpg')">
+          <img src="images/mantenimiento-kilometraje-ford-quilicura-aceite-motorcraft-original.jpg" alt="mantenimiento kilometraje ford quilicura aceite motorcraft original - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/reparacion-embrague-suzuki-san-miguel-taller-mecanico-cerca-de-mi-prensa.jpg')">
+          <img src="images/reparacion-embrague-suzuki-san-miguel-taller-mecanico-cerca-de-mi-prensa.jpg" alt="reparacion embrague suzuki san miguel taller mecanico cerca de mi prensa - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/correa-distribucion-peugeot-estacion-central-motor-hdi-especialistas.jpg')">
+          <img src="images/correa-distribucion-peugeot-estacion-central-motor-hdi-especialistas.jpg" alt="correa distribucion peugeot estacion central motor hdi especialistas - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/bateria-domicilio-mazda-huechuraba-taller-mecanico-cerca-de-mi-bosch.jpg')">
+          <img src="images/bateria-domicilio-mazda-huechuraba-taller-mecanico-cerca-de-mi-bosch.jpg" alt="bateria domicilio mazda huechuraba taller mecanico cerca de mi bosch - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/suspension-mitsubishi-independencia-buje-bandeja-y-terminal-direccion.jpg')">
+          <img src="images/suspension-mitsubishi-independencia-buje-bandeja-y-terminal-direccion.jpg" alt="suspension mitsubishi independencia buje bandeja y terminal direccion - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mecanico-urgencia-renault-recoleta-taller-mecanico-cerca-de-mi-electrico.jpg')">
+          <img src="images/mecanico-urgencia-renault-recoleta-taller-mecanico-cerca-de-mi-electrico.jpg" alt="mecanico urgencia renault recoleta taller mecanico cerca de mi electrico - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/scanner-changan-quinta-normal-borrado-fallas-computador-auto.jpg')">
+          <img src="images/scanner-changan-quinta-normal-borrado-fallas-computador-auto.jpg" alt="scanner changan quinta normal borrado fallas computador auto - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/frenos-pastillas-great-wall-san-joaquin-taller-mecanico-cerca-de-mi-ceramica.jpg')">
+          <img src="images/frenos-pastillas-great-wall-san-joaquin-taller-mecanico-cerca-de-mi-ceramica.jpg" alt="frenos pastillas great wall san joaquin taller mecanico cerca de mi ceramica - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/cambio-aceite-haval-san-ramon-castrol-mobil-ultra-proteccion.jpg')">
+          <img src="images/cambio-aceite-haval-san-ramon-castrol-mobil-ultra-proteccion.jpg" alt="cambio aceite haval san ramon castrol mobil ultra proteccion - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/afinamiento-chery-lo-prado-taller-mecanico-cerca-de-mi-inyectores.jpg')">
+          <img src="images/afinamiento-chery-lo-prado-taller-mecanico-cerca-de-mi-inyectores.jpg" alt="afinamiento chery lo prado taller mecanico cerca de mi inyectores - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/inspeccion-jac-lo-espejo-recorrido-de-prueba-y-compresion.jpg')">
+          <img src="images/inspeccion-jac-lo-espejo-recorrido-de-prueba-y-compresion.jpg" alt="inspeccion jac lo espejo recorrido de prueba y compresion - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/diagnostico-dfsk-cerro-navia-taller-mecanico-cerca-de-mi-furgones.jpg')">
+          <img src="images/diagnostico-dfsk-cerro-navia-taller-mecanico-cerca-de-mi-furgones.jpg" alt="diagnostico dfsk cerro navia taller mecanico cerca de mi furgones - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mantenimiento-mg-cerrillos-pauta-garantia-llanocar-multimarca.jpg')">
+          <img src="images/mantenimiento-mg-cerrillos-pauta-garantia-llanocar-multimarca.jpg" alt="mantenimiento mg cerrillos pauta garantia llanocar multimarca - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/embrague-ssangyong-renca-taller-mecanico-cerca-de-mi-especialista.jpg')">
+          <img src="images/embrague-ssangyong-renca-taller-mecanico-cerca-de-mi-especialista.jpg" alt="embrague ssangyong renca taller mecanico cerca de mi especialista - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/correa-distribucion-volvo-vitacura-mantenimiento-mayor-kilometraje.jpg')">
+          <img src="images/correa-distribucion-volvo-vitacura-mantenimiento-mayor-kilometraje.jpg" alt="correa distribucion volvo vitacura mantenimiento mayor kilometraje - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mecanico-domicilio-kia-lo-barnechea-taller-mecanico-cerca-de-mi-suv.jpg')">
+          <img src="images/mecanico-domicilio-kia-lo-barnechea-taller-mecanico-cerca-de-mi-suv.jpg" alt="mecanico domicilio kia lo barnechea taller mecanico cerca de mi suv - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/scanner-toyota-buin-corolla-yaris-limpieza-mariposa-admision.jpg')">
+          <img src="images/scanner-toyota-buin-corolla-yaris-limpieza-mariposa-admision.jpg" alt="scanner toyota buin corolla yaris limpieza mariposa admision - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/frenos-nissan-paine-taller-mecanico-cerca-de-mi-qashqai-xtrail.jpg')">
+          <img src="images/frenos-nissan-paine-taller-mecanico-cerca-de-mi-qashqai-xtrail.jpg" alt="frenos nissan paine taller mecanico cerca de mi qashqai xtrail - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/cambio-aceite-ford-talagante-ecosport-ranger-express-garantizado.jpg')">
+          <img src="images/cambio-aceite-ford-talagante-ecosport-ranger-express-garantizado.jpg" alt="cambio aceite ford talagante ecosport ranger express garantizado - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/afinamiento-mazda-el-monte-taller-mecanico-cerca-de-mi-skyactiv.jpg')">
+          <img src="images/afinamiento-mazda-el-monte-taller-mecanico-cerca-de-mi-skyactiv.jpg" alt="afinamiento mazda el monte taller mecanico cerca de mi skyactiv - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/inspeccion-hyundai-isla-de-maipo-tucson-santafe-revision-precompra.jpg')">
+          <img src="images/inspeccion-hyundai-isla-de-maipo-tucson-santafe-revision-precompra.jpg" alt="inspeccion hyundai isla de maipo tucson santafe revision precompra - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/diagnostico-chevrolet-melipilla-taller-mecanico-cerca-de-mi-sail-spark.jpg')">
+          <img src="images/diagnostico-chevrolet-melipilla-taller-mecanico-cerca-de-mi-sail-spark.jpg" alt="diagnostico chevrolet melipilla taller mecanico cerca de mi sail spark - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mantenimiento-suzuki-curacavi-swift-baleno-mantenimiento-preventivo.jpg')">
+          <img src="images/mantenimiento-suzuki-curacavi-swift-baleno-mantenimiento-preventivo.jpg" alt="mantenimiento suzuki curacavi swift baleno mantenimiento preventivo - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/embrague-peugeot-maria-pinto-taller-mecanico-cerca-de-mi-partner.jpg')">
+          <img src="images/embrague-peugeot-maria-pinto-taller-mecanico-cerca-de-mi-partner.jpg" alt="embrague peugeot maria pinto taller mecanico cerca de mi partner - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/correa-distribucion-renault-colina-clio-symbol-cambio-urgente.jpg')">
+          <img src="images/correa-distribucion-renault-colina-clio-symbol-cambio-urgente.jpg" alt="correa distribucion renault colina clio symbol cambio urgente - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/bateria-subaru-lampa-taller-mecanico-cerca-de-mi-awd-sistema.jpg')">
+          <img src="images/bateria-subaru-lampa-taller-mecanico-cerca-de-mi-awd-sistema.jpg" alt="bateria subaru lampa taller mecanico cerca de mi awd sistema - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/suspension-volkswagen-tiltil-gol-vento-amortiguadores-nuevos.jpg')">
+          <img src="images/suspension-volkswagen-tiltil-gol-vento-amortiguadores-nuevos.jpg" alt="suspension volkswagen tiltil gol vento amortiguadores nuevos - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mecanico-urgencia-fiat-alhue-taller-mecanico-cerca-de-mi-comerciales.jpg')">
+          <img src="images/mecanico-urgencia-fiat-alhue-taller-mecanico-cerca-de-mi-comerciales.jpg" alt="mecanico urgencia fiat alhue taller mecanico cerca de mi comerciales - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/scanner-chery-calera-de-tango-tiggo-pro-diagnostico-computador.jpg')">
+          <img src="images/scanner-chery-calera-de-tango-tiggo-pro-diagnostico-computador.jpg" alt="scanner chery calera de tango tiggo pro diagnostico computador - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/frenos-mg-padre-hurtado-taller-mecanico-cerca-de-mi-zs-extender.jpg')">
+          <img src="images/frenos-mg-padre-hurtado-taller-mecanico-cerca-de-mi-zs-extender.jpg" alt="frenos mg padre hurtado taller mecanico cerca de mi zs extender - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/cambio-aceite-changan-penaflor-cx70-alsvin-filtro-aceite-original.jpg')">
+          <img src="images/cambio-aceite-changan-penaflor-cx70-alsvin-filtro-aceite-original.jpg" alt="cambio aceite changan penaflor cx70 alsvin filtro aceite original - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/afinamiento-haval-pirque-taller-mecanico-cerca-de-mi-h6-jolion.jpg')">
+          <img src="images/afinamiento-haval-pirque-taller-mecanico-cerca-de-mi-h6-jolion.jpg" alt="afinamiento haval pirque taller mecanico cerca de mi h6 jolion - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/inspeccion-mitsubishi-san-jose-de-maipo-l200-montero-scanner-4x4.jpg')">
+          <img src="images/inspeccion-mitsubishi-san-jose-de-maipo-l200-montero-scanner-4x4.jpg" alt="inspeccion mitsubishi san jose de maipo l200 montero scanner 4x4 - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/diagnostico-nissan-san-pedro-taller-mecanico-cerca-de-mi-sentra-versa.jpg')">
+          <img src="images/diagnostico-nissan-san-pedro-taller-mecanico-cerca-de-mi-sentra-versa.jpg" alt="diagnostico nissan san pedro taller mecanico cerca de mi sentra versa - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden" onclick="openModal('images/mantenimiento-toyota-alhue-hilux-rav4-expertos-japoneses-llanocar.jpg')">
+          <img src="images/mantenimiento-toyota-alhue-hilux-rav4-expertos-japoneses-llanocar.jpg" alt="mantenimiento toyota alhue hilux rav4 expertos japoneses llanocar - LLANOCAR Servicios Automotrices Santiago" loading="lazy">
+        </div>
+    </div>
+    <div class="text-center mt-4">
+      <button class="cotizar-btn" id="btnVerMasFotos" onclick="document.querySelectorAll('.gallery-hidden').forEach(function(el){el.classList.add('show');}); document.getElementById('btnVerMasFotos').style.display='none';">
+        <i class="fas fa-images me-2"></i>Ver Más Fotos
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== I. TRUST/CTA SECTION ========== -->
+<section class="trust-section">
+  <div class="container">
+    <h2>No Dejes que una Mala Experiencia Mecánica te Impida Volver a Confiar.</h2>
+    <p>Con Nosotros, tu Vehículo Quedará en Excelentes Condiciones. En LLANOCAR entendemos que confiar en un taller mecánico no es fácil. Por eso nos esforzamos cada día en ofrecer transparencia, comunicación constante y un servicio de calidad que te devuelva la tranquilidad al manejar.</p>
+    <p>Más de 30 años de experiencia respaldan nuestro trabajo. Miles de clientes satisfechos en Santiago confían en nosotros para el mantenimiento y reparación de sus vehículos.</p>
+    <a href="https://wa.me/56966688770?text=Hola%20LLANOCAR%20necesito%20un%20servicio%20mec%C3%A1nico" class="cotizar-btn" target="_blank" style="background:#fff; color:#0d5e0d !important;">
+      <i class="fab fa-whatsapp me-2"></i>COTIZAR AHORA
+    </a>
+  </div>
+</section>
+
+
+<!-- ========== J. DIESEL SECTION ========== -->
+<section class="diesel-section">
+  <div class="container">
+    <h2>Si tu Vehículo es Diésel, Contamos con el Mejor Servicio Especializado</h2>
+    <h5 class="text-center mb-4" style="color:var(--llanocar-primary); font-weight:700;">¿Tu auto diésel presenta estos síntomas?</h5>
+    <div class="row g-3 mb-5">
+      
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="diesel-symptom-card">
+            <i class="fas fa-smog d-block"></i>
+            <h6>Humo Negro</h6>
+            <p>Exceso de combustible sin quemar, inyectores defectuosos o filtro de aire obstruido.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="diesel-symptom-card">
+            <i class="fas fa-cloud d-block"></i>
+            <h6>Humo Blanco</h6>
+            <p>Fugas de refrigerante hacia cámaras de combustión o problemas en la bomba inyectora.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="diesel-symptom-card">
+            <i class="fas fa-key d-block"></i>
+            <h6>Problemas de Partida</h6>
+            <p>Dificultad para encender en frío por bujías de precalentamiento o batería débil.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="diesel-symptom-card">
+            <i class="fas fa-volume-up d-block"></i>
+            <h6>Ruido Excesivo del Motor</h6>
+            <p>Ruidos metálicos o golpeteos que indican desgaste interno del motor diésel.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="diesel-symptom-card">
+            <i class="fas fa-wave-square d-block"></i>
+            <h6>Motor Inestable</h6>
+            <p>Marcha irregular, vibraciones o tirones que requieren diagnóstico especializado.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="diesel-symptom-card">
+            <i class="fas fa-tachometer-alt d-block"></i>
+            <h6>Problemas de Aceleración</h6>
+            <p>Pérdida de potencia, turbo defectuoso o inyectores con mal atomización.</p>
+          </div>
+        </div>
+    </div>
+    <h5 class="text-center mb-4" style="color:var(--llanocar-primary); font-weight:700;">Nuestros Servicios Diésel Especializados</h5>
+    <div class="row g-3 mb-4">
+      
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="diesel-service-box">
+            <i class="fas fa-syringe d-block"></i>
+            <h5>Inyección Diésel</h5>
+            <p>Limpieza, reparación y reemplazo de inyectores y bomba de inyección Common Rail.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="diesel-service-box">
+            <i class="fas fa-filter d-block"></i>
+            <h5>DPF OFF</h5>
+            <p>Servicio profesional de eliminación de filtro de partículas diésel.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="diesel-service-box">
+            <i class="fas fa-recycle d-block"></i>
+            <h5>EGR OFF</h5>
+            <p>Desactivación y limpieza de válvula EGR para mejorar rendimiento.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="diesel-service-box">
+            <i class="fas fa-vial d-block"></i>
+            <h5>Pruebas de Retorno</h5>
+            <p>Diagnóstico de retorno de inyectores para detectar fallas de inyección.</p>
+          </div>
+        </div>
+    </div>
+    <div class="text-center">
+      <a href="https://wa.me/56966688770?text=Hola%20LLANOCAR%20tengo%20un%20veh%C3%ADculo%20di%C3%A9sel%20con%20problemas" class="cotizar-btn" target="_blank">
+        <i class="fab fa-whatsapp me-2"></i>COTIZAR SERVICIO DIÉSEL
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== K. CONTACT FORM ========== -->
+<section id="contacto" class="contact-form-section">
+  <div class="container">
+    <h2>Solicita tu Cotización</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <form action="https://formsubmit.co/llanocar2019@gmail.com" method="POST">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label fw-bold">Nombre</label>
+              <input type="text" name="nombre" class="form-control" placeholder="Tu nombre completo" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold">WhatsApp</label>
+              <input type="tel" name="whatsapp" class="form-control" placeholder="+56 9 XXXX XXXX" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold">Email</label>
+              <input type="email" name="email" class="form-control" placeholder="tu@email.com">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold">Marca / Modelo / Año</label>
+              <input type="text" name="vehiculo" class="form-control" placeholder="Ej: Toyota Corolla 2020">
+            </div>
+            <div class="col-12">
+              <label class="form-label fw-bold">Describe tu Solicitud</label>
+              <textarea name="mensaje" class="form-control" rows="4" placeholder="Cuéntanos qué necesita tu vehículo, kilometraje actual y el servicio que requieres..." required></textarea>
+            </div>
+            <div class="col-12 text-center mt-3">
+              <button type="submit" class="cotizar-btn">
+                <i class="fas fa-paper-plane me-2"></i>Enviar
+              </button>
+            </div>
+          </div>
+        </form>
+        <p class="text-center mt-3" style="color:#888; font-size:0.9rem;">O contáctanos directamente por WhatsApp al <strong style="color:var(--llanocar-primary);">+56 9 6668 8770</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== L. INTERNAL LINKS SECTION ========== -->
+<section class="internal-links-section">
+  <div class="container">
+    <h2>Nuestros Servicios Mecánicos en Santiago</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <p>En LLANOCAR nos especializamos en ofrecer un servicio mecánico integral para tu vehículo en Santiago. Nuestros servicios incluyen <a href="mecanico-a-domicilio.html">mecánico a domicilio</a>, <a href="scanner-automotriz.html">scanner automotriz</a>, <a href="cambio-de-frenos.html">cambio de frenos</a>, <a href="cambio-de-pastillas.html">cambio de pastillas</a>, <a href="cambio-de-aceite.html">cambio de aceite</a>, <a href="reparacion-de-embrague.html">reparación de embrague</a>, <a href="correa-de-distribucion.html">correa de distribución</a>, <a href="mantencion-automotriz.html">mantención automotriz</a>, <a href="electricidad-automotriz.html">electricidad automotriz</a> y <a href="tren-delantero.html">tren delantero</a>. Cada uno de estos servicios cuenta con técnicos especializados, repuestos de calidad y garantía por escrito para tu tranquilidad.</p>
+        <p>Entendemos que cada vehículo tiene necesidades únicas. Por eso también ofrecemos servicios de <a href="suspension-y-direccion.html">suspensión y dirección</a>, <a href="embragues-y-distribucion.html">embragues y distribución</a>, <a href="diagnostico-automotriz.html">diagnóstico automotriz</a>, <a href="inspeccion-mecanica.html">inspección mecánica</a>, <a href="mecanico-de-emergencia.html">mecánico de emergencia</a>, <a href="servicio-de-bateria.html">servicio de batería</a>, <a href="cambio-de-bujias.html">cambio de bujías</a>, <a href="compresion-de-motor.html">compresión de motor</a>, <a href="reparacion-de-motor.html">reparación de motor</a> y <a href="transmision-automatica.html">transmisión automática</a>. Nuestro equipo está capacitado para atender vehículos bencineros y diésel de todas las marcas del mercado chileno.</p>
+        <p>Nos diferenciamos por ofrecer <a href="sistema-de-enfriamiento.html">sistema de enfriamiento</a>, <a href="cambio-de-filtros.html">cambio de filtros</a>, <a href="mantencion-a-domicilio.html">mantención a domicilio</a>, <a href="servicios-domicilio.html">servicios a domicilio</a>, <a href="taller-mecanico-a-domicilio.html">taller mecánico a domicilio</a>, <a href="mecanico-para-mujeres.html">mecánico para mujeres</a>, <a href="faq.html">preguntas frecuentes</a>, <a href="contacto.html">contáctanos</a> y <a href="quienes-somos.html">quiénes somos</a>. Visita nuestras páginas dedicadas para conocer más sobre cada servicio y no dudes en contactarnos al <strong style="color:var(--llanocar-primary);">+56 9 6668 8770</strong> para una cotización personalizada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== M. VOLANTE DE CUERO SECTION ========== -->
+<section class="volante-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h2>Tapizado de Volantes de Cuero — Especialistas en Recuperación de Volantes</h2>
+        <p>Además de nuestros servicios mecánicos, en LLANOCAR contamos con un servicio especializado de <strong>tapizado de volantes de cuero</strong>. Si el volante de tu vehículo está desgastado, agrietado, brillante por el uso o simplemente quieres renovar su aspecto, nuestros artesanos pueden devolverle la vida con acabados de primera calidad.</p>
+        <p>Trabajamos con cuero genuino de alta calidad, cosido a mano con técnicas profesionales que garantizan durabilidad y un acabado premium. Ofrecemos diferentes opciones de colores y terminaciones para que el volante de tu auto luzca como nuevo o incluso mejor que de fábrica. El tapizado de volante no solo mejora la estética, sino también el agarre y la comodidad al conducir.</p>
+        <div class="text-center mt-4">
+          <a href="https://tapizadodevolantes.pages.dev" class="cotizar-btn" target="_blank" style="background:#fff; color:var(--llanocar-primary) !important;">
+            <i class="fas fa-external-link-alt me-2"></i>Visita Tapizado de Volantes
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== N. ZONAS DE COBERTURA SECTION ========== -->
+<section class="zonas-section">
+  <div class="container">
+    <h2>Zonas de Cobertura — LLANOCAR en Toda Santiago</h2>
+    <p class="text-center mb-3" style="color:#666; max-width:800px; margin:0 auto 1.5rem auto;">
+      LLANOCAR ofrece servicio de <strong>entrega y recepción a domicilio SIN COSTO</strong> en las comunas destacadas y cobertura completa en toda la Región Metropolitana. Contáctanos al <strong style="color:var(--llanocar-primary);">+56 9 6668 8770</strong>.
+    </p>
+    <div class="text-center">
+        <a href="comunas/pudahuel.html" class="comuna-link comuna-destacada">Pudahuel</a>
+        <a href="comunas/estacion-central.html" class="comuna-link comuna-destacada">Estación Central</a>
+        <a href="comunas/la-cisterna.html" class="comuna-link comuna-destacada">La Cisterna</a>
+        <a href="comunas/san-bernardo.html" class="comuna-link comuna-destacada">San Bernardo</a>
+        <a href="comunas/la-granja.html" class="comuna-link comuna-destacada">La Granja</a>
+        <a href="comunas/la-florida.html" class="comuna-link comuna-destacada">La Florida</a>
+        <a href="comunas/maipu.html" class="comuna-link comuna-destacada">Maipú</a>
+        <a href="comunas/alhue.html" class="comuna-link">Alhué</a>
+        <a href="comunas/buin.html" class="comuna-link">Buin</a>
+        <a href="comunas/calera-de-tango.html" class="comuna-link">Calera de Tango</a>
+        <a href="comunas/cerrillos.html" class="comuna-link">Cerrillos</a>
+        <a href="comunas/cerro-navia.html" class="comuna-link">Cerro Navia</a>
+        <a href="comunas/colina.html" class="comuna-link">Colina</a>
+        <a href="comunas/conchali.html" class="comuna-link">Conchalí</a>
+        <a href="comunas/curacavi.html" class="comuna-link">Curacaví</a>
+        <a href="comunas/el-bosque.html" class="comuna-link">El Bosque</a>
+        <a href="comunas/el-monte.html" class="comuna-link">El Monte</a>
+        <a href="comunas/independencia.html" class="comuna-link">Independencia</a>
+        <a href="comunas/isla-de-maipo.html" class="comuna-link">Isla de Maipo</a>
+        <a href="comunas/la-pintana.html" class="comuna-link">La Pintana</a>
+        <a href="comunas/lampa.html" class="comuna-link">Lampa</a>
+        <a href="comunas/lo-espejo.html" class="comuna-link">Lo Espejo</a>
+        <a href="comunas/lo-prado.html" class="comuna-link">Lo Prado</a>
+        <a href="comunas/macul.html" class="comuna-link">Macul</a>
+        <a href="comunas/maria-pinto.html" class="comuna-link">María Pinto</a>
+        <a href="comunas/melipilla.html" class="comuna-link">Melipilla</a>
+        <a href="comunas/nunoa.html" class="comuna-link">Ñuñoa</a>
+        <a href="comunas/padre-hurtado.html" class="comuna-link">Padre Hurtado</a>
+        <a href="comunas/paine.html" class="comuna-link">Paine</a>
+        <a href="comunas/pedro-aguirre-cerda.html" class="comuna-link">Pedro Aguirre Cerda</a>
+        <a href="comunas/penaflor.html" class="comuna-link">Peñaflor</a>
+        <a href="comunas/penalolen.html" class="comuna-link">Peñalolén</a>
+        <a href="comunas/pirque.html" class="comuna-link">Pirque</a>
+        <a href="comunas/providencia.html" class="comuna-link">Providencia</a>
+        <a href="comunas/puente-alto.html" class="comuna-link">Puente Alto</a>
+        <a href="comunas/quilicura.html" class="comuna-link">Quilicura</a>
+        <a href="comunas/quinta-normal.html" class="comuna-link">Quinta Normal</a>
+        <a href="comunas/recoleta.html" class="comuna-link">Recoleta</a>
+        <a href="comunas/renca.html" class="comuna-link">Renca</a>
+        <a href="comunas/san-joaquin.html" class="comuna-link">San Joaquín</a>
+        <a href="comunas/san-jose-de-maipo.html" class="comuna-link">San José de Maipo</a>
+        <a href="comunas/san-miguel.html" class="comuna-link">San Miguel</a>
+        <a href="comunas/san-pedro.html" class="comuna-link">San Pedro</a>
+        <a href="comunas/san-ramon.html" class="comuna-link">San Ramón</a>
+        <a href="comunas/santiago.html" class="comuna-link">Santiago</a>
+        <a href="comunas/talagante.html" class="comuna-link">Talagante</a>
+        <a href="comunas/tiltil.html" class="comuna-link">Tiltil</a>
+        
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== FAQ SECTION ========== -->
 <section class="seo-section" id="faq">
   <div class="container">
     <h2 class="seo-h2"><i class="fas fa-question-circle me-2"></i>Preguntas Frecuentes</h2>
@@ -1146,11 +2930,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="col-lg-8">
         <div class="accordion" id="faqAccordion">
           <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">¿Cuánto cuesta un mecánico a domicilio?</button></h3>
-            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">El costo depende del servicio requerido. Te damos un presupuesto sin compromiso por WhatsApp o llamada. Trabajamos con precios justos y transparentes, sin costos ocultos. Aceptamos efectivo, transferencia y tarjeta con Transbank inalámbrico.</div></div>
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">¿Cuánto cuesta un servicio mecánico en LLANOCAR?</button></h3>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">El costo depende del servicio requerido. Te damos un presupuesto sin compromiso por WhatsApp o llamada al +56 9 6668 8770. Trabajamos con precios justos y transparentes, sin costos ocultos. Aceptamos efectivo, transferencia y tarjeta con Transbank inalámbrico.</div></div>
           </div>
           <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">¿Cuánto demora un servicio a domicilio?</button></h3>
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">¿Cuánto demora un servicio?</button></h3>
             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Un cambio de aceite toma aproximadamente 30-45 minutos. Un scanner automotriz unos 40 minutos. Reparaciones más complejas como embrague o correa de distribución pueden tomar entre 2-4 horas. Te informamos el tiempo estimado al dar el presupuesto.</div></div>
           </div>
           <div class="accordion-item">
@@ -1158,19 +2942,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Sí, todas nuestras reparaciones incluyen garantía por escrito. La garantía varía según el servicio (3 a 12 meses para repuestos, garantía de por vida en mano de obra para ciertos servicios). Utilizamos repuestos originales o de equivalencia certificada.</div></div>
           </div>
           <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">¿Atienden emergencias?</button></h3>
-            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Sí, contamos con servicio de emergencia las 24 horas del día, los 7 días de la semana. Si quedas varado, llámanos inmediatamente al +56 9 3326 1085 y coordinaremos un técnico para que llegue a tu ubicación lo antes posible.</div></div>
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">¿Cómo funciona el servicio de entrega y recepción a domicilio?</button></h3>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">En LLANOCAR ofrecemos servicio de entrega y recepción a domicilio SIN COSTO en las comunas de San Miguel, San Joaquín, La Florida, La Cisterna, La Granja y Santiago Centro. Coordinamos la recogida y entrega de tu vehículo por WhatsApp al +56 9 6668 8770. Para el resto de Santiago el servicio tiene un costo mínimo de traslado.</div></div>
           </div>
           <div class="accordion-item">
             <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">¿Qué marcas de vehículos reparan?</button></h3>
-            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Somos taller multimarca. Reparamos Chevrolet, Toyota, Nissan, Hyundai, Kia, Ford, Mazda, Renault, Suzuki, Peugeot, Honda, Subaru, Mitsubishi, Volkswagen, BMW, Mercedes-Benz, Volvo, Changan, Haval, JMC, DFSK y prácticamente todas las marcas del mercado chileno.</div></div>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Somos taller multimarca con más de 30 años de experiencia. Reparamos Chevrolet, Toyota, Nissan, Hyundai, Kia, Ford, Mazda, Renault, Suzuki, Peugeot, Honda, Subaru, Mitsubishi, Volkswagen, BMW, Mercedes-Benz, Volvo, Changan, Haval, JMC, DFSK, MG y prácticamente todas las marcas del mercado chileno, incluyendo vehículos bencineros y diésel.</div></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- MODAL PARA IMAGENES -->
 <div id="imageModal">
@@ -1194,7 +2977,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="social-icons mt-3">
           <a href="https://www.instagram.com/llanocar.servicios.automotrices" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="https://www.facebook.com/llanocar.service" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/56933261085" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/56966688770" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
 
@@ -1230,7 +3013,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="fas fa-phone-alt"></i>
           <div>
             <strong>Teléfono:</strong><br>
-            <a href="tel:933261085" style="color:#bbb; text-decoration:none;">+56 9 3326 1085</a>
+            <a href="tel:966688770" style="color:#bbb; text-decoration:none;">+56 9 6668 8770</a>
           </div>
         </div>
 
@@ -1262,12 +3045,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="big-buttons-container">
     
     <!-- Botón Llamada (Rojo Grande) -->
-    <a href="tel:933261085" class="btn-massive-call">
+    <a href="tel:966688770" class="btn-massive-call">
       <i class="fas fa-phone-alt"></i> LLAMAR AHORA
     </a>
 
     <!-- Botón WhatsApp (Verde Grande) -->
-    <a href="https://wa.me/56933261085?text=Hola%20te%20escribo%20desde%20la%20pagina%20web%20estoy%20interesado%20en%20tus%20servicios" class="btn-massive-wa" target="_blank">
+    <a href="https://wa.me/56966688770?text=Hola%20te%20escribo%20desde%20la%20pagina%20web%20estoy%20interesado%20en%20tus%20servicios" class="btn-massive-wa" target="_blank">
       <i class="fab fa-whatsapp"></i> WhatsApp
     </a>
 
