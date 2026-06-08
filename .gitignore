@@ -1,6 +1,5 @@
 # No incluir otros repos del workspace
-Globalpro/
-Globalprov2/
+other-repos/
 repo-analysis/
 .env
 __pycache__/
