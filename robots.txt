@@ -5,19 +5,38 @@
 
 # Sitemaps
 Sitemap: https://llanocar.pages.dev/sitemap.xml
+Sitemap: https://llanocar.pages.dev/image-sitemap.xml
 
-# Permitir todo el acceso a los crawlers
+# Permitir todo el acceso a los crawlers (incluyendo imágenes)
 User-agent: *
 Allow: /
+Allow: /images/
 
 # Archivos y carpetas que NO se deben indexar
 Disallow: /css/
 Disallow: /js/
-Disallow: /images/icons/
 Disallow: /assets/
 Disallow: /skills/
 Disallow: /upload/
 Disallow: /download/
+
+# Permitir indexación de imágenes a Google
+User-agent: Googlebot-Image
+Allow: /
+Allow: /images/
+
+# Permitir indexación de imágenes a Bing
+User-agent: msnbot-media
+Allow: /
+Allow: /images/
+
+# Permitir Googlebot sin restricciones
+User-agent: Googlebot
+Allow: /
+
+# Permitir Bingbot sin restricciones
+User-agent: Bingbot
+Allow: /
 
 # Bloquear bots maliciosos o innecesarios
 User-agent: AhrefsBot
@@ -40,11 +59,3 @@ Disallow: /
 
 User-agent: YandexBot
 Crawl-delay: 10
-
-# Permitir Googlebot sin restricciones
-User-agent: Googlebot
-Allow: /
-
-# Permitir Bingbot sin restricciones
-User-agent: Bingbot
-Allow: /
