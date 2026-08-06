@@ -1380,7 +1380,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <a class="nav-link" href="contacto.html">Contacto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#galeria-de-trabajos">Galería</a>
+          <a class="nav-link" href="galeria.html">Galería</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="blog/index.html">Blog</a>
@@ -2995,7 +2995,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <p>Además de nuestros servicios mecánicos, en LLANOCAR contamos con un servicio especializado de <strong>tapizado de volantes de cuero</strong>. Si el volante de tu vehículo está desgastado, agrietado, brillante por el uso o simplemente quieres renovar su aspecto, nuestros artesanos pueden devolverle la vida con acabados de primera calidad.</p>
         <p>Trabajamos con cuero genuino de alta calidad, cosido a mano con técnicas profesionales que garantizan durabilidad y un acabado premium. Ofrecemos diferentes opciones de colores y terminaciones para que el volante de tu auto luzca como nuevo o incluso mejor que de fábrica. El tapizado de volante no solo mejora la estética, sino también el agarre y la comodidad al conducir.</p>
         <div class="text-center mt-4">
-          <a href="https://tapizadodevolantes.pages.dev" class="cotizar-btn" target="_blank" style="background:#fff; color:var(--llanocar-primary) !important;">
+          <a href="https://tapizadodevolante.com/" class="cotizar-btn" target="_blank" style="background:#fff; color:var(--llanocar-primary) !important;">
             <i class="fas fa-external-link-alt me-2"></i>Visita Tapizado de Volantes
           </a>
         </div>
@@ -3968,6 +3968,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 <!-- FOOTER -->
+
+<!-- ====== MAPA INTERACTIVO DE COMUNAS (INDEX) ====== -->
+<section class="py-5" style="background:#0d1117;border-top:1px solid rgba(0,212,255,0.15);">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 style="color:#00d4ff;font-weight:700;font-size:1.8rem;">📍 Comunas que Cubrimos en Santiago</h2>
+      <p style="color:#8b949e;font-size:0.9rem;">Selecciona tu comuna o haz click en el mapa para ver los servicios disponibles.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <input type="text" id="comuna-search-input" placeholder="Buscar comuna..." autocomplete="off"
+          style="width:100%;padding:12px 16px;background:#161b22;border:2px solid rgba(0,212,255,0.2);border-radius:8px;color:#fff;font-size:0.875rem;margin-bottom:12px;"
+          oninput="filtrarComunasIdx()">
+        <div id="comunas-lista-container" style="background:#161b22;border:1px solid rgba(0,212,255,0.1);border-radius:8px;max-height:420px;overflow-y:auto;padding:12px;"></div>
+      </div>
+      <div class="col-lg-7">
+        <div id="comuna-map-leaflet" style="height:480px;background:#0d1117;border-radius:8px;overflow:hidden;border:1px solid rgba(0,212,255,0.2);"></div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px;">
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;border-radius:50%;background:#3B82F6;box-shadow:0 0 6px #3B82F6;"></div><span style="color:#8b949e;font-size:0.75rem;">Norte</span></div>
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;border-radius:50%;background:#00d4ff;box-shadow:0 0 6px #00d4ff;"></div><span style="color:#8b949e;font-size:0.75rem;">Oriente</span></div>
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;border-radius:50%;background:#ff8a00;box-shadow:0 0 6px #ff8a00;"></div><span style="color:#8b949e;font-size:0.75rem;">Sur</span></div>
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;border-radius:50%;background:#A855F7;box-shadow:0 0 6px #A855F7;"></div><span style="color:#8b949e;font-size:0.75rem;">Poniente</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script>
+const COMUNAS_MAPA_IDX=[{"slug":"alhue","nombre":"Alhué","lat":-33.8025,"lng":-71.0219},{"slug":"buin","nombre":"Buin","lat":-33.7314,"lng":-70.7419},{"slug":"calera-de-tango","nombre":"Calera de Tango","lat":-33.6286,"lng":-70.7894},{"slug":"cerrillos","nombre":"Cerrillos","lat":-33.4858,"lng":-70.7233},{"slug":"cerro-navia","nombre":"Cerro Navia","lat":-33.4389,"lng":-70.7331},{"slug":"colina","nombre":"Colina","lat":-33.2014,"lng":-70.6714},{"slug":"conchali","nombre":"Conchalí","lat":-33.3635,"lng":-70.6767},{"slug":"curacavi","nombre":"Curacaví","lat":-33.4050,"lng":-71.1361},{"slug":"el-bosque","nombre":"El Bosque","lat":-33.5522,"lng":-70.6764},{"slug":"el-monte","nombre":"El Monte","lat":-33.6794,"lng":-70.9967},{"slug":"estacion-central","nombre":"Estación Central","lat":-33.4514,"lng":-70.7036},{"slug":"independencia","nombre":"Independencia","lat":-33.4061,"lng":-70.6567},{"slug":"isla-de-maipo","nombre":"Isla de Maipo","lat":-33.7458,"lng":-70.9036},{"slug":"la-cisterna","nombre":"La Cisterna","lat":-33.5294,"lng":-70.6639},{"slug":"la-florida","nombre":"La Florida","lat":-33.5189,"lng":-70.5872},{"slug":"la-granja","nombre":"La Granja","lat":-33.5483,"lng":-70.6314},{"slug":"la-pintana","nombre":"La Pintana","lat":-33.5825,"lng":-70.6358},{"slug":"lampa","nombre":"Lampa","lat":-33.2847,"lng":-70.8686},{"slug":"lo-espejo","nombre":"Lo Espejo","lat":-33.5242,"lng":-70.7217},{"slug":"lo-prado","nombre":"Lo Prado","lat":-33.4453,"lng":-70.7128},{"slug":"macul","nombre":"Macul","lat":-33.4789,"lng":-70.6064},{"slug":"maipu","nombre":"Maipú","lat":-33.5189,"lng":-70.7594},{"slug":"maria-pinto","nombre":"María Pinto","lat":-33.4969,"lng":-71.0789},{"slug":"melipilla","nombre":"Melipilla","lat":-33.6894,"lng":-71.2186},{"slug":"nunoa","nombre":"Ñuñoa","lat":-33.4628,"lng":-70.5994},{"slug":"padre-hurtado","nombre":"Padre Hurtado","lat":-33.5750,"lng":-70.8300},{"slug":"paine","nombre":"Paine","lat":-33.7931,"lng":-70.7444},{"slug":"pedro-aguirre-cerda","nombre":"Pedro Aguirre Cerda","lat":-33.5108,"lng":-70.6864},{"slug":"penaflor","nombre":"Peñaflor","lat":-33.6158,"lng":-70.8847},{"slug":"penalolen","nombre":"Peñalolén","lat":-33.4906,"lng":-70.5869},{"slug":"pirque","nombre":"Pirque","lat":-33.7364,"lng":-70.5794},{"slug":"providencia","nombre":"Providencia","lat":-33.4378,"lng":-70.6108},{"slug":"pudahuel","nombre":"Pudahuel","lat":-33.4314,"lng":-70.7567},{"slug":"puente-alto","nombre":"Puente Alto","lat":-33.6117,"lng":-70.5758},{"slug":"quilicura","nombre":"Quilicura","lat":-33.3411,"lng":-70.7264},{"slug":"quinta-normal","nombre":"Quinta Normal","lat":-33.4417,"lng":-70.6944},{"slug":"recoleta","nombre":"Recoleta","lat":-33.4146,"lng":-70.6419},{"slug":"renca","nombre":"Renca","lat":-33.3936,"lng":-70.7067},{"slug":"san-bernardo","nombre":"San Bernardo","lat":-33.5856,"lng":-70.7008},{"slug":"san-joaquin","nombre":"San Joaquín","lat":-33.5028,"lng":-70.6367},{"slug":"san-jose-de-maipo","nombre":"San José de Maipo","lat":-33.6378,"lng":-70.3722},{"slug":"san-miguel","nombre":"San Miguel","lat":-33.4986,"lng":-70.6539},{"slug":"san-pedro","nombre":"San Pedro","lat":-33.9014,"lng":-71.2286},{"slug":"san-ramon","nombre":"San Ramón","lat":-33.5506,"lng":-70.5808},{"slug":"santiago","nombre":"Santiago Centro","lat":-33.4489,"lng":-70.6693},{"slug":"talagante","nombre":"Talagante","lat":-33.6647,"lng":-70.9267},{"slug":"tiltil","nombre":"Tiltil","lat":-33.0833,"lng":-70.9667},{"slug":"vitacura","nombre":"Vitacura","lat":-33.3956,"lng":-70.5997}];
+function getColorZonaIdx(s){const n=["conchali","huechuraba","independencia","quilicura","recoleta","renca"];const o=["las-condes","lo-barnechea","macul","nunoa","penalolen","providencia","la-reina","vitacura"];const su=["el-bosque","la-cisterna","la-florida","la-granja","la-pintana","lo-espejo","san-joaquin","san-miguel","san-ramon","santiago","puente-alto","pirque"];const p=["cerrillos","cerro-navia","estacion-central","lo-prado","maipu","pedro-aguirre-cerda","pudahuel","quinta-normal"];if(n.includes(s))return"#3B82F6";if(o.includes(s))return"#00d4ff";if(su.includes(s))return"#ff8a00";if(p.includes(s))return"#A855F7";return"#22c55e"}
+var lc=document.getElementById("comunas-lista-container");var sel=null;
+function renderListaIdx(f){if(!lc)return;var h="";var fl=COMUNAS_MAPA_IDX;if(f&&f.trim()!==""){var q=f.toLowerCase();fl=COMUNAS_MAPA_IDX.filter(function(c){return c.nombre.toLowerCase().indexOf(q)>=0})}fl.forEach(function(c){var col=getColorZonaIdx(c.slug);h+='<button onclick="selComunaIdx(\''+c.slug+'\',\''+c.nombre+'\')" data-cs="'+c.slug+'" style="display:block;width:100%;text-align:left;padding:8px 12px;margin-bottom:4px;border-radius:6px;border:1px solid rgba(0,212,255,0.1);background:#161b22;color:#c9d1d9;font-size:0.8rem;cursor:pointer;" onmouseover="this.style.background=\'#00d4ff\';this.style.color=\'#0d1117\'" onmouseout="if(this.dataset.sel!==\'1\'){this.style.background=\'#161b22\';this.style.color=\'#c9d1d9\'}"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:'+col+';margin-right:8px;"></span>'+c.nombre+'</button>'});lc.innerHTML=h||'<p style="color:#8b949e;text-align:center;padding:20px;">No se encontraron comunas.</p>'}
+function filtrarComunasIdx(){var i=document.getElementById("comuna-search-input");renderListaIdx(i?i.value:"")}
+function selComunaIdx(s,n){if(sel===s){window.location.href="comunas/"+s+".html";return}sel=s;document.querySelectorAll("[data-cs]").forEach(function(b){b.dataset.sel="0";b.style.background="#161b22";b.style.color="#c9d1d9"});var b=document.querySelector('[data-cs="'+s+'"]');if(b){b.dataset.sel="1";b.style.background="#00d4ff";b.style.color="#0d1117";b.title="Click nuevamente para ir a "+n}if(window.resaltarIdx)window.resaltarIdx(s)}
+var mp=null,mk=[];
+function initMapIdx(){var c=document.getElementById("comuna-map-leaflet");if(!c||typeof L==="undefined")return;if(mp){mp.remove();mp=null;mk=[]}mp=L.map("comuna-map-leaflet",{center:[-33.45,-70.65],zoom:9,scrollWheelZoom:false});L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",{attribution:"© OpenStreetMap, © CARTO",maxZoom:18}).addTo(mp);COMUNAS_MAPA_IDX.forEach(function(c){var col=getColorZonaIdx(c.slug);var m=L.circleMarker([c.lat,c.lng],{radius:6,fillColor:col,color:"#fff",weight:1.5,opacity:0.9,fillOpacity:0.6}).addTo(mp);m.bindTooltip('<div style="font-weight:600;color:'+col+';">'+c.nombre+'</div><div style="font-size:0.7rem;color:#00d4ff;margin-top:4px;">Click para ver</div>',{className:"ct",direction:"top",offset:[0,-8]});m.on("click",function(){window.location.href="comunas/"+c.slug+".html"});m.on("mouseover",function(){m.setStyle({radius:9,fillOpacity:0.9})});m.on("mouseout",function(){m.setStyle({radius:6,fillOpacity:0.6})});mk.push({slug:c.slug,marker:m,data:c})});c.addEventListener("click",function(){mp.scrollWheelZoom.enable()});c.addEventListener("mouseleave",function(){mp.scrollWheelZoom.disable()})}
+window.resaltarIdx=function(s){if(!mp)initMapIdx();if(!mp)return;mk.forEach(function(m){m.marker.setStyle({radius:6,fillOpacity:0.6,weight:1.5})});var f=mk.find(function(m){return m.slug===s});if(f){f.marker.setStyle({radius:12,fillOpacity:1,weight:3,color:"#fff"});f.marker.openTooltip();mp.flyTo([f.data.lat,f.data.lng],11,{duration:0.8})}};
+if(typeof L==="undefined"){var sc=document.createElement("script");sc.src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";sc.onload=initMapIdx;document.head.appendChild(sc)}else{initMapIdx()}
+renderListaIdx("");
+</script>
+<style>
+.ct{background:#0d1117!important;border:1px solid rgba(0,212,255,0.3)!important;border-radius:8px!important;padding:8px 12px!important;box-shadow:0 4px 20px rgba(0,0,0,0.5)!important;}
+.ct::before{border-top-color:#0d1117!important;}
+.leaflet-container{background:#0d1117!important;}
+.leaflet-control-zoom a{background:#161b22!important;color:#00d4ff!important;border:1px solid rgba(0,212,255,0.2)!important;}
+.leaflet-control-zoom a:hover{background:#00d4ff!important;color:#0d1117!important;}
+.leaflet-control-attribution{background:rgba(13,17,23,0.8)!important;color:#8b949e!important;}
+.leaflet-control-attribution a{color:#00d4ff!important;}
+</style>
+
 <footer class="main-footer">
   <div class="container">
     <div class="row">
@@ -4182,5 +4234,92 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   });
 </script>
+
+<!-- ====== MODAL GOOGLE REVIEWS ====== -->
+<button id="googleReviewsBtn" aria-label="Ver reseñas de Google"
+  style="position:fixed;bottom:80px;left:20px;z-index:9998;background:none;border:none;cursor:pointer;">
+  <div style="position:relative;">
+    <span style="position:absolute;inset:0;border-radius:50%;background:#4285F4;opacity:0.6;animation:gp-ping 2s infinite;"></span>
+    <div style="position:relative;width:56px;height:56px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(66,133,244,0.5);border:2px solid #4285F4;transition:transform 0.3s;"
+         onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+      </svg>
+    </div>
+  </div>
+</button>
+
+<div id="googleReviewsModal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:20px;">
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(4px);" id="googleReviewsOverlay"></div>
+  <div style="position:relative;background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.3);max-width:380px;width:100%;overflow:hidden;">
+    <button id="closeGoogleReviews" style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;background:#f1f3f4;border:none;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;">
+      <svg width="18" height="18" fill="none" stroke="#5f6368" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div style="padding:32px 24px;text-align:center;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:0 auto 16px;">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+      </svg>
+      <h3 style="font-size:1.25rem;font-weight:700;color:#202124;margin:0 0 12px;">Reseñas de Google</h3>
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:16px;">
+        <div style="display:flex;gap:2px;">
+          <svg width="22" height="22" fill="#fbbc04" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="22" height="22" fill="#fbbc04" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="22" height="22" fill="#fbbc04" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="22" height="22" fill="#fbbc04" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="22" height="22" fill="#fbbc04" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span style="font-size:1.5rem;font-weight:700;color:#202124;">5</span>
+        <span style="font-size:0.875rem;color:#5f6368;">/ 5.0</span>
+      </div>
+      <p style="color:#5f6368;font-size:0.875rem;margin:0 0 24px;">Calificación en Google Business</p>
+      <a href="https://share.google/KSALdS7mhRLxEw5AH" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:linear-gradient(135deg,#4285F4,#3367D6);color:#fff;font-weight:700;border-radius:8px;text-decoration:none;transition:all 0.3s;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#fff"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#fff"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#fff"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#fff"/>
+        </svg>
+        Ver perfil de Google
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>@keyframes gp-ping{0%{transform:scale(1);opacity:0.6}75%,100%{transform:scale(2);opacity:0}}</style>
+<script>
+(function(){
+  var btn=document.getElementById("googleReviewsBtn");
+  var modal=document.getElementById("googleReviewsModal");
+  var closeBtn=document.getElementById("closeGoogleReviews");
+  var overlay=document.getElementById("googleReviewsOverlay");
+  if(btn)btn.addEventListener("click",function(){if(modal){modal.style.display="flex";document.body.style.overflow="hidden"}});
+  function hide(){if(modal){modal.style.display="none";document.body.style.overflow=""}}
+  if(closeBtn)closeBtn.addEventListener("click",hide);
+  if(overlay)overlay.addEventListener("click",hide);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")hide()});
+})();
+</script>
+
+
+<!-- ====== BANNER TAPIZADO DE VOLANTES ====== -->
+<section style="padding:40px 20px;background:linear-gradient(135deg,#1a1a2e,#16213e);border-top:1px solid rgba(0,212,255,0.2);">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-size:2.5rem;margin-bottom:12px;">🪑</div>
+    <h2 style="color:#00d4ff;font-weight:700;font-size:1.5rem;margin:0 0 8px;">Tapizado de Volantes de Cuero</h2>
+    <p style="color:#8b949e;font-size:0.9rem;margin:0 0 20px;">Especialistas en recuperación y tapizado de volantes con cuero genuino. Acabados premium a mano.</p>
+    <a href="https://tapizadodevolante.com/" target="_blank" rel="noopener"
+       style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#00d4ff;color:#0d1117;font-weight:700;border-radius:8px;text-decoration:none;transition:all 0.3s;">
+      Visitar tapizadodevolante.com →
+    </a>
+  </div>
+</section>
+
 </body>
 </html>
